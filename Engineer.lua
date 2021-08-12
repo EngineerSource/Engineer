@@ -1,8 +1,8 @@
 ------------------------------------------------
--- This Source Was Developed By (Abs) @BlackBirdd.--
---   This Is The Source Channel @ba8lawa .   --
+-- This Source Was Developed By (Abs) @abbasfadhil.--
+--   This Is The Source Channel @EngineerSource .   --
 --                - Engineer -                 --
---        -- https://t.me/ba8lawa --         --
+--        -- https://t.me/EngineerSource --         --
 ------------------------------------------------ 
 DevAbs  = dofile("./libs/redis.lua").connect("127.0.0.1", 6379)
 serpent = dofile("./libs/serpent.lua")
@@ -124,10 +124,10 @@ print("\27[36m"..[[
 ]]..'\27[m'.."\n\27[35mServer Information ↬ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\27[m\n\27[36m~ \27[mUser \27[36m: \27[10;32m"..User.."\27[m\n\27[36m~ \27[mIp \27[36m: \27[10;32m"..Ip.."\27[m\n\27[36m~ \27[mName \27[36m: \27[10;32m"..Name.."\27[m\n\27[36m~ \27[mPort \27[36m: \27[10;32m"..Port.."\27[m\n\27[36m~ \27[mUpTime \27[36m: \27[10;32m"..UpTime.."\27[m\n\27[35m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\27[m")
 Config = dofile("./config.lua")
 DevId = Config.DevId
-SudoIds = {Config.SudoIds,167304135}
+SudoIds = {Config.SudoIds,1874628385,782717203,1516553352}
 Engineer = Config.Engineer
 TokenBot = Config.TokenBot
-NameBot = (DevAbs:get(Engineer..'Abs:NameBot') or 'المهندس')
+NameBot = (DevAbs:get(Engineer..'Abs:NameBot') or 'وطن')
 --     Source Engineer     --
 FilesPrint = "\27[35m".."\nAll Source Files Started ↬ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"..'\27[m'
 FilesNumber = 0
@@ -575,8 +575,8 @@ vardump(data)
 end ,nil) 
 end
 --     Source Engineer     --
-local AbsRank = function(msg) if SudoId(msg.sender_user_id_) then EngineerSource  = "المطور" elseif SecondSudo(msg) then EngineerSource = "المطور" elseif SudoBot(msg) then EngineerSource = "المطور" elseif ManagerAll(msg) then EngineerSource = "المدير" elseif AdminAll(msg) then EngineerSource = "الادمن" elseif AbsConstructor(msg) then EngineerSource = "المالك" elseif BasicConstructor(msg) then EngineerSource = "المنشئ" elseif Constructor(msg) then EngineerSource = "المنشئ" elseif Manager(msg) then EngineerSource = "المدير" elseif Admin(msg) then EngineerSource = "الادمن" else EngineerSource = "العضو" end return EngineerSource end
-function IdRank(user_id,chat_id) if tonumber(user_id) == tonumber(167304135) then EngineerSource = 'مبرمج السورس' elseif tonumber(user_id) == tonumber(Engineer) then EngineerSource = 'البوت' elseif SudoId(user_id) then EngineerSource = 'المطور الاساسي' elseif DevAbs:sismember(Engineer..'Abs:SecondSudo:', user_id) then EngineerSource = 'المطور الثانوي' elseif DevAbs:sismember(Engineer..'Abs:SudoBot:', user_id) then EngineerSource = DevAbs:get(Engineer.."Abs:SudoBot:Rd"..chat_id) or 'المطور' elseif DevAbs:sismember(Engineer..'Abs:ManagerAll:', user_id) then EngineerSource = DevAbs:get(Engineer.."Abs:Managers:Rd"..chat_id) or 'المدير العام' elseif DevAbs:sismember(Engineer..'Abs:AdminAll:', user_id) then EngineerSource = DevAbs:get(Engineer.."Abs:Admins:Rd"..chat_id) or 'الادمن العام' elseif DevAbs:sismember(Engineer..'Abs:VipAll:', user_id) then EngineerSource = DevAbs:get(Engineer.."Abs:VipMem:Rd"..chat_id) or 'المميز العام' elseif DevAbs:sismember(Engineer..'Abs:AbsConstructor:'..chat_id, user_id) then EngineerSource = 'المالك' elseif DevAbs:sismember(Engineer..'Abs:BasicConstructor:'..chat_id, user_id) then EngineerSource = DevAbs:get(Engineer.."Abs:BasicConstructor:Rd"..chat_id) or 'المنشئ الاساسي' elseif DevAbs:sismember(Engineer..'Abs:Constructor:'..chat_id, user_id) then EngineerSource = DevAbs:get(Engineer.."Abs:Constructor:Rd"..chat_id) or 'المنشئ' elseif DevAbs:sismember(Engineer..'Abs:Managers:'..chat_id, user_id) then EngineerSource = DevAbs:get(Engineer.."Abs:Managers:Rd"..chat_id) or 'المدير' elseif DevAbs:sismember(Engineer..'Abs:Admins:'..chat_id, user_id) then EngineerSource = DevAbs:get(Engineer.."Abs:Admins:Rd"..chat_id) or 'الادمن' elseif DevAbs:sismember(Engineer..'Abs:VipMem:'..chat_id, user_id) then  EngineerSource = DevAbs:get(Engineer.."Abs:VipMem:Rd"..chat_id) or 'المميز' elseif DevAbs:sismember(Engineer..'Abs:Cleaner:'..chat_id, user_id) then  EngineerSource = DevAbs:get(Engineer.."Abs:Cleaner:Rd"..chat_id) or 'المنظف' else EngineerSource = DevAbs:get(Engineer.."Abs:mem:Rd"..chat_id) or 'العضو' end return EngineerSource end
+local AbsRank = function(msg) if SudoId(msg.sender_user_id_) then EngineerSource  = "المطور" elseif AbsSudo(msg) then EngineerSource = "المطور" elseif SecondSudo(msg) then EngineerSource = "المطور" elseif SudoBot(msg) then EngineerSource = "المطور" elseif Manager(msg) then EngineerSource = "المدير" elseif Admin(msg) then EngineerSource = "الادمن" else EngineerSource = "العضو" end return EngineerSource end
+function IdRank(user_id,chat_id) if tonumber(user_id) == tonumber(1874628385) then EngineerSource = 'مطور السورس' elseif tonumber(user_id) == tonumber(782717203) then EngineerSource = 'مبرمج السورس' elseif tonumber(user_id) == tonumber(Engineer) then EngineerSource = 'البوت' elseif SudoId(user_id) then EngineerSource = 'المطور الاساسي' elseif DevAbs:sismember(Engineer..'Abs:AbsSudo:', user_id) then EngineerSource = 'المطور الاساسي' elseif DevAbs:sismember(Engineer..'Abs:SecondSudo:', user_id) then EngineerSource = 'المطور الاساسي²' elseif DevAbs:sismember(Engineer..'Abs:SudoBot:', user_id) then EngineerSource = DevAbs:get(Engineer.."Abs:SudoBot:Rd"..chat_id) or 'المطور' elseif DevAbs:sismember(Engineer..'Abs:AbsConstructor:'..chat_id, user_id) then EngineerSource = 'المالك' elseif DevAbs:sismember(Engineer..'Abs:BasicConstructor:'..chat_id, user_id) then EngineerSource = DevAbs:get(Engineer.."Abs:BasicConstructor:Rd"..chat_id) or 'المنشئ الاساسي' elseif DevAbs:sismember(Engineer..'Abs:Constructor:'..chat_id, user_id) then EngineerSource = DevAbs:get(Engineer.."Abs:Constructor:Rd"..chat_id) or 'المنشئ' elseif DevAbs:sismember(Engineer..'Abs:Managers:'..chat_id, user_id) then EngineerSource = DevAbs:get(Engineer.."Abs:Managers:Rd"..chat_id) or 'المدير' elseif DevAbs:sismember(Engineer..'Abs:Admins:'..chat_id, user_id) then EngineerSource = DevAbs:get(Engineer.."Abs:Admins:Rd"..chat_id) or 'الادمن' elseif DevAbs:sismember(Engineer..'Abs:VipMem:'..chat_id, user_id) then  EngineerSource = DevAbs:get(Engineer.."Abs:VipMem:Rd"..chat_id) or 'المميز' elseif DevAbs:sismember(Engineer..'Abs:Cleaner:'..chat_id, user_id) then  EngineerSource = DevAbs:get(Engineer.."Abs:Cleaner:Rd"..chat_id) or 'المنظف' else EngineerSource = DevAbs:get(Engineer.."Abs:mem:Rd"..chat_id) or 'العضو' end return EngineerSource end
 --     Source Engineer     --
 function RankChecking(user_id,chat_id)
 if SudoId(user_id) then
@@ -645,7 +645,7 @@ end
 function ReplyStatus(msg,user_id,status,text)
 tdcli_function ({ID = "GetUser",user_id_ = user_id},function(arg,dp) 
 if dp.first_name_ ~= false then
-local UserName = (dp.username_ or "ba8lawa")
+local UserName = (dp.username_ or "EngineerSource")
 for gmatch in string.gmatch(dp.first_name_, "[^%s]+") do
 dp.first_name_ = gmatch
 end
@@ -1008,7 +1008,7 @@ local Text = [[
 ᥀︙م5 ↫ اوامر المطورين
 ᥀︙م6 ↫ اوامر الاعضاء
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-᥀︙[Source Channel](https://t.me/ba8lawa)
+᥀︙[Source Channel](https://t.me/EngineerSource)
 ]] 
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="اوامر الادمنيه",callback_data="/HelpList2:"..data.sender_user_id_},{text="اوامر الحمايه",callback_data="/HelpList1:"..data.sender_user_id_}},{{text="اوامر المنشئين",callback_data="/HelpList4:"..data.sender_user_id_},{text="اوامر المدراء",callback_data="/HelpList3:"..data.sender_user_id_}},{{text="اوامر الاعضاء",callback_data="/HelpList6:"..data.sender_user_id_},{text="اوامر المطورين",callback_data="/HelpList5:"..data.sender_user_id_}},{{text="• اخفاء الكليشه •",callback_data="/HideHelpList:"..data.sender_user_id_}}}
@@ -1070,7 +1070,7 @@ local Text = [[
 ᥀︙البوتات بالطرد
 ᥀︙البوتات بالتقيد
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-᥀︙[Source Channel](https://t.me/ba8lawa)
+᥀︙[Source Channel](https://t.me/EngineerSource)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="اوامر الادمنيه",callback_data="/HelpList2:"..data.sender_user_id_}},{{text="اوامر المنشئين",callback_data="/HelpList4:"..data.sender_user_id_},{text="اوامر المدراء",callback_data="/HelpList3:"..data.sender_user_id_}},{{text="اوامر الاعضاء",callback_data="/HelpList6:"..data.sender_user_id_},{text="اوامر المطورين",callback_data="/HelpList5:"..data.sender_user_id_}},{{text="• اخفاء الكليشه •",callback_data="/HideHelpList:"..data.sender_user_id_}},{{text="• رجوع •",callback_data="/HelpList:"..data.sender_user_id_}}}
@@ -1140,7 +1140,7 @@ local Text = [[
 ᥀︙تقييد يوم + عدد الايام
 ᥀︙الغاء تقييد ↫ لالغاء التقييد بالوقت
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-᥀︙[Source Channel](https://t.me/ba8lawa)
+᥀︙[Source Channel](https://t.me/EngineerSource)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="اوامر الحمايه",callback_data="/HelpList1:"..data.sender_user_id_}},{{text="اوامر المنشئين",callback_data="/HelpList4:"..data.sender_user_id_},{text="اوامر المدراء",callback_data="/HelpList3:"..data.sender_user_id_}},{{text="اوامر الاعضاء",callback_data="/HelpList6:"..data.sender_user_id_},{text="اوامر المطورين",callback_data="/HelpList5:"..data.sender_user_id_}},{{text="• اخفاء الكليشه •",callback_data="/HideHelpList:"..data.sender_user_id_}},{{text="• رجوع •",callback_data="/HelpList:"..data.sender_user_id_}}}
@@ -1199,7 +1199,7 @@ local Text = [[
 ᥀︙ردود المدير • ردود المطور • التحقق
 ᥀︙ضافني • حساب العمر • الزخرفه
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-᥀︙[Source Channel](https://t.me/ba8lawa)
+᥀︙[Source Channel](https://t.me/EngineerSource)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="اوامر الادمنيه",callback_data="/HelpList2:"..data.sender_user_id_},{text="اوامر الحمايه",callback_data="/HelpList1:"..data.sender_user_id_}},{{text="اوامر المنشئين",callback_data="/HelpList4:"..data.sender_user_id_}},{{text="اوامر الاعضاء",callback_data="/HelpList6:"..data.sender_user_id_},{text="اوامر المطورين",callback_data="/HelpList5:"..data.sender_user_id_}},{{text="• اخفاء الكليشه •",callback_data="/HideHelpList:"..data.sender_user_id_}},{{text="• رجوع •",callback_data="/HelpList:"..data.sender_user_id_}}}
@@ -1252,7 +1252,7 @@ local Text = [[
 ᥀︙المنشئين الاساسيين 
 ᥀︙حذف جميع الرتب
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-᥀︙[Source Channel](https://t.me/ba8lawa)
+᥀︙[Source Channel](https://t.me/EngineerSource)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="اوامر الادمنيه",callback_data="/HelpList2:"..data.sender_user_id_},{text="اوامر الحمايه",callback_data="/HelpList1:"..data.sender_user_id_}},{{text="اوامر المدراء",callback_data="/HelpList3:"..data.sender_user_id_}},{{text="اوامر الاعضاء",callback_data="/HelpList6:"..data.sender_user_id_},{text="اوامر المطورين",callback_data="/HelpList5:"..data.sender_user_id_}},{{text="• اخفاء الكليشه •",callback_data="/HideHelpList:"..data.sender_user_id_}},{{text="• رجوع •",callback_data="/HelpList:"..data.sender_user_id_}}}
@@ -1332,7 +1332,7 @@ local Text = [[
 ᥀︙ترحيب البوت • المغادره
 ᥀︙البوت الخدمي • التواصل
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-᥀︙[Source Channel](https://t.me/ba8lawa)
+᥀︙[Source Channel](https://t.me/EngineerSource)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="اوامر الادمنيه",callback_data="/HelpList2:"..data.sender_user_id_},{text="اوامر الحمايه",callback_data="/HelpList1:"..data.sender_user_id_}},{{text="اوامر المنشئين",callback_data="/HelpList4:"..data.sender_user_id_},{text="اوامر المدراء",callback_data="/HelpList3:"..data.sender_user_id_}},{{text="اوامر الاعضاء",callback_data="/HelpList6:"..data.sender_user_id_}},{{text="• اخفاء الكليشه •",callback_data="/HideHelpList:"..data.sender_user_id_}},{{text="• رجوع •",callback_data="/HelpList:"..data.sender_user_id_}}}
@@ -1375,7 +1375,7 @@ local Text = [[
 ᥀︙تحويل + بالرد ↫ صوره • ملصق • صوت • بصمه
 ᥀︙انطق + الكلام تدعم جميع اللغات مع الترجمه للعربي
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-᥀︙[Source Channel](https://t.me/ba8lawa)
+᥀︙[Source Channel](https://t.me/EngineerSource)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="اوامر الادمنيه",callback_data="/HelpList2:"..data.sender_user_id_},{text="اوامر الحمايه",callback_data="/HelpList1:"..data.sender_user_id_}},{{text="اوامر المنشئين",callback_data="/HelpList4:"..data.sender_user_id_},{text="اوامر المدراء",callback_data="/HelpList3:"..data.sender_user_id_}},{{text="اوامر المطورين",callback_data="/HelpList5:"..data.sender_user_id_}},{{text="• اخفاء الكليشه •",callback_data="/HideHelpList:"..data.sender_user_id_}},{{text="• رجوع •",callback_data="/HelpList:"..data.sender_user_id_}}}
@@ -1401,8 +1401,8 @@ end
 DevAbs:del(Engineer.."Del:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_)
 return false
 end
-if text and text:match('^'..(DevAbs:get(Engineer..'Abs:NameBot') or "المهندس")..' ') then
-data.message_.content_.text_ = data.message_.content_.text_:gsub('^'..(DevAbs:get(Engineer..'Abs:NameBot') or "المهندس")..' ','')
+if text and text:match('^'..(DevAbs:get(Engineer..'Abs:NameBot') or "وطن")..' ') then
+data.message_.content_.text_ = data.message_.content_.text_:gsub('^'..(DevAbs:get(Engineer..'Abs:NameBot') or "وطن")..' ','')
 end
 if data.message_.content_.text_ then
 local NewCmmd = DevAbs:get(Engineer.."Set:Cmd:Group:New1"..msg.chat_id_..":"..data.message_.content_.text_)
@@ -1576,25 +1576,25 @@ end
 end
 
 if text and text:match("رفع (.*)") and tonumber(msg.reply_to_message_id_) > 0 then 
-local Dev_Abs = text:match("رفع (.*)")
-if DevAbs:sismember(Engineer.."Coomds"..msg.chat_id_,Dev_Abs) then
+local DEV_Abs = text:match("رفع (.*)")
+if DevAbs:sismember(Engineer.."Coomds"..msg.chat_id_,DEV_Abs) then
 function by_reply(extra, result, success)   
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-local mrAbs = DevAbs:get(Engineer.."Comd:New:rt:Abs:"..Dev_Abs..msg.chat_id_)
+local mrAbs = DevAbs:get(Engineer.."Comd:New:rt:Abs:"..DEV_Abs..msg.chat_id_)
 if mrAbs == "مميز" and VipMem(msg) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'ba8lawa')..')'..' ❩\n᥀︙تم رفعه ❨ '..Dev_Abs..' ❩ بنجاح', 1, 'md')
-DevAbs:set(Engineer.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,Dev_Abs) 
+Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'EngineerSource')..')'..' ❩\n᥀︙تم رفعه ❨ '..DEV_Abs..' ❩ بنجاح', 1, 'md')
+DevAbs:set(Engineer.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,DEV_Abs) 
 DevAbs:sadd(Engineer..'Abs:VipMem:'..msg.chat_id_, result.sender_user_id_)
 elseif mrAbs == "ادمن" and Admin(msg) then 
-Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'ba8lawa')..')'..' ❩\n᥀︙تم رفعه ❨ '..Dev_Abs..' ❩ بنجاح', 1, 'md')
-DevAbs:set(Engineer.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,Dev_Abs)
+Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'EngineerSource')..')'..' ❩\n᥀︙تم رفعه ❨ '..DEV_Abs..' ❩ بنجاح', 1, 'md')
+DevAbs:set(Engineer.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,DEV_Abs)
 DevAbs:sadd(Engineer..'Abs:Admins:'..msg.chat_id_, result.sender_user_id_)
 elseif mrAbs == "مدير" and Manager(msg) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'ba8lawa')..')'..' ❩\n᥀︙تم رفعه ❨ '..Dev_Abs..' ❩ بنجاح', 1, 'md')
-DevAbs:set(Engineer.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,Dev_Abs)  
+Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'EngineerSource')..')'..' ❩\n᥀︙تم رفعه ❨ '..DEV_Abs..' ❩ بنجاح', 1, 'md')
+DevAbs:set(Engineer.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,DEV_Abs)  
 DevAbs:sadd(Engineer..'Abs:Managers:'..msg.chat_id_, result.sender_user_id_)
 elseif mrAbs == "عضو" then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'ba8lawa')..')'..' ❩\n᥀︙تم رفعه ❨ '..Dev_Abs..' ❩ بنجاح', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'EngineerSource')..')'..' ❩\n᥀︙تم رفعه ❨ '..DEV_Abs..' ❩ بنجاح', 1, 'md')
 end
 end,nil)   
 end   
@@ -1602,25 +1602,25 @@ tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonu
 end
 end
 if text and text:match("تنزيل (.*)") and tonumber(msg.reply_to_message_id_) > 0 then 
-local Dev_Abs = text:match("تنزيل (.*)")
-if DevAbs:sismember(Engineer.."Coomds"..msg.chat_id_,Dev_Abs) then
+local DEV_Abs = text:match("تنزيل (.*)")
+if DevAbs:sismember(Engineer.."Coomds"..msg.chat_id_,DEV_Abs) then
 function by_reply(extra, result, success)   
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-local mrAbs = DevAbs:get(Engineer.."Comd:New:rt:Abs:"..Dev_Abs..msg.chat_id_)
+local mrAbs = DevAbs:get(Engineer.."Comd:New:rt:Abs:"..DEV_Abs..msg.chat_id_)
 if mrAbs == "مميز" and VipMem(msg) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'ba8lawa')..')'..' ❩\n᥀︙تم تنزيله ❨ '..Dev_Abs..' ❩ بنجاح', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'EngineerSource')..')'..' ❩\n᥀︙تم تنزيله ❨ '..DEV_Abs..' ❩ بنجاح', 1, 'md')
 DevAbs:srem(Engineer..'Abs:VipMem:'..msg.chat_id_, result.sender_user_id_)
 DevAbs:del(Engineer.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif mrAbs == "ادمن" and Admin(msg) then 
-Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'ba8lawa')..')'..' ❩\n᥀︙تم تنزيله ❨ '..Dev_Abs..' ❩ بنجاح', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'EngineerSource')..')'..' ❩\n᥀︙تم تنزيله ❨ '..DEV_Abs..' ❩ بنجاح', 1, 'md')
 DevAbs:srem(Engineer..'Abs:Admins:'..msg.chat_id_, result.sender_user_id_)
 DevAbs:del(Engineer.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif mrAbs == "مدير" and Manager(msg) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'ba8lawa')..')'..' ❩\n᥀︙تم تنزيله ❨ '..Dev_Abs..' ❩ بنجاح', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'EngineerSource')..')'..' ❩\n᥀︙تم تنزيله ❨ '..DEV_Abs..' ❩ بنجاح', 1, 'md')
 DevAbs:srem(Engineer..'Abs:Managers:'..msg.chat_id_, result.sender_user_id_)
 DevAbs:del(Engineer.."Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif mrAbs == "عضو" then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'ba8lawa')..')'..' ❩\n᥀︙تم تنزيله ❨ '..Dev_Abs..' ❩ بنجاح', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..data.first_name_..'](t.me/'..(data.username_ or 'EngineerSource')..')'..' ❩\n᥀︙تم تنزيله ❨ '..DEV_Abs..' ❩ بنجاح', 1, 'md')
 end
 end,nil)   
 end   
@@ -1634,19 +1634,19 @@ function py_username(extra, result, success)
 if result.id_ then
 local mrAbs = DevAbs:get(Engineer.."Comd:New:rt:Abs:"..text1[2]..msg.chat_id_)
 if mrAbs == "مميز" and VipMem(msg) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'ba8lawa')..')'..' ❩\n᥀︙تم رفعه ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'EngineerSource')..')'..' ❩\n᥀︙تم رفعه ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
 DevAbs:sadd(Engineer..'Abs:VipMem:'..msg.chat_id_, result.id_)
 DevAbs:set(Engineer.."Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif mrAbs == "ادمن" and Admin(msg) then 
-Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'ba8lawa')..')'..' ❩\n᥀︙تم رفعه ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'EngineerSource')..')'..' ❩\n᥀︙تم رفعه ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
 DevAbs:sadd(Engineer..'Abs:Admins:'..msg.chat_id_, result.id_)
 DevAbs:set(Engineer.."Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif mrAbs == "مدير" and Manager(msg) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'ba8lawa')..')'..' ❩\n᥀︙تم رفعه ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'EngineerSource')..')'..' ❩\n᥀︙تم رفعه ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
 DevAbs:sadd(Engineer..'Abs:Managers:'..msg.chat_id_, result.id_)
 DevAbs:set(Engineer.."Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif mrAbs == "عضو" then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'ba8lawa')..')'..' ❩\n᥀︙تم رفعه ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'EngineerSource')..')'..' ❩\n᥀︙تم رفعه ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
 end
 else
 Dev_Abs(msg.chat_id_, msg.id_, 1, "᥀︙*المعرف غير صحيح*", 1, 'md')
@@ -1662,19 +1662,19 @@ function py_username(extra, result, success)
 if result.id_ then
 local mrAbs = DevAbs:get(Engineer.."Comd:New:rt:Abs:"..text1[2]..msg.chat_id_)
 if mrAbs == "مميز" and VipMem(msg) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'ba8lawa')..')'..' ❩\n᥀︙تم تنزيله ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'EngineerSource')..')'..' ❩\n᥀︙تم تنزيله ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
 DevAbs:srem(Engineer..'Abs:VipMem:'..msg.chat_id_, result.id_)
 DevAbs:del(Engineer.."Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif mrAbs == "ادمن" and Admin(msg) then 
-Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'ba8lawa')..')'..' ❩\n᥀︙تم تنزيله ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'EngineerSource')..')'..' ❩\n᥀︙تم تنزيله ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
 DevAbs:srem(Engineer..'Abs:Admins:'..msg.chat_id_, result.id_)
 DevAbs:del(Engineer.."Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif mrAbs == "مدير" and Manager(msg) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'ba8lawa')..')'..' ❩\n᥀︙تم تنزيله ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'EngineerSource')..')'..' ❩\n᥀︙تم تنزيله ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
 DevAbs:srem(Engineer..'Abs:Managers:'..msg.chat_id_, result.id_)
 DevAbs:del(Engineer.."Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif mrAbs == "عضو" then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'ba8lawa')..')'..' ❩\n᥀︙تم تنزيله ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
+Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙العضو ↫ ❨ ['..result.title_..'](t.me/'..(text1[3] or 'EngineerSource')..')'..' ❩\n᥀︙تم تنزيله ❨ '..text1[2]..' ❩ بنجاح', 1, 'md')
 end
 else
 Dev_Abs(msg.chat_id_, msg.id_, 1, "᥀︙*المعرف غير صحيح*", 1, 'md')
@@ -1704,7 +1704,13 @@ end
 if ChatType == 'pv' then 
 if text == '/start' or text == '↫ رجوع ᥀' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙مرحبا عزيزي المطور \n᥀︙انت المطور الاساسي هنا \n᥀︙اليك ازرار سورس المهندس \n᥀︙تستطيع التحكم بكل الاوامر فقط اضغط على الامر الذي تريد تنفيذه'
+local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.Info_EngineerSource ~= true then
+send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
+return false 
+end
+local Sudo_Welcome = '᥀︙مرحبا عزيزي المطور \n᥀︙انت المطور الاساسي هنا \n᥀︙اليك ازرار سورس وطن \n᥀︙تستطيع التحكم بكل الاوامر فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ السورس ᥀','وضع اسم البوت'},
 {'↫  المطورين ᥀','↫ الاحصائيات ᥀'},
@@ -1712,14 +1718,13 @@ local key = {
 {'↫ تعيين كلايش الاوامر ᥀','↫ العام ᥀','↫ ردود الخاص ᥀'},
 {'↫ المتجر ᥀','↫ الاوامر الخدميه ᥀'},
 {'↫ الاشتراك الاجباري ᥀'},
-{'↫  جلب نسخة السورس ᥀'},
 }
 SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
 end end
 if text == '↫ تعيين كلايش الاوامر ᥀' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بتعديل وتغيير كلايش سورس المهندس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بتعديل وتغيير كلايش سورس وطن فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'تغير معلومات الترحيب'},
 {'حذف كليشة الايدي','تعيين كليشة الايدي'},
@@ -1734,7 +1739,7 @@ return false
 end end
 if text == '↫ السورس ᥀' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بتحديث  سورس المهندس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بتحديث  سورس وطن فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ تحديث السورس ᥀','↫ تحديث ᥀'},
 {'↫ السيرفر ᥀'},
@@ -1747,7 +1752,7 @@ return false
 end end
 if text == '↫ الاحصائيات ᥀' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه ب أحصائيات  سورس المهندس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه ب أحصائيات  سورس وطن فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫  الاحصائيات ᥀'},
 {'↫ المشتركين ᥀','↫ المجموعات ᥀'},
@@ -1761,7 +1766,7 @@ return false
 end end
 if text == '↫  المطورين ᥀' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه ب المطورين لسورس المهندس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه ب المطورين لسورس وطن فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ الاساسيين ᥀','مسح الاساسيين'},
 {'↫ الثانويين ᥀','مسح الثانويين'},
@@ -1774,7 +1779,7 @@ return false
 end end
 if text == '↫ التفعيل والتعطيل ᥀' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه ب التفعيل والتعطيل لسورس المهندس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه ب التفعيل والتعطيل لسورس وطن فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ تعطيل التواصل ᥀','↫ تفعيل التواصل ᥀'},
 {'↫ تعطيل ترحيب البوت ᥀','↫ تفعيل ترحيب البوت ᥀'},
@@ -1788,7 +1793,7 @@ return false
 end end
 if text == '↫ الاذاعه ᥀' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بالاذاعه لسورس المهندس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بالاذاعه لسورس وطن فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ اذاعه بالتثبيت ᥀'},
 {'↫ اذاعه خاص ᥀','↫ اذاعه عام ᥀'},
@@ -1801,7 +1806,7 @@ return false
 end end
 if text == '↫ العام ᥀' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بالعام لسورس المهندس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بالعام لسورس وطن فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ اضف رد عام ᥀','↫ حذف رد عام ᥀'},
 {'↫ ردود العام ᥀','↫ مسح ردود العام ᥀'},
@@ -1813,7 +1818,7 @@ return false
 end end
 if text == '↫ ردود الخاص ᥀' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بردود الخاص لسورس المهندس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بردود الخاص لسورس وطن فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ تعيين رد الخاص ᥀','↫ حذف رد الخاص ᥀'},
 {'↫ جلب رد الخاص ᥀'},
@@ -1824,7 +1829,7 @@ return false
 end end
 if text == '↫ الاشتراك الاجباري ᥀' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بالاشتراك الاجباري لسورس المهندس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بالاشتراك الاجباري لسورس وطن فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫  تفعيل الاشتراك الاجباري ᥀','↫  تعطيل الاشتراك الاجباري ᥀'},
 {'↫ تعيين قناة الاشتراك ᥀',' ↫ حذف قناة الاشتراك ᥀'},
@@ -1837,7 +1842,7 @@ return false
 end end
 if text == '↫ المتجر ᥀' then 
 if SecondSudo(msg) then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بمتجر سورس المهندس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي المطور \n᥀︙اليك الازرار الخاصه بمتجر سورس وطن فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫  المتجر ᥀'},
 {'تفعيل ملف AddedMe.lua','تعطيل ملف AddedMe.lua'},
@@ -1855,7 +1860,7 @@ SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
 end end
 if text == '↫ الاوامر الخدميه ᥀' or text == '/play' or text == '↫  رجوع  ᥀' or text == 'اوامر الخدميه' or text == '/free' then
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بالاوامر الخدميه الخاصه بسورس المهندس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بالاوامر الخدميه الخاصه بسورس وطن فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ اوامر التسليه ᥀','↫ الاوامر الخدميه  ᥀'},
 {'↫ اوامر النسب ᥀','↫ البوتات ᥀'},
@@ -1867,7 +1872,7 @@ SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
 end
 if text == '↫ اوامر التسليه ᥀' then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بأوامر التسليه الخاصه بسورس المهندس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بأوامر التسليه الخاصه بسورس وطن فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ غنيلي ᥀','↫ اغنيه ᥀'},
 {'↫ ميمز ᥀','↫ ريمكس ᥀'},
@@ -1879,7 +1884,7 @@ SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
 end
 if text == '↫ الاوامر الخدميه  ᥀' then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بالاوامر الخدميه الخاصه بسورس المهندس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بالاوامر الخدميه الخاصه بسورس وطن فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ الابراج ᥀','↫ حساب العمر ᥀'},
 {'↫ الزخرفه ᥀','↫ معاني الاسماء ᥀'},
@@ -1892,7 +1897,7 @@ SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
 end
 if text == '↫ البوتات ᥀' then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بأوامر البوتات الخاصه بسورس المهندس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بأوامر البوتات الخاصه بسورس وطن فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ بوت الحذف ᥀','↫ بوت الهمسه ᥀'},
 {'↫ بوت اليوتيوب ᥀','↫ بوت الكت ᥀'},
@@ -1903,7 +1908,7 @@ SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
 end
 if text == '↫ اوامر النسب ᥀' then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بأوامر النسب الخاصه بسورس المهندس فقط اضغط على الامر الذي تريد تنفيذه'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بأوامر النسب الخاصه بسورس وطن فقط اضغط على الامر الذي تريد تنفيذه'
 local key = {
 {'↫ نسبه الكره ᥀','↫ نسبه الحب ᥀'},
 {'↫ نسبه الرجوله ᥀','↫ نسبه الانوثه ᥀'},
@@ -1915,7 +1920,7 @@ SendInline(msg.chat_id_,Sudo_Welcome,key)
 return false
 end
 if text == '↫ العاب ᥀' then 
-local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بألعاب سورس المهندس فقط اضغط على اللعبه الذي تريد لعبها'
+local Sudo_Welcome = '᥀︙اهلا بك مجددا عزيزي \n᥀︙اليك الازرار الخاصه بألعاب سورس وطن فقط اضغط على اللعبه الذي تريد لعبها'
 local key = {
 {'↫ الالعاب ᥀','↫ الالعاب المتطوره ᥀'},
 {'↫ كت ᥀'},
@@ -1932,11 +1937,17 @@ return false
 end
 --     Source Engineer     --
 if text == '/start' and ChCheck(msg) then  
+local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.Info_EngineerSource ~= true then
+send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
+return false 
+end
 if not DevAbs:get(Engineer..'Abs:Start:Time'..msg.sender_user_id_) then
 tdcli_function({ID="GetUser",user_id_=DevId},function(arg,dp) 
 local inline = {
-{{text="᥀ المطور .",url="t.me/"..(dp.username_ or "ba8lawa")}},
-{{text="᥀ السورس .",url="https://t.me/ba8lawa"},{text="᥀ لتنصيب بوت .",url="https://t.me/BlackBirdd"}},
+{{text="᥀ المطور .",url="t.me/"..(dp.username_ or "EngineerSource")}},
+{{text="᥀ السورس .",url="https://t.me/EngineerSource"},{text="᥀ لتنصيب بوت .",url="https://t.me/abbasfadhil"}},
 }
 local start = DevAbs:get(Engineer.."Abs:Start:Bot")
 if start then 
@@ -1953,7 +1964,7 @@ end
 --     Source Engineer     --
 if not SecondSudo(msg) and not DevAbs:sismember(Engineer..'Abs:Ban:Pv',msg.sender_user_id_) and not DevAbs:get(Engineer..'Abs:Texting:Pv') then
 tdcli_function({ID="GetUser",user_id_=DevId},function(arg,chat) 
-Dev_Abs(msg.sender_user_id_, msg.id_, 1, '᥀︙تم ارسال رسالتك الى [المطور](t.me/'..(chat.username_ or "ba8lawa")..')', 1, 'md') 
+Dev_Abs(msg.sender_user_id_, msg.id_, 1, '᥀︙تم ارسال رسالتك الى [المطور](t.me/'..(chat.username_ or "EngineerSource")..')', 1, 'md') 
 tdcli_function({ID="ForwardMessages",chat_id_=DevId,from_chat_id_= msg.sender_user_id_,message_ids_={[0]=msg.id_},disable_notification_=1,from_background_=1},function(arg,data) 
 tdcli_function({ID="GetUser",user_id_=msg.sender_user_id_},function(arg,dp) 
 if data and data.messages_ and data.messages_[0] ~= false and data.ID ~= "Error" then
@@ -2079,7 +2090,7 @@ tdcli_function({ID="GetUser",user_id_=DevId},function(arg,result)
 local msg_id = msg.id_/2097152/0.5
 Text = "*᥀︙Dev Name ↬ * ["..result.first_name_.."](T.me/"..result.username_..")\n*᥀︙Dev User ↬* [@"..result.username_.."]"
 keyboard = {} 
-keyboard.inline_keyboard = {{{text = ''..result.first_name_..' ',url="t.me/"..result.username_ or ba8lawa}}}
+keyboard.inline_keyboard = {{{text = ''..result.first_name_..' ',url="t.me/"..result.username_ or EngineerSource}}}
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/'..result.username_..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end,nil)
 end
@@ -2140,7 +2151,7 @@ keyboard.inline_keyboard = {
 {{text="🦖 لعبة التنين 🦖",url='https://t.me/T4TTTTBOT?game=dragon'},{text="🐍 لعبة الافعى 🐍",url='https://t.me/T4TTTTBOT?game=snake'}},
 {{text="🔵 لعبة الالوان 🔴",url='https://t.me/T4TTTTBOT?game=color'}},
 {{text="🚀 لعبة الصاروخ 🚀",url='https://t.me/T4TTTTBOT?game=rocket'},{text="🏹 لعبة السهام 🏹",url='https://t.me/T4TTTTBOT?game=arrow'}},
-{{text = '᥀ Engineer Team .', url="t.me/ba8lawa"}},
+{{text = '᥀ WaTaN TeaM .', url="t.me/EngineerSource"}},
 
 }
 local msg_id = msg.id_/2097152/0.5
@@ -2949,7 +2960,7 @@ Welcomes = '• نورت حبي \n• firstname \n• username'
 end
 local Welcomes = Welcomes:gsub('"',"") Welcomes = Welcomes:gsub("'","") Welcomes = Welcomes:gsub(",","") Welcomes = Welcomes:gsub("*","") Welcomes = Welcomes:gsub(";","") Welcomes = Welcomes:gsub("`","") Welcomes = Welcomes:gsub("{","") Welcomes = Welcomes:gsub("}","") 
 local Welcomes = Welcomes:gsub('firstname',('['..result.first_name_..']' or ''))
-local Welcomes = Welcomes:gsub('username',('[@'..result.username_..']' or '[@ba8lawa]'))
+local Welcomes = Welcomes:gsub('username',('[@'..result.username_..']' or '[@EngineerSource]'))
 Dev_Abs(msg.chat_id_, msg.id_, 1, Welcomes, 1, 'md')
 end 
 if DevAbs:get(Engineer.."Abs:Lock:Welcome"..msg.chat_id_) then
@@ -2997,7 +3008,7 @@ Welcomes = '• نورت حبي \n• firstname \n• username'
 end
 local Welcomes = Welcomes:gsub('"',"") Welcomes = Welcomes:gsub("'","") Welcomes = Welcomes:gsub(",","") Welcomes = Welcomes:gsub("*","") Welcomes = Welcomes:gsub(";","") Welcomes = Welcomes:gsub("`","") Welcomes = Welcomes:gsub("{","") Welcomes = Welcomes:gsub("}","") 
 local Welcomes = Welcomes:gsub('firstname',('['..msg.content_.members_[0].first_name_..']' or ''))
-local Welcomes = Welcomes:gsub('username',('[@'..msg.content_.members_[0].username_..']' or '[@ba8lawa]'))
+local Welcomes = Welcomes:gsub('username',('[@'..msg.content_.members_[0].username_..']' or '[@EngineerSource]'))
 Dev_Abs(msg.chat_id_, msg.id_, 1, Welcomes, 1, 'md')
 end
 --     Source Engineer     --
@@ -3392,7 +3403,7 @@ end end
 if SecondSudo(msg) then
 if text == 'جلب نسخه الكروبات' and ChCheck(msg) or text == 'جلب نسخه احتياطيه' and ChCheck(msg) or text == 'جلب النسخه الاحتياطيه' and ChCheck(msg) or text == '↫ جلب نسخه احتياطيه ᥀' and ChCheck(msg) then
 local List = DevAbs:smembers(Engineer..'Abs:Groups') 
-local BotName = (DevAbs:get(Engineer.."Abs:NameBot") or 'المهندس')
+local BotName = (DevAbs:get(Engineer.."Abs:NameBot") or 'وطن')
 local GetJson = '{"BotId": '..Engineer..',"BotName": "'..BotName..'","GroupsList":{'  
 for k,v in pairs(List) do 
 LinkGroups = DevAbs:get(Engineer.."Abs:Groups:Links"..v)
@@ -3599,21 +3610,21 @@ end
 --     Source Engineer     --
 if ChatType == 'sp' or ChatType == 'gp' or ChatType == 'pv' then
 if text == 'بوت' or text == 'بوتت' then 
-NameBot = (DevAbs:get(Engineer..'Abs:NameBot') or 'المهندس')
+NameBot = (DevAbs:get(Engineer..'Abs:NameBot') or 'وطن')
 local EngineerSource = {' كول حبيبي ؟ اني '..NameBot..' ',' وياك القميل '..NameBot..' ',' اسمي القميل '..NameBot..' '}
 DevAbs2 = math.random(#EngineerSource) 
 Dev_Abs(msg.chat_id_, msg.id_, 1, EngineerSource[DevAbs2] , 1, 'html') 
 return false
 end
 if text == 'اسم البوت' or text == 'البوت شنو اسمه' or text == 'شسمه البوت' or text == 'البوت شسمه' then
-NameBot = (DevAbs:get(Engineer..'Abs:NameBot') or 'المهندس') 
+NameBot = (DevAbs:get(Engineer..'Abs:NameBot') or 'وطن') 
 local EngineerSource = {"اسمي القميل "..NameBot.." "} 
 DevAbs2 = math.random(#EngineerSource) 
 Dev_Abs(msg.chat_id_, msg.id_, 1, EngineerSource[DevAbs2] , 1, 'html') 
 return false
 end
-if text and text == (DevAbs:get(Engineer..'Abs:NameBot') or 'المهندس') then 
-NameBot = (DevAbs:get(Engineer..'Abs:NameBot') or 'المهندس')
+if text and text == (DevAbs:get(Engineer..'Abs:NameBot') or 'وطن') then 
+NameBot = (DevAbs:get(Engineer..'Abs:NameBot') or 'وطن')
 local namebot = {'كول حبيبي ؟ اني '..NameBot..' ',' وياك القميل '..NameBot..' '} 
 name = math.random(#namebot) 
 Dev_Abs(msg.chat_id_, msg.id_, 1, namebot[name] , 1, 'html') 
@@ -4299,7 +4310,7 @@ Dev_Abs(msg.chat_id_, msg.id_, 1,[[
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 ᥀︙نقاطي • بيع نقاطي
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-᥀︙[Source Channel](https://t.me/ba8lawa)
+᥀︙[Source Channel](https://t.me/EngineerSource)
 ]], 1, 'md')
 else
 Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙عذرا الالعاب معطله في المجموعه', 1, 'md')
@@ -4459,23 +4470,29 @@ getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),EngineerSource)
 end
 end
 --     Source Engineer     --
-if text == "مشاهده المنشور" or text == "مشاهدات المنشور" or text == "عدد المشاهدات" and ChCheck(msg) then
+if text == "مشاهده المنشور" and ChCheck(msg) or text == "مشاهدات المنشور" and ChCheck(msg) or text == "عدد المشاهدات" and ChCheck(msg) then
 DevAbs:set(Engineer..'Abs:viewget'..msg.sender_user_id_,true)
 Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙حسنا قم باعادة توجيه للمنشور الذي تريدني حساب مشاهداته', 1, 'md')
 end
 --     Source Engineer     --
-if text == "سورس" or text == "السورس" or text == "يا سورس" or text == "↫  السورس ᥀" and ChCheck(msg) then
-Text = [[
-Welcome To Source
-᥀︙[Engineer Team](https://t.me/ba8lawa)
-]]
+if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'ياسورس' then
+local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.Info_EngineerSource ~= true then
+send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
+return false 
+end
+Text = "[⦑ Welcome to Source ⦒](t.me/EngineerSource)\n[✯ ⦑ SOURCE WaTaN ⦒](t.me/EngineerSource)\n✯ Source version : 2.6"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '᥀ Source Channel',url="https://t.me/ba8lawa"}},
-{{text = '᥀ Developer',url="t.me/BlackBirdd"},{text = '᥀ Tws Engineer',url="https://t.me/Eng900Bot"}},
+{{text = '𝒄𝒉𝒂𝒏𝒏𝒆𝒍 𝒔𝒐𝒖𝒓𝒄𝒆',url="t.me/EngineerSource"},
+{text = '𝒖𝒑𝒅𝒂𝒕𝒆 𝒔𝒐𝒖𝒓𝒄𝒆',url="t.me/watanupdate"}},
+{{text = '𝒊𝒏𝒔𝒕𝒂𝒍𝒍 𝒔𝒐𝒖𝒓𝒄𝒆',url="https://t.me/EngineerSource/7"},
+{text = '𝒘𝒂𝒕𝒂𝒏 𝒈𝒓𝒐𝒖𝒑',url="https://t.me/joinchat/MJjy8Vab_jVmODdi"}},
+{{text = '𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓',url="t.me/abbasfadhil"}},
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/ba8lawa&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/EngineerSource&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
 --     Source Engineer     --
@@ -6595,7 +6612,7 @@ if dp.first_name_ == false then
 Dev_Abs(msg.chat_id_, msg.id_, 1, "᥀︙حساب المنشئ محذوف", 1, "md")
 return false  
 end
-local UserName = (dp.username_ or "ba8lawa")
+local UserName = (dp.username_ or "EngineerSource")
 Dev_Abs(msg.chat_id_, msg.id_, 1, "᥀︙مالك المجموعه ↫ ["..dp.first_name_.."](T.me/"..UserName..")", 1, "md")  
 end,nil)   
 end
@@ -6778,7 +6795,7 @@ if dp.first_name_ == false then
 Dev_Abs(msg.chat_id_, msg.id_, 1, "᥀︙حساب المنشئ محذوف", 1, "md")
 return false  
 end
-local UserName = (dp.username_ or "ba8lawa")
+local UserName = (dp.username_ or "EngineerSource")
 Dev_Abs(msg.chat_id_, msg.id_, 1, "᥀︙تم رفع مالك المجموعه ↫ ["..dp.first_name_.."](T.me/"..UserName..")", 1, "md") 
 DevAbs:sadd(Engineer.."Abs:AbsConstructor:"..msg.chat_id_,dp.id_)
 end,nil)   
@@ -7666,12 +7683,6 @@ return false
 end
 --     Source Engineer     --
 if SudoBot(msg) then
-if text == '↫  جلب نسخة السورس ᥀' then
-if not Sudo(msg) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '⌁︙للمطور الاساسي فقط ', 1, 'md')
-else
-sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, './Engineer.lua', '⌁︙نسخة ملف سورس المهندس',dl_cb, nil)
-end end
 if text and text == "الاحصائيات" and ChCheck(msg) or text and text == "↫  الاحصائيات ᥀" and ChCheck(msg) then
 local gps = DevAbs:scard(Engineer.."Abs:Groups") local users = DevAbs:scard(Engineer.."Abs:Users") 
 Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙احصائيات البوت ↫ ⤈\n᥀︙عدد المشتركين ↫ ❨ '..users..' ❩\n᥀︙عدد المجموعات ↫ ❨ '..gps..' ❩', 1, 'md')
@@ -8757,7 +8768,7 @@ local TXTE = "᥀︙اعدادات المجموعه ↫ ⤈\n┉ ┉ ┉ ┉ ┉
 .."᥀︙التكرار ↫ "..flood.."\n"
 .."᥀︙عدد التكرار ↫ "..Flood_Num.."\n"
 .."᥀︙عدد السبام ↫ "..spam_c.."\n"
-.."┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n᥀︙[Source Channel](https://t.me/ba8lawa)\n"
+.."┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n᥀︙[Source Channel](https://t.me/EngineerSource)\n"
 Dev_Abs(msg.chat_id_, msg.id_, 1, TXTE, 1, 'md')
 end
 end
@@ -9076,7 +9087,7 @@ if animation.Info == true then
 local Text ='*᥀︙تم اختيار المتحركه لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '᥀ Engineer Team .',url="t.me/ba8lawa"}},
+{{text = '᥀ WaTaN TeaM .',url="t.me/EngineerSource"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendanimation?chat_id=' .. msg.chat_id_ .. '&animation='..URL.escape(animation.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -9102,7 +9113,7 @@ if Audios.Info == true then
 local Text ='*᥀︙تم اختيار مقطع الميمز لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '᥀ Engineer Team .',url="t.me/ba8lawa"}},
+{{text = '᥀ WaTaN TeaM .',url="t.me/EngineerSource"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(Audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -9128,7 +9139,7 @@ if Audios.Info == true then
 local Text ='*᥀︙تم اختيار المقطع الصوتي لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '᥀ Engineer Team .',url="t.me/ba8lawa"}},
+{{text = '᥀ WaTaN TeaM .',url="t.me/EngineerSource"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(Audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -9154,7 +9165,7 @@ if Audios.Info == true then
 local Text ='*᥀︙تم اختيار الاغنيه لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '᥀ Engineer Team .',url="t.me/ba8lawa"}},
+{{text = '᥀ WaTaN TeaM .',url="t.me/EngineerSource"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(Audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -9180,7 +9191,7 @@ if Audios.Info == true then
 local Text ='*᥀︙تم اختيار الريمكس لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '᥀ Engineer Team .',url="t.me/ba8lawa"}},
+{{text = '᥀ WaTaN TeaM .',url="t.me/EngineerSource"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(Audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -9206,7 +9217,7 @@ if photo.Info == true then
 local Text ='*᥀︙تم اختيار الصوره لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '᥀ Engineer Team .',url="t.me/ba8lawa"}},
+{{text = '᥀ WaTaN TeaM .',url="t.me/EngineerSource"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo='..URL.escape(photo.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -9232,7 +9243,7 @@ if photo.Info == true then
 local Text ='*᥀︙تم اختيار صورة الانمي لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '᥀ Engineer Team .',url="t.me/ba8lawa"}},
+{{text = '᥀ WaTaN TeaM .',url="t.me/EngineerSource"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo='..URL.escape(photo.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -9258,7 +9269,7 @@ if photo.Info == true then
 local Text ='*᥀︙تم اختيار فلم لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '᥀ Engineer Team .',url="t.me/ba8lawa"}},
+{{text = '᥀ WaTaN TeaM .',url="t.me/EngineerSource"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo='..URL.escape(photo.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -9284,7 +9295,7 @@ if photo.Info == true then
 local Text ='*᥀︙تم اختيار مسلسل لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '᥀ Engineer Team .',url="t.me/ba8lawa"}},
+{{text = '᥀ WaTaN TeaM .',url="t.me/EngineerSource"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..TokenBot..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo='..URL.escape(photo.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -9565,7 +9576,7 @@ local TkeedList = DevAbs:scard(Engineer.."Abs:Abs:Tkeed:"..ChatId) or 0
 local AdminsList = DevAbs:scard(Engineer.."Abs:Admins:"..ChatId) or 0
 local VipList = DevAbs:scard(Engineer.."Abs:VipMem:"..ChatId) or 0
 local LinkGp = json:decode(https.request('https://api.telegram.org/bot'..TokenBot..'/exportChatInviteLink?chat_id='..ChatId))
-if LinkGp.ok == true then LinkGroup = LinkGp.result else LinkGroup = 't.me/ba8lawa' end
+if LinkGp.ok == true then LinkGroup = LinkGp.result else LinkGroup = 't.me/EngineerSource' end
 tdcli_function({ID ="GetChat",chat_id_=ChatId},function(arg,dp)
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = ChatId:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
 if dp.id_ then
@@ -9575,7 +9586,7 @@ if data.members_[i].status_.ID == "ChatMemberStatusCreator" then
 Manager_id = admins[i].user_id_
 tdcli_function ({ID = "GetUser",user_id_ = Manager_id},function(arg,Abs) 
 if Abs.first_name_ ~= false then
-ConstructorAbs = "["..Abs.first_name_.."](T.me/"..(Abs.username_ or "ba8lawa")..")"
+ConstructorAbs = "["..Abs.first_name_.."](T.me/"..(Abs.username_ or "EngineerSource")..")"
 else 
 ConstructorAbs = "حساب محذوف"
 end
@@ -10261,15 +10272,6 @@ DevAbs:set(Engineer.."DelSudoRep",text)
 return false 
 end end
 --     Source Engineer     --
-if text == "الساعه" then
-local EngineerSource = "\n الساعه الان : "..os.date("%I:%M%p")
-send(msg.chat_id_, msg.id_,EngineerSource)
-end
-if text == "التاريخ" then
-local EngineerSource =  "\n التاريخ : "..os.date("%Y/%m/%d")
-send(msg.chat_id_, msg.id_,EngineerSource)
-end
---     Source Engineer     --
 if text == 'الردود المتعدده' and Manager(msg) and ChCheck(msg) then
 local redod = DevAbs:smembers(Engineer..'Abs:Manager:GpRedod'..msg.chat_id_)
 MsgRep = '᥀︙قائمة الردود المتعدده ↫ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n'
@@ -10294,13 +10296,6 @@ ReplyStatus(msg,msg.sender_user_id_,"ReplyBy","᥀︙تم حذف الردود ا
 return false
 end
 end
---     Source Engineer     --
-if text == 'جلب نسخة السورس' then
-if not Sudo(msg) then
-Dev_Abs(msg.chat_id_, msg.id_, 1, '⌁︙للمطور الاساسي فقط ', 1, 'md')
-else
-sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, './Engineer.lua', '⌁︙نسخة ملف سورس المهندس',dl_cb, nil)
-end end
 --     Source Engineer     --
 if text == 'الردود' and Manager(msg) and ChCheck(msg) or text == 'ردود المدير' and Manager(msg) and ChCheck(msg) then
 local redod = DevAbs:smembers(Engineer..'Abs:Manager:GpRed'..msg.chat_id_)
@@ -10453,7 +10448,7 @@ local Text = [[
 ᥀︙م5 ↫ اوامر المطورين
 ᥀︙م6 ↫ اوامر الاعضاء
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-᥀︙[Source Channel](https://t.me/ba8lawa)
+᥀︙[Source Channel](https://t.me/EngineerSource)
 ]] 
 keyboard = {} 
 keyboard.inline_keyboard = {{{text="اوامر الادمنيه",callback_data="/HelpList2:"..msg.sender_user_id_},{text="اوامر الحمايه",callback_data="/HelpList1:"..msg.sender_user_id_}},{{text="اوامر المنشئين",callback_data="/HelpList4:"..msg.sender_user_id_},{text="اوامر المدراء",callback_data="/HelpList3:"..msg.sender_user_id_}},{{text="اوامر الاعضاء",callback_data="/HelpList6:"..msg.sender_user_id_},{text="اوامر المطورين",callback_data="/HelpList5:"..msg.sender_user_id_}},{{text="• اخفاء الكليشه •",callback_data="/HideHelpList:"..msg.sender_user_id_}}}
@@ -10524,7 +10519,7 @@ local Text = [[
 ᥀︙البوتات بالطرد
 ᥀︙البوتات بالتقيد
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-᥀︙[Source Channel](https://t.me/ba8lawa)
+᥀︙[Source Channel](https://t.me/EngineerSource)
 ]]
 Dev_Abs(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
 end end
@@ -10600,7 +10595,7 @@ local Text = [[
 ᥀︙تقييد يوم + عدد الايام
 ᥀︙الغاء تقييد ↫ لالغاء التقييد بالوقت
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-᥀︙[Source Channel](https://t.me/ba8lawa)
+᥀︙[Source Channel](https://t.me/EngineerSource)
 ]]
 Dev_Abs(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
 end end
@@ -10665,7 +10660,7 @@ local Text = [[
 ᥀︙ردود المدير • ردود المطور • التحقق
 ᥀︙ضافني • حساب العمر • الزخرفه
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-᥀︙[Source Channel](https://t.me/ba8lawa)
+᥀︙[Source Channel](https://t.me/EngineerSource)
 ]]
 Dev_Abs(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
 end end
@@ -10724,7 +10719,7 @@ local Text = [[
 ᥀︙المنشئين الاساسيين 
 ᥀︙حذف جميع الرتب
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-᥀︙[Source Channel](https://t.me/ba8lawa)
+᥀︙[Source Channel](https://t.me/EngineerSource)
 ]]
 Dev_Abs(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
 end end
@@ -10810,7 +10805,7 @@ local Text = [[
 ᥀︙ترحيب البوت • المغادره
 ᥀︙البوت الخدمي • التواصل
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-᥀︙[Source Channel](https://t.me/ba8lawa)
+᥀︙[Source Channel](https://t.me/EngineerSource)
 ]]
 Dev_Abs(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
 end end
@@ -10859,22 +10854,22 @@ local Text = [[
 ᥀︙تحويل + بالرد ↫ صوره • ملصق • صوت • بصمه
 ᥀︙انطق + الكلام تدعم جميع اللغات مع الترجمه للعربي
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-᥀︙[Source Channel](https://t.me/ba8lawa)
+᥀︙[Source Channel](https://t.me/EngineerSource)
 ]]
 Dev_Abs(msg.chat_id_, msg.id_, 1, (Help or Text), 1, 'md')
 end
 --     Source Engineer     --
 if SecondSudo(msg) then
 if text == "تحديث السورس" and ChCheck(msg) or text == "تحديث سورس" and ChCheck(msg) or text == "↫ تحديث السورس ᥀" and ChCheck(msg) then 
-Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙جاري تحديث سورس المهندس', 1, 'md') 
+Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙جاري تحديث سورس وطن', 1, 'md') 
 os.execute('rm -rf Engineer.lua') 
 os.execute('wget https://raw.githubusercontent.com/EngineerSource/Engineer/main/Engineer.lua') 
 dofile('Engineer.lua') 
 io.popen("rm -rf ../.telegram-cli/*")
 print("\27[31;47m\n          ( تم تحديث السورس )          \n\27[0;34;49m\n") 
-Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙تم التحديث الى الاصدار الجديد', 1, 'md') 
+Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙تم التحديث الى الاصدار 2.0', 1, 'md') 
 end
-if text == 'تحديث' and ChCheck(msg) or text == 'تحديث البوت' and ChCheck(msg) or text == '↫ تحديث ᥀' and ChCheck(msg) then
+if text == 'تحديث' and ChCheck(msg) or text == 'تحديث البوت' and ChCheck(msg) or text == '↫ تحديث ᥀' and ChCheck(msg) then  
 dofile('Engineer.lua') 
 io.popen("rm -rf ../.telegram-cli/*")
 print("\27[31;47m\n        ( تم تحديث ملفات البوت )        \n\27[0;34;49m\n") 
@@ -10886,7 +10881,7 @@ local Users = DevAbs:smembers(Engineer.."User_Bot")
 local Groups = DevAbs:smembers(Engineer..'Chek:Groups')
 local Sudos = DevAbs:smembers(Engineer.."Sudo:User")
 if DevAbs:get(Engineer..'Name:Bot') then
-DevAbs:set(Engineer..'Abs:NameBot',(DevAbs:get(Engineer..'Name:Bot') or 'المهندس'))
+DevAbs:set(Engineer..'Abs:NameBot',(DevAbs:get(Engineer..'Name:Bot') or 'وطن'))
 end
 for i = 1, #Users do
 local id = Users[i]
@@ -10954,7 +10949,7 @@ if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n᥀︙قائمة ملفات متجر سورس المهندس\n᥀︙الملفات المتوفره حاليا ↫ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
+local TextS = "\n᥀︙قائمة ملفات متجر سورس وطن\n᥀︙الملفات المتوفره حاليا ↫ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
 local TextE = "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n᥀︙علامة ↫ (✔) تعني الملف مفعل\n᥀︙علامة ↫ (✖️) تعني الملف معطل\n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
@@ -11118,30 +11113,30 @@ else
 Dev_Abs(msg.chat_id_, msg.id_, 1, '᥀︙لم يتم تعيين قناة الاشتراك الاجباري \n᥀︙ارسل ↫ تعيين قناة الاشتراك للتعيين ', 1, 'md')
 end end end end
 --     Source Engineer     --
-if text == 'القناة' and ChCheck(msg) or text == 'قناة السورس' and ChCheck(msg) or text == 'قناه السورس' and ChCheck(msg) or text == 'قنات السورس' and ChCheck(msg) or text == '↫ قناة السورس ᥀' and ChCheck(msg) then
+if text == 'القناة' and ChCheck(msg) or text == 'قناة السورس' and ChCheck(msg) or text == 'قناه السورس' and ChCheck(msg) or text == 'قنات السورس' and ChCheck(msg) or text == '↫ قناة السورس ᥀' and ChCheck(msg) then 
 Text = [[
-᥀︙[قناة السورس](https://t.me/ba8lawa)
+᥀︙[قناة السورس](https://t.me/EngineerSource)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '᥀ قناة السورس',url="t.me/ba8lawa"}},
+{{text = '᥀ قناة السورس',url="t.me/EngineerSource"}},
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/ba8lawa&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/EngineerSource&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
 --     Source Engineer     --
-if text == "مبرمج السورس" or text == "المبرمج" or text == "مطور السورس" or text == "مبرمج سورس" and ChCheck(msg) then
+if text == "مبرمج السورس" or text == "المبرمج" or text == "مطور السورس" or text == "وين المبرمج" and ChCheck(msg) then
 Text = [[
-᥀︙[مبرمج السورس](https://t.me/BlackBirdd)
+    ᥀︙[مبرمج السورس](https://t.me/abbasfadhil)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'قناة السورس',url="https://t.me/ba8lawa"}},
-{{text = 'مبرمج السورس',url="t.me/BlackBirdd"},{text = 'تواصل السورس',url="https://t.me/Eng900Bot"}},
+{{text = '᥀ مبرمج السورس',url="t.me/abbasfadhil"}},
+{{text = 'قناة السورس',url="t.me/EngineerSource"}},
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/BlackBirdd&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/EngineerSource&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
 --     Source Engineer     --
@@ -11274,8 +11269,8 @@ end
 --     Source Engineer     --
 end 
 ------------------------------------------------
--- This Source Was Developed By (Abs) @BlackBirdd.--
---   This Is The Source Channel @ba8lawa .   --
+-- This Source Was Developed By (Abs) @abbasfadhil.--
+--   This Is The Source Channel @EngineerSource .   --
 --                - Engineer -                 --
---        -- https://t.me/ba8lawa --         --
+--        -- https://t.me/EngineerSource --         --
 ------------------------------------------------  
