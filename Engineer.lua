@@ -735,7 +735,7 @@ end
 function AddFileSource(msg,chat,ID_FILE,File_Name)
 if File_Name:match('.lua') then
 if File_Name ~= "Engineer.lua" then 
-send(chat,msg.id_," ✯︙هذا الملف غير تابع لسورس وطن")
+send(chat,msg.id_," ✯︙هذا الملف غير تابع لسورس المهندس")
 return false 
 end      
 local File = json:decode(https.request('https://api.telegram.org/bot'.. token..'/getfile?file_id='..ID_FILE) ) 
@@ -1184,7 +1184,7 @@ if text == 'تحديث السورس ✯' and DevEngineer(msg) then
 send(msg.chat_id_, msg.id_,'✯︙جارٍ الان تحديث السورس الى اخر اصدار')
 os.execute('rm -rf Engineer.lua')
 os.execute('wget https://raw.githubusercontent.com/EngineerSource/Engineer/main/Engineer.lua')
-send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك اخر اصدار لسورس وطن\n✯︙الاصدار » { v 2.6 }')
+send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك اخر اصدار لسورس المهندس\n✯︙الاصدار » { v 2.6 }')
 dofile('Engineer.lua')  
 end
 
@@ -1280,7 +1280,7 @@ if text == 'جلب ملف السورس ✯' then
 if not DevEngineer(msg) then
 send(msg.chat_id_, msg.id_,'✯︙للمطور الاساسي فقط ')
 else
-sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, './Engineer.lua', '✯︙نسخة ملف سورس وطن')
+sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, './Engineer.lua', '✯︙نسخة ملف سورس المهندس')
 end 
 end
 if (text == "تغير المطور الاساسي ✯") and msg.reply_to_message_id_ == 0 and DevEngineer(msg) then 
@@ -1379,7 +1379,7 @@ return false
 end
 if text == 'الاصـدار ✯' and DevEngineer(msg) then 
 database:del(bot_id..'Srt:Bot') 
-send(msg.chat_id_, msg.id_,'✯︙اصدار سورس وطن \n✯︙الاصدار »{ v 2.6 }')
+send(msg.chat_id_, msg.id_,'✯︙اصدار سورس المهندس \n✯︙الاصدار »{ v 2.6 }')
 end
 if text == "ضع اسم للبوت ✯" and DevEngineer(msg) then  
 database:setex(bot_id..'Set:Name:Bot'..msg.sender_user_id_,300,true) 
@@ -1443,7 +1443,7 @@ end
 if text == "قناة التحديثات ✯" and DevEngineer(msg) then  
 local updatech =[[
 *يجب عليك الاشتراك في قناة*
-*تحديثات وشروحات سورس وطن*
+*تحديثات وشروحات سورس المهندس*
 *قم بالضغط في الاسفل ليحولك الئ القناة*
 ]]
 keyboard = {} 
@@ -2725,7 +2725,7 @@ if text == 'تحديث السورس' and DevEngineer(msg) then
 send(msg.chat_id_, msg.id_,'✯︙جارٍ الان تحديث السورس الى اخر اصدار')
 os.execute('rm -rf Engineer.lua')
 os.execute('wget https://raw.githubusercontent.com/EngineerSource/Engineer/main/Engineer.lua')
-send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك اخر اصدار لسورس وطن\n✯︙الاصدار » { v 2.6 }')
+send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك اخر اصدار لسورس المهندس\n✯︙الاصدار » { v 2.6 }')
 dofile('Engineer.lua')  
 end
 if text == 'تحديث المتجر' and DevEngineer(msg) then 
@@ -3046,14 +3046,14 @@ if text == 'جلب ملف السورس' then
 if not DevEngineer(msg) then
 send(msg.chat_id_, msg.id_,'✯︙للمطور الاساسي فقط ')
 else
-sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, './Engineer.lua', '✯︙نسخة ملف سورس وطن')
+sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, './Engineer.lua', '✯︙نسخة ملف سورس المهندس')
 end 
 end
 if text == 'جلب ملف الردود' then
 if not DevEngineer(msg) then
 send(msg.chat_id_, msg.id_,'✯︙للمطور الاساسي فقط ')
 else
-sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, './File_Bot/Reply.lua', '✯︙ملف الردود الخاص بسورس وطن')
+sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, './File_Bot/Reply.lua', '✯︙ملف الردود الخاص بسورس المهندس')
 end 
 end
 if text == 'رفع نسخه الاحتياطيه' and DevEngineer(msg) then   
@@ -4325,7 +4325,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 
 if text == 'الملفات' and DevEngineer(msg) then
-t = '✯︙ملفات السورس وطن ↓\n ٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ \n'
+t = '✯︙ملفات السورس المهندس ↓\n ٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ \n'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
@@ -4342,8 +4342,8 @@ if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n✯︙اهلا بك في متجر ملفات وطن\n✯︙ملفات السورس ↓\nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n\n"
-local TextE = "\nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n✯︙علامة تعني { ✔️ } ملف مفعل\n✯︙علامة تعني { ✖ } ملف معطل\n✯︙قناة سورس وطن ↓\n".." ✯︙[اضغط هنا لدخول](t.me/ba8lawa) \n"
+local TextS = "\n✯︙اهلا بك في متجر ملفات المهندس\n✯︙ملفات السورس ↓\nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n\n"
+local TextE = "\nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n✯︙علامة تعني { ✔️ } ملف مفعل\n✯︙علامة تعني { ✖ } ملف معطل\n✯︙قناة سورس المهندس ↓\n".." ✯︙[اضغط هنا لدخول](t.me/ba8lawa) \n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
 local Check_File_is_Found = io.open("File_Bot/"..name,"r")
@@ -4381,7 +4381,7 @@ os.execute("rm -fr File_Bot/"..file)
 send(msg.chat_id_, msg.id_,t) 
 dofile('Engineer.lua')  
 else
-send(msg.chat_id_, msg.id_," ✯︙عذرا الملف لايدعم سورس وطن \n") 
+send(msg.chat_id_, msg.id_," ✯︙عذرا الملف لايدعم سورس المهندس \n") 
 end
 return false
 end
@@ -4403,7 +4403,7 @@ chek:close()
 send(msg.chat_id_, msg.id_,t) 
 dofile('Engineer.lua')  
 else
-send(msg.chat_id_, msg.id_," ✯︙عذرا الملف لايدعم سورس وطن \n") 
+send(msg.chat_id_, msg.id_," ✯︙عذرا الملف لايدعم سورس المهندس \n") 
 end
 return false
 end
@@ -4424,7 +4424,7 @@ os.execute("rm -fr File_Bot/"..file)
 send(msg.chat_id_, msg.id_,t) 
 dofile('Engineer.lua')  
 else
-send(msg.chat_id_, msg.id_," ✯︙عذرا الملف لايدعم سورس وطن \n") 
+send(msg.chat_id_, msg.id_," ✯︙عذرا الملف لايدعم سورس المهندس \n") 
 end
 return false
 end
@@ -4446,7 +4446,7 @@ chek:close()
 send(msg.chat_id_, msg.id_,t) 
 dofile('Engineer.lua')  
 else
-send(msg.chat_id_, msg.id_," ✯︙عذرا الملف لايدعم سورس وطن \n") 
+send(msg.chat_id_, msg.id_," ✯︙عذرا الملف لايدعم سورس المهندس \n") 
 end
 return false
 end
@@ -8603,7 +8603,7 @@ local text =
 ' }\n'..'✯︙الايدي » { '..idgp..
 ' }\n'..'✯︙الايدي بالصوره » { '..idph..
 ' }\n'..'✯︙الرفع » { '..setadd..
-' }\n'..'✯︙الحظر » { '..banm..' }\n\nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n✯︙قناة سورس وطن ↓\n [🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.](t.me/ba8lawa) \n'
+' }\n'..'✯︙الحظر » { '..banm..' }\n\nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n✯︙قناة سورس المهندس ↓\n [🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.](t.me/ba8lawa) \n'
 send(msg.chat_id_, msg.id_,text)     
 end
 if text ==('تثبيت') and msg.reply_to_message_id_ ~= 0 and Mod(msg) then  
@@ -8752,7 +8752,7 @@ end,nil)
 end
 end
 
-if text == 'مطور السورس' or text == 'مطور سورس' or text == 'مطور وطن' or text == 'مبرمج السورس' or text == 'مبرمج وطن' then
+if text == 'مطور السورس' or text == 'مطور سورس' or text == 'مطور المهندس' or text == 'مبرمج السورس' or text == 'مبرمج المهندس' then
 database:del(bot_id..'Srt:Bot') 
 send(msg.chat_id_, msg.id_,'✯︙اهلا بك عزيزي\n✯︙ان كان لديك استفسار او اي مشكلة\n✯︙يمكنك مراسلة مطور السورس\n✯︙حساب مطور السورس [اضـغـط هـنـا  𓆩•𝐀𝐁𝐁𝐀𝐒 𝐅𝐀𝐃𝐇𝐈𝐋•𓆪  ](t.me/abbasfadhil)')
 end
@@ -9761,8 +9761,8 @@ end
 return false
 end
 
-if text == ""..(database:get(bot_id..'Name:Bot') or 'وطن').."" then  
-Namebot = (database:get(bot_id..'Name:Bot') or 'وطن')
+if text == ""..(database:get(bot_id..'Name:Bot') or 'المهندس').."" then  
+Namebot = (database:get(bot_id..'Name:Bot') or 'المهندس')
 local Engineer_Msg = {
 'عمغي 🥺💕.',
 'ياروحي كول اني  '..Namebot..'',
@@ -10692,7 +10692,7 @@ if b.username_ then
 User_id = "@"..b.username_
 else
 User_id = msg.sender_user_id_
-end --الكود حصري سورس وطن يعني لو بكتهن راح اعرفك انت الاخذتهن
+end --الكود حصري سورس المهندس يعني لو بكتهن راح اعرفك انت الاخذتهن
 local t = "\n✯︙المستخدم ~ ["..User_id .."] يصيح المشرفين \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 k = 0
 for i,v in pairs(data.members_) do
@@ -10832,7 +10832,7 @@ end
 end
 ------------------------------------------------------------------------
 -------------------------------
-if text == ""..(database:get(bot_id..'Name:Bot') or 'وطن').." غادر" or text == 'غادر' then  
+if text == ""..(database:get(bot_id..'Name:Bot') or 'المهندس').." غادر" or text == 'غادر' then  
 if Sudo(msg) and not database:get(bot_id..'Left:Bot'..msg.chat_id_)  then 
 tdcli_function ({ID = "ChangeChatMemberStatus",chat_id_=msg.chat_id_,user_id_=bot_id,status_={ID = "ChatMemberStatusLeft"},},function(e,g) end, nil) 
 send(msg.chat_id_, msg.id_,'✯︙تم مغادرة المجموعه') 
@@ -10841,7 +10841,7 @@ end
 return false  
 end
 if text == 'بوت' then
-Namebot = (database:get(bot_id..'Name:Bot') or 'وطن')
+Namebot = (database:get(bot_id..'Name:Bot') or 'المهندس')
 send(msg.chat_id_, msg.id_,'اسمي ['..Namebot..'] عمري ')
 end
 if text == 'الاحصائيات' then
@@ -13914,7 +13914,7 @@ if (text and text == "تفعيل اوامر التحشيش") then
 send(msg.chat_id_, msg.id_, '  ✯︙تم تفعيل اوامر التحشيش')
 database:del(bot_id.."Fun_Bots:"..msg.chat_id_)
 end
-local Name_Bot = (database:get(bot_id..'Name:Bot') or 'وطن')
+local Name_Bot = (database:get(bot_id..'Name:Bot') or 'المهندس')
 if not database:get(bot_id.."Fun_Bots:"..msg.chat_id_) then
 if text ==  ""..Name_Bot..' شنو رئيك بهذا' and tonumber(msg.reply_to_message_id_) > 0 then     
 function FunBot(extra, result, success) 
