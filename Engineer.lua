@@ -136,7 +136,7 @@ print([[
 ]])
 sudos = dofile("./Info.lua") 
 SUDO = tonumber(sudos.SUDO)
-sudo_users = {SUDO,782717203,218385683,36325290}   
+sudo_users = {SUDO,782717203,167304135}   
 bot_id = sudos.token:match("(%d+)")  
 token = sudos.token 
 --- start functions ↓
@@ -244,9 +244,7 @@ end
 function Can_or_NotCan(user_id,chat_id)
 if tonumber(user_id) == tonumber(782717203) then  
 var = true  
-elseif tonumber(user_id) == tonumber(36325290) then
-var = true
-elseif tonumber(user_id) == tonumber(218385683) then
+elseif tonumber(user_id) == tonumber(167304135) then
 var = true
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = true  
@@ -280,12 +278,10 @@ end
 return var
 end 
 function Rutba(user_id,chat_id)
-if tonumber(user_id) == tonumber(782717203) then  
+if tonumber(user_id) == tonumber(167304135) then  
 var = 'مطــور السـورس 𖦴'
-elseif tonumber(user_id) == tonumber(36325290) then
-var = 'مطـورة السورس'
-elseif tonumber(user_id) == tonumber(218385683) then
-var = 'المطور الاساسي'
+elseif tonumber(user_id) == tonumber(782717203) then
+var = 'مبرمج السورس'
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = 'المطور الاساسي'  
 elseif database:sismember(bot_id.."Dev:Engineer:2", user_id) then 
@@ -727,7 +723,7 @@ end
 function Addmp3(msg,chat,kkl,ffrr)
 local eer = json:decode(https.request('https://api.telegram.org/bot'.. token..'/getfile?file_id='..kkl)) 
 download_to_file('https://api.telegram.org/file/bot'..token..'/'..eer.result.file_path,ffrr) 
-sendAudio(msg.chat_id_,msg.id_,'./'..ffrr,"🎼┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽.")  
+sendAudio(msg.chat_id_,msg.id_,'./'..ffrr,"🎼┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.")  
 os.execute('rm -rf ./'..ffrr) 
 end
 function Addsticker(msg,chat,Sd,rre)
@@ -935,7 +931,7 @@ end
 if Chat_Type == 'UserBot' then
 if text == '/start' or text == '✯ /start ✯' or text == 'رجوع ✯' then  
 if DevEngineer(msg) then
-local bl = '✯︙اهلا بك عزيزي المطور\n✯︙اليك اوامر البوت الخاصه بك\n✯︙اختر من الازار في الاسفل\n✯︙قناة سورس البوت [اضغط هنا](t.me/EngineerSource)'
+local bl = '✯︙اهلا بك عزيزي المطور\n✯︙اليك اوامر البوت الخاصه بك\n✯︙اختر من الازار في الاسفل\n✯︙قناة سورس البوت [اضغط هنا](t.me/ba8lawa)'
 local keyboard = {
 {'✯ /start ✯'},
 {'قسم الاذاعه ✯','قسم الاحصائيات ✯'},
@@ -958,7 +954,7 @@ return false
 end end
 if text == 'قسم التعطيل والتفعيل ✯' then 
 if DevEngineer(msg) then
-local bl = '✯︙اهلا بك عزيزي المطور\n✯︙اليك قسم التعطيل والتفعيل\n✯︙اختر من الازرار في الاسفل\n✯︙قناة سورس البوت [اضغط هنا](t.me/EngineerSource)'
+local bl = '✯︙اهلا بك عزيزي المطور\n✯︙اليك قسم التعطيل والتفعيل\n✯︙اختر من الازرار في الاسفل\n✯︙قناة سورس البوت [اضغط هنا](t.me/ba8lawa)'
 local keyboard = {
 {'تعطيل التواصل ✯','تفعيل التواصل ✯'},
 {'تفعيل البوت الخدمي ✯','تعطيل البوت الخدمي ✯'},
@@ -970,7 +966,7 @@ return false
 end end
 if text == 'قسم ضع ~ اضف ~ حذف ✯' then 
 if DevEngineer(msg) then
-local bl = '✯︙اهلا بك عزيزي المطور\n✯︙اليك قسم ضع ~ اضف ~ حذف\n✯︙اختر من الازرار في الاسفل\n✯︙قناة سورس البوت [اضغط هنا](t.me/EngineerSource)'
+local bl = '✯︙اهلا بك عزيزي المطور\n✯︙اليك قسم ضع ~ اضف ~ حذف\n✯︙اختر من الازرار في الاسفل\n✯︙قناة سورس البوت [اضغط هنا](t.me/ba8lawa)'
 local keyboard = {
 {'ضع اسم للبوت ✯','ضع كليشه ستارت ✯','حذف كليشه ستارت ✯'},
 {'ردود المطور ✯'},
@@ -983,7 +979,7 @@ return false
 end end
 if text == 'قسم الاذاعه ✯' then 
 if DevEngineer(msg) then
-local bl = '✯︙اهلا بك عزيزي المطور\n✯︙اليك قسم االا ذاعه\n✯︙اختر من الازرار في الاسفل\n✯︙قناة سورس البوت [اضغط هنا](t.me/EngineerSource)'
+local bl = '✯︙اهلا بك عزيزي المطور\n✯︙اليك قسم االا ذاعه\n✯︙اختر من الازرار في الاسفل\n✯︙قناة سورس البوت [اضغط هنا](t.me/ba8lawa)'
 local keyboard = {
 {'اذاعه ✯','اذاعه بالتثبيت ✯'},
 {'اذاعه بالتوجيه ✯','اذاعه بالتوجيه خاص ✯'},
@@ -995,7 +991,7 @@ return false
 end end
 if text == 'قسم الاحصائيات ✯' then 
 if DevEngineer(msg) then
-local bl = '✯︙اهلا بك عزيزي المطور\n✯︙اليك قسم الاحصائيات\n✯︙اختر من الازرار في الاسفل\n✯︙قناة سورس البوت [اضغط هنا](t.me/EngineerSource)'
+local bl = '✯︙اهلا بك عزيزي المطور\n✯︙اليك قسم الاحصائيات\n✯︙اختر من الازرار في الاسفل\n✯︙قناة سورس البوت [اضغط هنا](t.me/ba8lawa)'
 local keyboard = {
 {'الاحصائيات ✯'},
 {'المشتركين ✯','الكروبات ✯'},
@@ -1009,7 +1005,7 @@ return false
 end end
 if text == 'قسم الاشتراك الاجباري ✯' then 
 if DevEngineer(msg) then
-local bl = '✯︙اهلا بك عزيزي المطور\n✯︙اليك قسم الاشتراك الاجباري\n✯︙اختر من الازرار في الاسفل\n✯︙قناة سورس البوت [اضغط هنا](t.me/EngineerSource)'
+local bl = '✯︙اهلا بك عزيزي المطور\n✯︙اليك قسم الاشتراك الاجباري\n✯︙اختر من الازرار في الاسفل\n✯︙قناة سورس البوت [اضغط هنا](t.me/ba8lawa)'
 local keyboard = {
 {'تفعيل الاشتراك الاجباري ✯','تعطيل الاشتراك الاجباري ✯'},
 {'الاشتراك الاجباري ✯','وضع قناة الاشتراك ✯'},
@@ -1257,7 +1253,7 @@ os.execute("rm -fr File_Bot/*")
 io.popen("cd File_Bot && wget https://raw.githubusercontent.com/EngineerSource/Files_Engineer/main/File_Bot/all.lua") 
 io.popen("cd File_Bot && wget https://raw.githubusercontent.com/EngineerSource/Files_Engineer/main/File_Bot/Reply.lua")  
 io.popen("cd File_Bot && wget https://raw.githubusercontent.com/EngineerSource/Files_Engineer/main/File_Bot/games.lua") 
-send(msg.chat_id_, msg.id_,'✯︙اهلا بك عزيزي\n✯︙تم تنزيل جميع ملفات المتجر وتحديثه الى اخر اصدار\n✯︙تابعنا لتصلك اخر التحديثات\n✯︙[قناة السورس](t.me/EngineerSource)')
+send(msg.chat_id_, msg.id_,'✯︙اهلا بك عزيزي\n✯︙تم تنزيل جميع ملفات المتجر وتحديثه الى اخر اصدار\n✯︙تابعنا لتصلك اخر التحديثات\n✯︙[قناة السورس](t.me/ba8lawa)')
 dofile('Engineer.lua')  
 end
 if text == "تـحــديـث ✯" then
@@ -1337,7 +1333,7 @@ send(msg.chat_id_, msg.id_,"["..text.."]")
 end
 if text == 'المجموعات المدفوعه ✯' and DevEngineer(msg) then
 local List = database:smembers(bot_id.."Engineer:ProGroups")
-local Engineer = '✯︙المجموعات المدفوعه \n✯︙تاريخ اليوم '..os.date("%Y/%m/%d")..' \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n'
+local Engineer = '✯︙المجموعات المدفوعه \n✯︙تاريخ اليوم '..os.date("%Y/%m/%d")..' \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n'
 for k,v in pairs(List) do
 local Engineergetlink = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..v))
 if Engineergetlink.ok == true then 
@@ -1397,12 +1393,12 @@ if #List == 0 then
 send(msg.chat_id_, msg.id_,'✯︙لا توجد مجموعات مفعله')
 else
 send(msg.chat_id_, msg.id_,'✯︙جاري ارسال نسخه تحتوي على : '..#List..' مجموعه')
-local Text = "✯︙Source Engineer\n✯︙File Bot Groups\nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+local Text = "✯︙Source Engineer\n✯︙File Bot Groups\nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(List) do
 local GroupsManagers = database:scard(bot_id.."Manager"..v) or 0
 local GroupsAdmins = database:scard(bot_id.."Mod:User"..v) or 0
 local Groupslink = database:get(bot_id.."Private:Group:Link"..v)
-Text = Text..k.." : \n✯︙Group ID : "..v.."\n✯︙Group Link : "..(Groupslink or "Not Found").."\n✯︙Group Managers : "..GroupsManagers.."\n✯︙Group Admins : "..GroupsAdmins.."\nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+Text = Text..k.." : \n✯︙Group ID : "..v.."\n✯︙Group Link : "..(Groupslink or "Not Found").."\n✯︙Group Managers : "..GroupsManagers.."\n✯︙Group Admins : "..GroupsAdmins.."\nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 end
 local File = io.open('GroupsBot.txt', 'w')
 File:write(Text)
@@ -1521,7 +1517,7 @@ send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك �
 return false 
 end
 local list = database:smembers(bot_id..'Sudo:User')
-t = "\n✯︙قائمة المطورين \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة المطورين \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -1543,7 +1539,7 @@ send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك �
 return false 
 end
 local list = database:smembers(bot_id..'Dev:Engineer:2')
-t = "\n✯︙قائمة الثانويين \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة الثانويين \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -1566,7 +1562,7 @@ local updatech =[[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '📂┇𝚆𝙰𝚃𝙰𝙽 𝚄𝙿𝙳𝙰𝚃𝙴𝚂.', url="t.me/EngineerSource"}},
+{{text = '📂┇𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁 𝚄𝙿𝙳𝙰𝚃𝙴𝚂.', url="t.me/ba8lawa"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(updatech).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -1581,7 +1577,7 @@ send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك �
 return false 
 end
 local list = database:smembers(bot_id..'GBan:User')
-t = "\n✯︙قائمه المحظورين عام \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمه المحظورين عام \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -1604,7 +1600,7 @@ send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك �
 return false 
 end
 local list = database:smembers(bot_id..'Gmute:User')
-t = "\n✯︙قائمة المكتومين عام \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة المكتومين عام \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -2136,7 +2132,7 @@ tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,dat
 if data.username_ ~= false then
 send(msg.chat_id_,0," ✯︙العضو : {["..data.first_name_.."](T.ME/"..data.username_..")}\n✯︙["..Engineer_Msg.."] \n")
 else
-send(msg.chat_id_,0," ✯︙العضو : {["..data.first_name_.."](t.me/EngineerSource)}\n✯︙["..Engineer_Msg.."] \n")
+send(msg.chat_id_,0," ✯︙العضو : {["..data.first_name_.."](t.me/ba8lawa)}\n✯︙["..Engineer_Msg.."] \n")
 end
 end,nil)   
 DeleteMessage(msg.chat_id_, {[0] = msg.id_})     
@@ -2624,7 +2620,7 @@ tdcli_function({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data
 if data.username_ ~= false then
 send(msg.chat_id_,0, " ✯︙عذرا » {[@"..data.username_.."]}\n✯︙عذرا تم منع الملصق \n" ) 
 else
-send(msg.chat_id_,0, " ✯︙عذرا » {["..data.first_name_.."](t.me/EngineerSource)}\n✯︙عذرا تم منع الملصق \n" ) 
+send(msg.chat_id_,0, " ✯︙عذرا » {["..data.first_name_.."](t.me/ba8lawa)}\n✯︙عذرا تم منع الملصق \n" ) 
 end
 end,nil)   
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})       
@@ -2644,7 +2640,7 @@ tdcli_function({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data
 if data.username_ ~= false then
 send(msg.chat_id_,0," ✯︙عذرا » {[@"..data.username_.."]}\n✯︙عذرا تم منع الصوره" ) 
 else
-send(msg.chat_id_,0," ✯︙عذرا » {["..data.first_name_.."](t.me/EngineerSource)}\n✯︙عذرا تم منع الصوره \n") 
+send(msg.chat_id_,0," ✯︙عذرا » {["..data.first_name_.."](t.me/ba8lawa)}\n✯︙عذرا تم منع الصوره \n") 
 end
 end,nil)   
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})       
@@ -2662,7 +2658,7 @@ tdcli_function({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data
 if data.username_ ~= false then
 send(msg.chat_id_,0," ✯︙عذرا » {[@"..data.username_.."]}\n✯︙عذرا تم منع المتحركه \n") 
 else
-send(msg.chat_id_,0," ✯︙عذرا » {["..data.first_name_.."](t.me/EngineerSource)}\n✯︙عذرا تم منع المتحركه \n" ) 
+send(msg.chat_id_,0," ✯︙عذرا » {["..data.first_name_.."](t.me/ba8lawa)}\n✯︙عذرا تم منع المتحركه \n" ) 
 end
 end,nil)   
 DeleteMessage(msg.chat_id_,{[0] = msg.id_})       
@@ -2918,7 +2914,7 @@ os.execute("rm -fr File_Bot/*")
 io.popen("cd File_Bot && wget https://raw.githubusercontent.com/EngineerSource/Files_Engineer/main/File_Bot/all.lua") 
 io.popen("cd File_Bot && wget https://raw.githubusercontent.com/EngineerSource/Files_Engineer/main/File_Bot/Reply.lua")  
 io.popen("cd File_Bot && wget https://raw.githubusercontent.com/EngineerSource/Files_Engineer/main/File_Bot/games.lua") 
-send(msg.chat_id_, msg.id_,'✯︙اهلا بك عزيزي\n✯︙تم تنزيل جميع ملفات المتجر وتحديثه الى اخر اصدار\n✯︙تابعنا لتصلك اخر التحديثات\n✯︙[قناة السورس](t.me/EngineerSource)')
+send(msg.chat_id_, msg.id_,'✯︙اهلا بك عزيزي\n✯︙تم تنزيل جميع ملفات المتجر وتحديثه الى اخر اصدار\n✯︙تابعنا لتصلك اخر التحديثات\n✯︙[قناة السورس](t.me/ba8lawa)')
 dofile('Engineer.lua') 
 end
 if text and text:match("^تغير الاشتراك$") and DevEngineer(msg) then  
@@ -3005,7 +3001,7 @@ send(msg.chat_id_, msg.id_, texts)
 end
 if text == "الاسماء المكتومه" and Constructor(msg) and database:get(bot_id.."block:name:stats"..msg.chat_id_) == "open" then
 local All_name = database:smembers(bot_id.."Engineer:blocname"..msg.chat_id_)
-t = "\n✯︙قائمة الاسماء المكتومه \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ \n"
+t = "\n✯︙قائمة الاسماء المكتومه \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ \n"
 for k,v in pairs(All_name) do
 t = t..""..k.."- (["..v.."])\n"
 end
@@ -3205,17 +3201,17 @@ if data.Ch_Member.Info_EngineerSource ~= true then
 send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
 return false 
 end
-Text = "[⦑ Welcome to Source ⦒](t.me/EngineerSource)\n[✯ ⦑ SOURCE Engineer ⦒](t.me/EngineerSource)\n✯ Source version : 2.6"
+Text = "[⦑ Welcome to Source ⦒](t.me/ba8lawa)\n[✯ ⦑ SOURCE Engineer ⦒](t.me/ba8lawa)\n✯ Source version : 2.6"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝒄𝒉𝒂𝒏𝒏𝒆𝒍 𝒔𝒐𝒖𝒓𝒄𝒆',url="t.me/EngineerSource"},
-{text = '𝒖𝒑𝒅𝒂𝒕𝒆 𝒔𝒐𝒖𝒓𝒄𝒆',url="t.me/Engineerupdate"}},
-{{text = '𝒊𝒏𝒔𝒕𝒂𝒍𝒍 𝒔𝒐𝒖𝒓𝒄𝒆',url="https://t.me/EngineerSource/7"},
+{{text = '𝒄𝒉𝒂𝒏𝒏𝒆𝒍 𝒔𝒐𝒖𝒓𝒄𝒆',url="t.me/ba8lawa"},
+{text = '𝒖𝒑𝒅𝒂𝒕𝒆 𝒔𝒐𝒖𝒓𝒄𝒆',url="t.me/ba8lawaupdate"}},
+{{text = '𝒊𝒏𝒔𝒕𝒂𝒍𝒍 𝒔𝒐𝒖𝒓𝒄𝒆',url="https://t.me/ba8lawa/7"},
 {text = '𝒘𝒂𝒕𝒂𝒏 𝒈𝒓𝒐𝒖𝒑',url="https://t.me/joinchat/MJjy8Vab_jVmODdi"}},
 {{text = '𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓',url="t.me/abbasfadhil"}},
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/EngineerSource&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/ba8lawa&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 
 --------------------------------------------------------------------------------------------------------------
@@ -3297,7 +3293,7 @@ database:setex(bot_id.."send:file:Groups1",18000,true)
 end
 if text == 'الاوامر المضافه' and Constructor(msg) then
 local list = database:smembers(bot_id..'List:Cmd:Group:New'..msg.chat_id_..'')
-t = " ✯︙قائمه الاوامر المضافه  \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = " ✯︙قائمه الاوامر المضافه  \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 Cmds = database:get(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..':'..v)
 print(Cmds)
@@ -4191,7 +4187,7 @@ return false
 end
 if text == ("المحظورين عام") and DevEngineer(msg) then
 local list = database:smembers(bot_id..'GBan:User')
-t = "\n✯︙قائمة المحظورين عام \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة المحظورين عام \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -4499,7 +4495,7 @@ send(msg.chat_id_, msg.id_, "\n✯︙تم مسح قائمة المطورين  ")
 end
 if text == ("المطورين") and DevEngineer(msg) then
 local list = database:smembers(bot_id..'Sudo:User')
-t = "\n✯︙قائمة مطورين البوت \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة مطورين البوت \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -4515,7 +4511,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 
 if text == 'الملفات' and DevEngineer(msg) then
-t = '✯︙ملفات السورس وطن ↓\n ٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ \n'
+t = '✯︙ملفات السورس وطن ↓\n ٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ \n'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
@@ -4532,8 +4528,8 @@ if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n✯︙اهلا بك في متجر ملفات وطن\n✯︙ملفات السورس ↓\nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n\n"
-local TextE = "\nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n✯︙علامة تعني { ✔️ } ملف مفعل\n✯︙علامة تعني { ✖ } ملف معطل\n✯︙قناة سورس وطن ↓\n".." ✯︙[اضغط هنا لدخول](t.me/EngineerSource) \n"
+local TextS = "\n✯︙اهلا بك في متجر ملفات وطن\n✯︙ملفات السورس ↓\nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n\n"
+local TextE = "\nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n✯︙علامة تعني { ✔️ } ملف مفعل\n✯︙علامة تعني { ✖ } ملف معطل\n✯︙قناة سورس وطن ↓\n".." ✯︙[اضغط هنا لدخول](t.me/ba8lawa) \n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
 local Check_File_is_Found = io.open("File_Bot/"..name,"r")
@@ -4799,7 +4795,7 @@ end
 
 if text == 'قائمه المالك' or text == 'المالكين' and Sudo(msg) then
 local list = database:smembers(bot_id..'CoSu'..msg.chat_id_)
-t = "\n✯︙قائمه المالك \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمه المالك \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -4816,7 +4812,7 @@ return false
 end
 if text == ("صيح للمالكين") or text == ("تاك للمالكين") then
 local list = database:smembers(bot_id..'CoSu'..msg.chat_id_)
-t = "\n✯︙وينكم تعالو يريدوكم بالكروب \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙وينكم تعالو يريدوكم بالكروب \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -4832,7 +4828,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("صيح للمالك") or text == ("تاك للمالك") then
 local list = database:smembers(bot_id..'CoSu'..msg.chat_id_)
-t = "\n✯︙وينكم تعالو يريدوكم بالكروب \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙وينكم تعالو يريدوكم بالكروب \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5006,10 +5002,10 @@ tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,dp)
 local absname = '✯︙العضو ↫ ['..dp.first_name_..'](tg://user?id='..dp.id_..')'
 local absid = '✯︙ايديه ↫ '..dp.id_..''
 local abstext = '✯︙قام بنشر '..Media
-local abstxt = 'ٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n✯︙تعالو يامشرفين اكو مخرب'
+local abstxt = 'ٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n✯︙تعالو يامشرفين اكو مخرب'
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,abbas) 
 local admins = abbas.members_  
-text = '\nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n'
+text = '\nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n'
 for i=0 , #admins do 
 if not abbas.members_[i].bot_info_ then
 tdcli_function ({ID = "GetUser",user_id_ = admins[i].user_id_},function(arg,data) 
@@ -5098,7 +5094,7 @@ return false
 end
 if text == 'المنشئين الاساسين' and CoSu(msg) then
 local list = database:smembers(bot_id..'Basic:Constructor'..msg.chat_id_)
-t = "\n✯︙قائمة المنشئين الاساسين \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة المنشئين الاساسين \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5115,7 +5111,7 @@ return false
 end
 if text == ("تاك للمنشئين الاساسين") or text == ("صيح المنشئين الاساسين") then
 local list = database:smembers(bot_id..'Basic:Constructor'..msg.chat_id_)
-t = "\n✯︙وينكم تعالو يريدوكم بالكروب \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙وينكم تعالو يريدوكم بالكروب \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5283,7 +5279,7 @@ end
 
 if text == ("المنشئين") and BasicConstructor(msg) then
 local list = database:smembers(bot_id..'Constructor'..msg.chat_id_)
-t = "\n✯︙قائمة المنشئين \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة المنشئين \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5299,7 +5295,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("تاك للمنشئين") or text == ("صيح المنشئين") then
 local list = database:smembers(bot_id..'Constructor'..msg.chat_id_)
-t = "\n✯︙وينكم تعالو يريدوكم بالكروب \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙وينكم تعالو يريدوكم بالكروب \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5480,7 +5476,7 @@ send(msg.chat_id_, msg.id_, texts)
 end
 if text == ("المدراء") and Constructor(msg) then
 local list = database:smembers(bot_id..'Manager'..msg.chat_id_)
-t = "\n✯︙قائمة المدراء \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة المدراء \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5496,7 +5492,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("تاك للمدراء") or text == ("صيح المدراء") then
 local list = database:smembers(bot_id..'Manager'..msg.chat_id_)
-t = "\n✯︙وينكم تعالو يريدوكم بالكروب \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙وينكم تعالو يريدوكم بالكروب \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5716,7 +5712,7 @@ return false
 end
 if text == ("الثانويين") and SudoBot(msg) then
 local list = database:smembers(bot_id.."Dev:Engineer:2")
-t = "\n✯︙قائمة مطورين الثانويين للبوت \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة مطورين الثانويين للبوت \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5767,7 +5763,7 @@ send(msg.chat_id_, msg.id_, '✯︙تم مسح الادمنيه')
 end
 if text == ("الادمنيه") and Manager(msg) then
 local list = database:smembers(bot_id..'Mod:User'..msg.chat_id_)
-t = "\n✯︙قائمة الادمنيه \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة الادمنيه \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5783,7 +5779,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("تاك للادمنيه") or text == ("صيح الادمنيه") then
 local list = database:smembers(bot_id..'Mod:User'..msg.chat_id_)
-t = "\n✯︙وينكم تعالو يريدوكم بالكروب \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙وينكم تعالو يريدوكم بالكروب \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -6295,7 +6291,7 @@ send(msg.chat_id_, msg.id_, '✯︙تم مسح المميزين')
 end
 if text == ("المميزين") and Mod(msg) then
 local list = database:smembers(bot_id..'Special:User'..msg.chat_id_)
-t = "\n✯︙قائمة مميزين الكروب \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة مميزين الكروب \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -6311,7 +6307,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("تاك للمميزين") or text == ("صيح المميزين") then
 local list = database:smembers(bot_id..'Special:User'..msg.chat_id_)
-t = "\n✯︙وينكم تعالو يريدوكم بالكروب \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙وينكم تعالو يريدوكم بالكروب \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -6490,7 +6486,7 @@ send(msg.chat_id_, msg.id_, '✯︙تم مسح جميع المطايه')
 end
 if text == ("تاك للمطايه") and Mod(msg) then
 local list = database:smembers(bot_id..'Mote:User'..msg.chat_id_)
-t = "\n✯︙قائمة مطايه الكروب \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة مطايه الكروب \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -6559,7 +6555,7 @@ send(msg.chat_id_, msg.id_, '✯︙تم مسح جميع الحاتات')
 end
 if text == ("تاك للحاتات") and Mod(msg) then
 local list = database:smembers(bot_id..'Mode:User'..msg.chat_id_)
-t = "\n✯︙قائمه حاتات الكروب \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمه حاتات الكروب \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -6628,7 +6624,7 @@ send(msg.chat_id_, msg.id_, '✯︙تم مسح جميع الصاكين')
 end
 if text == ("تاك للصاكين") and Mod(msg) then
 local list = database:smembers(bot_id..'Modde:User'..msg.chat_id_)
-t = "\n✯︙قائمه صاكين الكروب \nٴٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴٴ\n"
+t = "\n✯︙قائمه صاكين الكروب \nٴٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -6697,7 +6693,7 @@ send(msg.chat_id_, msg.id_, '✯︙تم تنزيل جميع صخوله من ال
 end
 if text == ("تاك للصخوله") and Mod(msg) then
 local list = database:smembers(bot_id..'Sakl:User'..msg.chat_id_)
-t = "\n✯︙قائمة صخوله الكروب \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة صخوله الكروب \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -6767,7 +6763,7 @@ send(msg.chat_id_, msg.id_, '✯︙تم تنزيل جميع جلاب الكرو�
 end
 if text == ("تاك للجلاب") and Mod(msg) then
 local list = database:smembers(bot_id..'Motte:User'..msg.chat_id_)
-t = "\n✯︙قائمة الجلاب الكروب \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة الجلاب الكروب \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -6836,7 +6832,7 @@ send(msg.chat_id_, msg.id_, '✯︙تم تنزيل جميع القروده با�
 end
 if text == ("تاك للقروده") and Mod(msg) then
 local list = database:smembers(bot_id..'Motee:User'..msg.chat_id_)
-t = "\n✯︙قائمة القروده الكروب \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة القروده الكروب \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -6905,7 +6901,7 @@ send(msg.chat_id_, msg.id_, '✯︙تم تنزيل جميع الضلوع بال�
 end
 if text == ("تاك للضلوع") and Mod(msg) then
 local list = database:smembers(bot_id..'Bro:User'..msg.chat_id_)
-t = "\n✯︙قائمة الضلوع الكروب \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة الضلوع الكروب \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -6974,7 +6970,7 @@ send(msg.chat_id_, msg.id_, '✯︙تم تنزيل جميع الضلعات با�
 end
 if text == ("تاك للضلعات") and Mod(msg) then
 local list = database:smembers(bot_id..'Girl:User'..msg.chat_id_)
-t = "\n✯︙قائمة الضلعات الكروب \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة الضلعات الكروب \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -7043,7 +7039,7 @@ send(msg.chat_id_, msg.id_, '✯︙تم تنزيل جميع البقرات با�
 end
 if text == ("تاك للبقرات") and Mod(msg) then
 local list = database:smembers(bot_id..'Bakra:User'..msg.chat_id_)
-t = "\n✯︙قائمة البقرات الكروب \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة البقرات الكروب \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -7112,7 +7108,7 @@ send(msg.chat_id_, msg.id_, '✯︙تم تنزيل جميع طليان بالك�
 end
 if text == ("تاك للطليان") and Mod(msg) then
 local list = database:smembers(bot_id..'Tele:User'..msg.chat_id_)
-t = "\n✯︙قائمة الطليان الكروب \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة الطليان الكروب \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -7181,7 +7177,7 @@ send(msg.chat_id_, msg.id_, '✯︙تم تنزيل جميع زواحف')
 end
 if text == ("تاك للزواحف") and Mod(msg) then
 local list = database:smembers(bot_id..'Zahf:User'..msg.chat_id_)
-t = "\n✯︙قائمة الزواحف الكروب \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة الزواحف الكروب \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -7250,7 +7246,7 @@ send(msg.chat_id_, msg.id_, '✯︙تم تنزيل جميع جريزي')
 end
 if text == ("تاك للجريذيه") and Mod(msg) then
 local list = database:smembers(bot_id..'Jred:User'..msg.chat_id_)
-t = "\n✯︙قائمة الجريذيه الكروب \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة الجريذيه الكروب \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -7332,7 +7328,7 @@ tdcli_function({ID="GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""
 end
 if text == ("المحظورين") then
 local list = database:smembers(bot_id..'Ban:User'..msg.chat_id_)
-t = "\n✯︙قائمة محظورين الكروب \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة محظورين الكروب \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -7576,7 +7572,7 @@ send(msg.chat_id_, msg.id_, '✯︙تم مسح المقيدين')
 end
 if text == ("المقيدين") and Mod(msg) then
 local list = database:smembers(bot_id..'Tkeed:User'..msg.chat_id_)
-t = "\n✯︙قائمة المقيدين \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة المقيدين \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -7596,7 +7592,7 @@ send(msg.chat_id_, msg.id_, '✯︙تم مسح المكتومين')
 end
 if text == ("المكتومين") and Mod(msg) then
 local list = database:smembers(bot_id..'Muted:User'..msg.chat_id_)
-t = "\n✯︙قائمة المكتومين \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة المكتومين \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -8747,10 +8743,10 @@ local text =
 '\n⚙️┇𝙶𝚁𝙾𝚄𝙿 𝚂𝙴𝚃𝚃𝙸𝙽𝙶𝚂'..
 '\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ '..
 '\n✯︙اعدادات الكروب كتالي √↓'..
-'\nءٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ'..
+'\nءٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ'..
 '\n✯︙علامة ال {✅} تعني مفتوح'..
 '\n✯︙علامة ال {❌} تعني مقفل'..
-'\nءٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ'..
+'\nءٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ'..
 '\n✯︙الروابط » { '..lock_links..
 ' }\n'..'✯︙المعرفات » { '..lock_user..
 ' }\n'..'✯︙التاك » { '..lock_hash..
@@ -8761,7 +8757,7 @@ local text =
 ' }\n'..'✯︙الماركدون » { '..lock_mark..
 ' }\n'..'✯︙التعديل » { '..lock_edit..
 ' }\n'..'✯︙تعديل الميديا » { '..lock_edit_med..
-' }\nءٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ'..
+' }\nءٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ'..
 '\n'..'✯︙الكلايش » { '..lock_spam..
 ' }\n'..'✯︙الكيبورد » { '..lock_inlin..
 ' }\n'..'✯︙الاغاني » { '..lock_vico..
@@ -8781,10 +8777,10 @@ local text =
 ' }\n'..'✯︙التكرار » { '..flood..
 ' }\n'..'✯︙الترحيب » { '..welcome..
 ' }\n'..'✯︙عدد التكرار » { '..NUM_MSG_MAX..
-' }\nءٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ'..
+' }\nءٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ'..
 '\n✯︙علامة ال {❌} تعني مفعل'..
 '\n✯︙علامة ال {✅} تعني معطل'..
-'\nءٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ'..
+'\nءٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ'..
 '\n'..'✯︙امر صيح » { '..kickme..
 ' }\n'..'✯︙امر اطردني » { '..sehuser..
 ' }\n'..'✯︙امر منو ضافني » { '..addme..
@@ -8793,7 +8789,7 @@ local text =
 ' }\n'..'✯︙الايدي » { '..idgp..
 ' }\n'..'✯︙الايدي بالصوره » { '..idph..
 ' }\n'..'✯︙الرفع » { '..setadd..
-' }\n'..'✯︙الحظر » { '..banm..' }\n\nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n✯︙قناة سورس وطن ↓\n [🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽.](t.me/EngineerSource) \n'
+' }\n'..'✯︙الحظر » { '..banm..' }\n\nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n✯︙قناة سورس وطن ↓\n [🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.](t.me/ba8lawa) \n'
 send(msg.chat_id_, msg.id_,text)     
 end
 if text ==('تثبيت') and msg.reply_to_message_id_ ~= 0 and Mod(msg) then  
@@ -9211,7 +9207,7 @@ end
 
 if text == "قائمه المنع" and Manager(msg) then   
 local list = database:smembers(bot_id.."Engineer1:List:Filter"..msg.chat_id_)  
-t = "\n✯︙قائمة المنع \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة المنع \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do  
 local Engineer_Msg = database:get(bot_id.."Engineer1:Add:Filter:Rp2"..v..msg.chat_id_)   
 t = t..""..k.."- "..v.." » {"..Engineer_Msg.."}\n"    
@@ -9357,7 +9353,7 @@ return false
 end
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = getChatId(msg.chat_id_).ID,filter_ = {ID = "ChannelMembersBots"},offset_ = 0,limit_ = 100 },function(extra,result,success)
 local admins = result.members_  
-text = "\n✯︙قائمة البوتات الموجوده \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+text = "\n✯︙قائمة البوتات الموجوده \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 local n = 0
 local t = 0
 for i=0 , #admins do 
@@ -9376,7 +9372,7 @@ send(msg.chat_id_, msg.id_, " ✯︙لا توجد بوتات في الكروب")
 return false 
 end
 if #admins == i then 
-local a = '\nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n✯︙عدد البوتات التي هنا >> {'..n..'} بوت\n'
+local a = '\nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n✯︙عدد البوتات التي هنا >> {'..n..'} بوت\n'
 local f = '✯︙عدد البوتات التي هي ادمن >> {'..t..'}\n✯︙ملاحضه علامة ال (✯) تعني ان البوت ادمن \n'
 send(msg.chat_id_, msg.id_, text..a..f)
 end
@@ -9465,7 +9461,7 @@ if #list == 0 then
 send(msg.chat_id_, msg.id_,'✯︙لا توجد صلاحيات مضافه')
 return false
 end
-t = "\n✯︙قائمة الصلاحيات المضافه \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمة الصلاحيات المضافه \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 var = database:get(bot_id.."Comd:New:rt:bot:"..v..msg.chat_id_)
 if var then
@@ -9744,7 +9740,7 @@ end,nil)
 end
 if text == 'المجموعات المدفوعه' or text == 'الكروبات المدفوعه' and DevEngineer(msg) then
 local List = database:smembers(bot_id.."Engineer:ProGroups")
-local Engineer = '✯︙المجموعات المدفوعه \n✯︙تاريخ اليوم'..os.date("%Y/%m/%d")..' \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n'
+local Engineer = '✯︙المجموعات المدفوعه \n✯︙تاريخ اليوم'..os.date("%Y/%m/%d")..' \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n'
 for k,v in pairs(List) do
 local Engineergetlink = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..v))
 if Engineergetlink.ok == true then 
@@ -10076,7 +10072,7 @@ return false
 end
 tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 200
 },function(ta,Engineer)
-local t = "\nツ قائمة الاعضاء \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+local t = "\nツ قائمة الاعضاء \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 x = 0
 local list = Engineer.members_
 for k, v in pairs(list) do
@@ -10521,7 +10517,7 @@ send(msg.chat_id_, msg.id_,"✯︙تم مسح ردود المدير")
 end
 if text == ("ردود المدير") and Manager(msg) then
 local list = database:smembers(bot_id.."List:Manager"..msg.chat_id_.."")
-text = "✯︙قائمه ردود المدير \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+text = "✯︙قائمه ردود المدير \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 if database:get(bot_id.."Add:Rd:Manager:Gif"..v..msg.chat_id_) then
 db = "متحركه 🎭"
@@ -10724,7 +10720,7 @@ if audios.Info == true then
 local Text ='✯︙تم اختيار المقطع الصوتي لك'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽.',url="t.me/EngineerSource"}},
+{{text = '🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.',url="t.me/ba8lawa"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -10842,7 +10838,7 @@ PRo = '❴ ✔️ ❵'
 else
 PRo = '❴ ✖ ❵'
 end 
-send(msg.chat_id_, msg.id_,'\n✯︙صلاحيات البوت هي\nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n✯︙علامة ال {✔️} تعني مفعل\n✯︙علامة ال {✖} تعني غير مفعل\nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n✯︙تغير معلومات المجموعة ↞ '..INf..'\n✯︙حذف الرسائل ↞ '..DEL..'\n✯︙حظر المستخدمين ↞ '..REs..'\n✯︙دعوة المستخدمين ↞ '..INv..'\n✯︙ثتبيت الرسالة ↞ '..Pin..'\n✯︙اضافة مشرفين ↞ '..PRo)   
+send(msg.chat_id_, msg.id_,'\n✯︙صلاحيات البوت هي\nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n✯︙علامة ال {✔️} تعني مفعل\n✯︙علامة ال {✖} تعني غير مفعل\nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n✯︙تغير معلومات المجموعة ↞ '..INf..'\n✯︙حذف الرسائل ↞ '..DEL..'\n✯︙حظر المستخدمين ↞ '..REs..'\n✯︙دعوة المستخدمين ↞ '..INv..'\n✯︙ثتبيت الرسالة ↞ '..Pin..'\n✯︙اضافة مشرفين ↞ '..PRo)   
 end
 end
 if text == "تعطيل الانستا" and Manager(msg) then
@@ -10883,7 +10879,7 @@ User_id = "@"..b.username_
 else
 User_id = msg.sender_user_id_
 end --الكود حصري سورس وطن يعني لو بكتهن راح اعرفك انت الاخذتهن
-local t = "\n✯︙المستخدم ~ ["..User_id .."] يصيح المشرفين \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+local t = "\n✯︙المستخدم ~ ["..User_id .."] يصيح المشرفين \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 k = 0
 for i,v in pairs(data.members_) do
 if bot_id ~= v.user_id_ then 
@@ -10925,7 +10921,7 @@ end
 return false
 end
 local list = database:smembers(bot_id.."botss:Engineer:List:Rd:Sudo")
-text = "\nقائمة ردود المتعدده \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+text = "\nقائمة ردود المتعدده \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
 db = "رساله "
 text = text..""..k.." => {"..v.."} => {"..db.."}\n"
@@ -11052,12 +11048,12 @@ if #List == 0 then
 send(msg.chat_id_, msg.id_,'✯︙لا توجد مجموعات مفعله')
 else
 send(msg.chat_id_, msg.id_,'✯︙جاري ارسال نسخه تحتوي على : '..#List..' مجموعه')
-local Text = "✯︙Source Engineer\n✯︙File Bot Groups\nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+local Text = "✯︙Source Engineer\n✯︙File Bot Groups\nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(List) do
 local GroupsManagers = database:scard(bot_id.."Manager"..v) or 0
 local GroupsAdmins = database:scard(bot_id.."Mod:User"..v) or 0
 local Groupslink = database:get(bot_id.."Private:Group:Link"..v)
-Text = Text..k.." : \n✯︙Group ID : "..v.."\n✯︙Group Link : "..(Groupslink or "Not Found").."\n✯︙Group Managers : "..GroupsManagers.."\n✯︙Group Admins : "..GroupsAdmins.."\nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+Text = Text..k.." : \n✯︙Group ID : "..v.."\n✯︙Group Link : "..(Groupslink or "Not Found").."\n✯︙Group Managers : "..GroupsManagers.."\n✯︙Group Admins : "..GroupsAdmins.."\nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 end
 local File = io.open('GroupsBot.txt', 'w')
 File:write(Text)
@@ -12240,11 +12236,11 @@ end
 return false
 end
 local Text =[[
-*🖥┇𝚂𝙾𝚄𝚁𝙲𝙴 𝚆𝙰𝚃𝙰𝙽 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂 .*
+*🖥┇𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂 .*
 *┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ *
 *⚙️ | اهلا انت في اوامر البوت الرئيسية 🔏*
 *⚙️ | اختر في الاسفل الرقم التابع للأمر 🔍*
-*ٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ*
+*ٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ*
 *❶◂ اوامر الحمايه .*
 *❷◂ اوامر تعطيل ~ تفعيل .*
 *❸◂ اوامر ضع ~ اضف  .*
@@ -12255,8 +12251,8 @@ local Text =[[
 *❽◂ اوامر مطور البوت .*
 *❾◂ اوامر مطور الاساسي .*
 *⓿❶◂ اوامر الاعضاء .*
-*ٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ*
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽. ](t.me/EngineerSource)➤
+*ٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ*
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁. ](t.me/ba8lawa)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12273,7 +12269,7 @@ keyboard.inline_keyboard = {
 {text = '• ❾ •', callback_data="/help9"..msg.sender_user_id_},{text = '• ❶⓿ •', callback_data="/help10"..msg.sender_user_id_},
 },
 {
-{text = '𝐖𝐀𝐓𝐀𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/EngineerSource"},
+{text = '𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/ba8lawa"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -12333,7 +12329,7 @@ Text = [[
 ✯︙الجهات
 ✯︙الاشعارات
 ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴٴ
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽. ](t.me/EngineerSource)➤
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁. ](t.me/ba8lawa)➤
 ]]
 send(msg.chat_id_, msg.id_,(help_text or Text)) 
 return false
@@ -12391,7 +12387,7 @@ Text = [[
 ✯︙اوامر التحشيش
 ✯︙صورتي 
  ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴٴ
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽. ](t.me/EngineerSource)➤
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁. ](t.me/ba8lawa)➤
 ]]
 send(msg.chat_id_, msg.id_,(help_text or Text)) 
 return false
@@ -12431,7 +12427,7 @@ Text = [[
 ✯︙وصف
 ✯︙تكرار + عدد
 ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴ
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽. ](t.me/EngineerSource)➤
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁. ](t.me/ba8lawa)➤
 ]]
 send(msg.chat_id_, msg.id_,(help_text or Text)) 
 return false
@@ -12479,7 +12475,7 @@ Text = [[
 ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴ
 ✯︙الاوامر المضافه ( لعرض الاوامر المضافه ) 
 ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴٴ
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽. ](t.me/EngineerSource)➤
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁. ](t.me/ba8lawa)➤
 ]]
 send(msg.chat_id_, msg.id_,(help_text or Text)) 
 return false
@@ -12533,7 +12529,7 @@ Text = [[
 ✯︙تغير امر الاوامر
 ✯︙تغير امر م1 ~ الئ م10
 ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴ
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽. ](t.me/EngineerSource)➤
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁. ](t.me/ba8lawa)➤
 ]]
 send(msg.chat_id_, msg.id_,(help_text or Text)) 
 return false
@@ -12610,7 +12606,7 @@ Text = [[
 ✯︙الساعه
 ✯︙التاريخ
 ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴٴ
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽.](t.me/EngineerSource)➤
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.](t.me/ba8lawa)➤
 ]]
 send(msg.chat_id_, msg.id_,(help_text or Text)) 
 return false
@@ -12673,7 +12669,7 @@ Text = [[
 ✯︙رفع + تنزيل ← الحاته
 ✯︙تاك للحاتات
 ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴ
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽. ](t.me/EngineerSource)➤
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁. ](t.me/ba8lawa)➤
 ]]
 send(msg.chat_id_, msg.id_,(help_text or Text)) 
 return false
@@ -12706,7 +12702,7 @@ Text = [[
 ✯︙اسم ~ ايدي + بوت غادر 
 ✯︙اذاعه 
 ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴ
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽. ](t.me/EngineerSource)➤
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁. ](t.me/ba8lawa)➤
 ]]
 send(msg.chat_id_, msg.id_,(help_text or Text)) 
 return false
@@ -12791,7 +12787,7 @@ Text = [[
 ✯︙تنظيف المشتركين
 ✯︙تنظيف الكروبات
 ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴ
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽. ](t.me/EngineerSource)➤
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁. ](t.me/ba8lawa)➤
 ]]
 send(msg.chat_id_, msg.id_,(help_text or Text)) 
 return false
@@ -12828,7 +12824,7 @@ Text = [[
 ✯︙شنو رئيك بهاي بالرد
 ✯︙تحب هذا
 ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴ
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽. ](t.me/EngineerSource)➤
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁. ](t.me/ba8lawa)➤
 ]]
 send(msg.chat_id_, msg.id_,(help_text or Text)) 
 return false
@@ -12852,14 +12848,14 @@ local Text =[[
 *اهلا عزيزي انت في اضافات البوت*
 *لتفعيل او تعطيل الاضافات*
 *ارسل تفعيل/تعطيل الاضافات*
-*ٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴٴ*
+*ٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴٴ*
 * يمكنك معرفة حاله تفعيل الاضافات *
 * من خلال ارسال ( حاله الاضافات ) *
-*ٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ*
+*ٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ*
 *يمكنك تصفح الاضافات من خلال*
 *الكيبورد الموجود في الأسفل*
-*ٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ*
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽. ](t.me/EngineerSource)➤
+*ٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ*
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁. ](t.me/ba8lawa)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12870,7 +12866,7 @@ keyboard.inline_keyboard = {
 {text = 'تنبيه المعرف', callback_data="/change-id"},{text = 'تنبيه الصور', callback_data="/change-photo"},
 },
 {
-{text = '𝐖𝐀𝐓𝐀𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/EngineerSource"},
+{text = '𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/ba8lawa"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -12890,13 +12886,13 @@ if text and text:match("^زغرفه (.*)$") and database:get(bot_id.." Engineer:
 local TextZhrfa = text:match("^زغرفه (.*)$")
 zh = https.request('https://rudi-dev.tk/Amir1/Engineer.php?en='..URL.escape(TextZhrfa)..'')
 zx = JSON.decode(zh)
-t = "\n✯︙قائمه الزخرفه \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
+t = "\n✯︙قائمه الزخرفه \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 i = 0
 for k,v in pairs(zx.ok) do
 i = i + 1
 t = t..i.."-  "..v.." \n"
 end
-send(msg.chat_id_, msg.id_, t..'ٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴٴ\n✯︙➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽. ](t.me/EngineerSource)➤ ')
+send(msg.chat_id_, msg.id_, t..'ٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴٴ\n✯︙➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁. ](t.me/ba8lawa)➤ ')
 end
 if text == "تعطيل الابراج" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '✯︙تم تعطيل الابراج')
@@ -13002,7 +12998,7 @@ if text == 'رابط الحذف' or text == 'رابط حذف' then
 t =[[
 رابط الحذف في جميع مواقع التواصل ✯
 فكر قبل لا تتسرع وتروح
-ٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ
+ٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ
  ✯ رابط حذف  [Telegram](https://my.telegram.org/auth?to=delete) ܁
  ✯ رابط حذف [instagram](https://www.instagram.com/accounts/login/?next=/accounts/remove/request/permanent/) ܁
  ✯ رابط حذف [Facebook](https://www.facebook.com/help/deleteaccount) ܁
@@ -13148,7 +13144,7 @@ local Teext =[[
 ✯︙الجهات
 ✯︙الاشعارات
 ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴٴ
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽.](t.me/EngineerSource)➤
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.](t.me/ba8lawa)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -13168,7 +13164,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 الاوامر الرئيسيه 🔙', callback_data="/helpback"..data.sender_user_id_},
 },
 {
-{text = '𝐖𝐀𝐓𝐀𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/EngineerSource"},
+{text = '𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/ba8lawa"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -13222,7 +13218,7 @@ local Teext =[[
 ✯︙اوامر التحشيش
 ✯︙صورتي 
 ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴٴ
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽.](t.me/EngineerSource)➤
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.](t.me/ba8lawa)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -13242,7 +13238,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 الاوامر الرئيسيه 🔙', callback_data="/helpback"..data.sender_user_id_},
 },
 {
-{text = '𝐖𝐀𝐓𝐀𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/EngineerSource"},
+{text = '𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/ba8lawa"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -13278,7 +13274,7 @@ local Teext =[[
 ✯︙وصف
 ✯︙تكرار + عدد
 ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴٴ
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽.](t.me/EngineerSource)➤
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.](t.me/ba8lawa)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -13298,7 +13294,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 الاوامر الرئيسيه 🔙', callback_data="/helpback"..data.sender_user_id_},
 },
 {
-{text = '𝐖𝐀𝐓𝐀𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/EngineerSource"},
+{text = '𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/ba8lawa"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -13342,7 +13338,7 @@ local Teext =[[
 ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴ
 ✯︙الاوامر المضافه ( لعرض الاوامر المضافه ) 
 ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴٴ
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽.](t.me/EngineerSource)➤
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.](t.me/ba8lawa)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -13362,7 +13358,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 الاوامر الرئيسيه 🔙', callback_data="/helpback"..data.sender_user_id_},
 },
 {
-{text = '𝐖𝐀𝐓𝐀𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/EngineerSource"},
+{text = '𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/ba8lawa"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -13412,7 +13408,7 @@ local Teext =[[
 ✯︙تغير امر الاوامر
 ✯︙تغير امر م1 ~ الئ م10
 ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴٴ
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽.](t.me/EngineerSource)➤
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.](t.me/ba8lawa)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -13432,7 +13428,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 الاوامر الرئيسيه 🔙', callback_data="/helpback"..data.sender_user_id_},
 },
 {
-{text = '𝐖𝐀𝐓𝐀𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/EngineerSource"},
+{text = '𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/ba8lawa"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -13505,7 +13501,7 @@ local Teext =[[
 ✯︙الساعه
 ✯︙التاريخ
 ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴٴ
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽.](t.me/EngineerSource)➤
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.](t.me/ba8lawa)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -13525,7 +13521,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 الاوامر الرئيسيه 🔙', callback_data="/helpback"..data.sender_user_id_},
 },
 {
-{text = '𝐖𝐀𝐓𝐀𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/EngineerSource"},
+{text = '𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/ba8lawa"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -13584,7 +13580,7 @@ local Teext =[[
 ✯︙رفع + تنزيل ← الحاته
 ✯︙تاك للحاتات
 ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴٴ
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽.](t.me/EngineerSource)➤
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.](t.me/ba8lawa)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -13604,7 +13600,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 الاوامر الرئيسيه 🔙', callback_data="/helpback"..data.sender_user_id_},
 },
 {
-{text = '𝐖𝐀𝐓𝐀𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/EngineerSource"},
+{text = '𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/ba8lawa"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -13633,7 +13629,7 @@ local Teext =[[
 ✯︙اسم ~ ايدي + بوت غادر 
 ✯︙اذاعه 
 ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴٴ
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽.](t.me/EngineerSource)➤
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.](t.me/ba8lawa)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -13653,7 +13649,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 الاوامر الرئيسيه 🔙', callback_data="/helpback"..data.sender_user_id_},
 },
 {
-{text = '𝐖𝐀𝐓𝐀𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/EngineerSource"},
+{text = '𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/ba8lawa"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -13736,7 +13732,7 @@ local Teext =[[
 ✯︙تنظيف المشتركين
 ✯︙تنظيف الكروبات
 ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴٴ
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽.](t.me/EngineerSource)➤
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.](t.me/ba8lawa)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -13756,7 +13752,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 الاوامر الرئيسيه 🔙', callback_data="/helpback"..data.sender_user_id_},
 },
 {
-{text = '𝐖𝐀𝐓𝐀𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/EngineerSource"},
+{text = '𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/ba8lawa"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -13798,7 +13794,7 @@ local Teext =[[
 ✯︙شنو رئيك بهاي بالرد
 ✯︙تحب هذا
 ٴ━━━━━━ 𝐖𝐓𝐍 ━━━━━━ٴٴ
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽. ](t.me/EngineerSource)➤
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁. ](t.me/ba8lawa)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -13818,7 +13814,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 الاوامر الرئيسيه 🔙', callback_data="/helpback"..data.sender_user_id_},
 },
 {
-{text = '𝐖𝐀𝐓𝐀𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/EngineerSource"},
+{text = '𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/ba8lawa"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -13835,11 +13831,11 @@ https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callb
 return false
 end
 local Teext =[[
-*🖥┇𝚂𝙾𝚄𝚁𝙲𝙴 𝚆𝙰𝚃𝙰𝙽 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂 .*
+*🖥┇𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂 .*
 *┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ *
 *⚙️ | اهلا انت في اوامر البوت الرئيسية 🔏*
 *⚙️ | اختر في الاسفل الرقم التابع للأمر 🔍*
-*ٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ*
+*ٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ*
 *❶◂ اوامر الحمايه .*
 *❷◂ اوامر تعطيل ~ تفعيل .*
 *❸◂ اوامر ضع ~ اضف  .*
@@ -13850,8 +13846,8 @@ local Teext =[[
 *❽◂ اوامر مطور البوت .*
 *❾◂ اوامر مطور الاساسي .*
 *⓿❶◂ اوامر الاعضاء .*
-*ٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ*
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽. ](t.me/EngineerSource)➤
+*ٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ*
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁. ](t.me/ba8lawa)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -13868,7 +13864,7 @@ keyboard.inline_keyboard = {
 {text = '• ❾ •', callback_data="/help9"..data.sender_user_id_},{text = '• ❶⓿ •', callback_data="/help10"..data.sender_user_id_},
 },
 {
-{text = '𝐖𝐀𝐓𝐀𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/EngineerSource"},
+{text = '𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/ba8lawa"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -13885,7 +13881,7 @@ return false
 end
 local Teext =[[
 انت الان في قائمة كتم الأسماء
-*ٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ*
+*ٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ*
 الاوامر الخاصة فـي كتم الاسماء 
 تفعيل كتم الاسم
 تعطيل كتم الاسم
@@ -13905,7 +13901,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 القائمة الرئيسيه 🔙', callback_data="/add"},
 },
 {
-{text = '𝐖𝐀𝐓𝐀𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/EngineerSource"},
+{text = '𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/ba8lawa"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -13918,7 +13914,7 @@ return false
 end
 local Teext =[[
 انت الان في قائمة التوحيد
-*ٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ*
+*ٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ*
 الاوامر الخاصة فـي التوحيد 
 تفعيل التوحيد
 تعطيل التوحيد
@@ -13938,7 +13934,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 القائمة الرئيسيه 🔙', callback_data="/add"},
 },
 {
-{text = '𝐖𝐀𝐓𝐀𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/EngineerSource"},
+{text = '𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/ba8lawa"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -13951,7 +13947,7 @@ return false
 end
 local Teext =[[
 انت الان في قائمة تنبيه الاسماء
-*ٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ*
+*ٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ*
 الاوامر الخاصة فـي تنبيه الاسماء 
 تفعيل تنبيه الاسماء
 تعطيل تنبيه الاسماء
@@ -13968,7 +13964,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 القائمة الرئيسيه 🔙', callback_data="/add"},
 },
 {
-{text = '𝐖𝐀𝐓𝐀𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/EngineerSource"},
+{text = '𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/ba8lawa"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -13981,7 +13977,7 @@ return false
 end
 local Teext =[[
 انت الان في قائمة تنبيه المعرف
-*ٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ*
+*ٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ*
 الاوامر الخاصة فـي تنبيه المعرف
 تفعيل تنبيه المعرف
 تعطيل تنبيه المعرف
@@ -13998,7 +13994,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 القائمة الرئيسيه 🔙', callback_data="/add"},
 },
 {
-{text = '𝐖𝐀𝐓𝐀𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/EngineerSource"},
+{text = '𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/ba8lawa"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -14011,7 +14007,7 @@ return false
 end
 local Teext =[[
 انت الان في قائمة تنبيه الصور
-*ٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ*
+*ٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ*
 الاوامر الخاصة فـي تنبيه الصور
 تفعيل تنبيه الصور
 تعطيل تنبيه الصور
@@ -14028,7 +14024,7 @@ keyboard.inline_keyboard = {
 {text = '🔙 القائمة الرئيسيه 🔙', callback_data="/add"},
 },
 {
-{text = '𝐖𝐀𝐓𝐀𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/EngineerSource"},
+{text = '𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/ba8lawa"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -14044,14 +14040,14 @@ local Teext =[[
 *اهلا عزيزي انت في اضافات البوت*
 *لتفعيل او تعطيل الاضافات*
 *ارسل تفعيل/تعطيل الاضافات*
-*ٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴٴ*
+*ٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴٴ*
 * يمكنك معرفة حاله تفعيل الاضافات *
 * من خلال ارسال ( حاله الاضافات ) *
-*ٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ*
+*ٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ*
 *يمكنك تصفح الاضافات من خلال*
 *الكيبورد الموجود في الأسفل*
-*ٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ*
-➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝚆𝙰𝚃𝙰𝙽. ](t.me/EngineerSource)➤
+*ٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ*
+➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁. ](t.me/ba8lawa)➤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -14062,7 +14058,7 @@ keyboard.inline_keyboard = {
 {text = 'تنبيه المعرف', callback_data="/change-id"},{text = 'تنبيه الصور', callback_data="/change-photo"},
 },
 {
-{text = '𝐖𝐀𝐓𝐀𝐍 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/EngineerSource"},
+{text = '𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 𝐂𝐇𝐀𝐍𝐍𝐄𝐋', url="t.me/ba8lawa"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -14302,7 +14298,7 @@ local NameChat = NameChat:gsub("*","")
 local NameChat = NameChat:gsub("{","") 
 local NameChat = NameChat:gsub("}","") 
 if not DevEngineer(msg) then
-sendText(SUDO,"✯︙تم طرد البوت من المجموعه : \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n✯︙بواسطة : "..Name.."\n✯︙اسم المجموعه : ["..NameChat.."]\n✯︙ايدي المجموعه : \n`"..msg.chat_id_.."`",0,'md')
+sendText(SUDO,"✯︙تم طرد البوت من المجموعه : \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n✯︙بواسطة : "..Name.."\n✯︙اسم المجموعه : ["..NameChat.."]\n✯︙ايدي المجموعه : \n`"..msg.chat_id_.."`",0,'md')
 end
 end,nil)
 end,nil)
@@ -14346,7 +14342,7 @@ end
 if #list == 0 then
 t = " ✯︙لا يوجد ادمن"
 end
-send(msg.chat_id_,0,''..t..'\nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n✯︙تم التعديل على الميديا\n✯︙الشخص الي قام بالتعديل\n✯︙ايدي الشخص ◂ '..result.sender_user_id_..'\n✯︙معرف الشخص»{ '..users..' }') 
+send(msg.chat_id_,0,''..t..'\nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n✯︙تم التعديل على الميديا\n✯︙الشخص الي قام بالتعديل\n✯︙ايدي الشخص ◂ '..result.sender_user_id_..'\n✯︙معرف الشخص»{ '..users..' }') 
 end,nil)
 DeleteMessage(msg.chat_id_,{[0] = msg.message_id_}) 
 end
@@ -14422,7 +14418,7 @@ tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,
 if data.username_ ~= false then
 send(msg.chat_id_,0," ✯︙العضو : {["..data.first_name_.."](T.ME/"..data.username_..")}\n✯︙["..EngineerAbot.."] \n") 
 else
-send(msg.chat_id_,0," ✯︙العضو : {["..data.first_name_.."](t.me/EngineerSource)}\n✯︙["..EngineerAbot.."] \n") 
+send(msg.chat_id_,0," ✯︙العضو : {["..data.first_name_.."](t.me/ba8lawa)}\n✯︙["..EngineerAbot.."] \n") 
 end
 end,nil)   
 DeleteMessage(msg.chat_id_,{[0] = data.message_id_}) 
