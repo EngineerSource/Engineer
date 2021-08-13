@@ -132,7 +132,7 @@ print([[
                                
 > CH › @EngineerTeaM
 ~> DEVELOPER › @abbasfadhil
-~~> Source Version 2.6
+~~> Source Version 1.1
 ]])
 sudos = dofile("./Info.lua") 
 SUDO = tonumber(sudos.SUDO)
@@ -1184,7 +1184,7 @@ if text == 'تحديث السورس ✯' and DevEngineer(msg) then
 send(msg.chat_id_, msg.id_,'✯︙جارٍ الان تحديث السورس الى اخر اصدار')
 os.execute('rm -rf Engineer.lua')
 os.execute('wget https://raw.githubusercontent.com/EngineerSource/Engineer/main/Engineer.lua')
-send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك اخر اصدار لسورس المهندس\n✯︙الاصدار » { v 2.6 }')
+send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك اخر اصدار لسورس المهندس\n✯︙الاصدار » { v 1.1 }')
 dofile('Engineer.lua')  
 end
 
@@ -1379,7 +1379,7 @@ return false
 end
 if text == 'الاصـدار ✯' and DevEngineer(msg) then 
 database:del(bot_id..'Srt:Bot') 
-send(msg.chat_id_, msg.id_,'✯︙اصدار سورس المهندس \n✯︙الاصدار »{ v 2.6 }')
+send(msg.chat_id_, msg.id_,'✯︙اصدار سورس المهندس \n✯︙الاصدار »{ v 1.1 }')
 end
 if text == "ضع اسم للبوت ✯" and DevEngineer(msg) then  
 database:setex(bot_id..'Set:Name:Bot'..msg.sender_user_id_,300,true) 
@@ -2725,7 +2725,7 @@ if text == 'تحديث السورس' and DevEngineer(msg) then
 send(msg.chat_id_, msg.id_,'✯︙جارٍ الان تحديث السورس الى اخر اصدار')
 os.execute('rm -rf Engineer.lua')
 os.execute('wget https://raw.githubusercontent.com/EngineerSource/Engineer/main/Engineer.lua')
-send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك اخر اصدار لسورس المهندس\n✯︙الاصدار » { v 2.6 }')
+send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك اخر اصدار لسورس المهندس\n✯︙الاصدار » { v 1.1 }')
 dofile('Engineer.lua')  
 end
 if text == 'تحديث المتجر' and DevEngineer(msg) then 
@@ -3015,7 +3015,7 @@ end,nil)
 end
 
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'ياسورس' then
-Text = "[⦑ Welcome to Source ⦒](t.me/ba8lawa)\n[✯ ⦑ SOURCE Engineer ⦒](t.me/ba8lawa)\n✯ Source version : 2.6"
+Text = "[⦑ Welcome to Source ⦒](t.me/ba8lawa)\n[✯ ⦑ SOURCE Engineer ⦒](t.me/ba8lawa)\n✯ Source version : 1.1"
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '𝒄𝒉𝒂𝒏𝒏𝒆𝒍 𝒔𝒐𝒖𝒓𝒄𝒆',url="t.me/ba8lawa"},
