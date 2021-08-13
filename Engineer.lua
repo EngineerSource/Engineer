@@ -41,7 +41,7 @@ end
 else
 print('\27[0;35m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n لم يتم حفظ التوكن ارسل لي التوكن الان')
 end 
-os.execute('lua WaTaN.lua')
+os.execute('lua Engineer.lua')
 end
 if not database:get(id_server..":SUDO:ID") then 
 io.write('\27[0;35m\n ارسل لي ايدي المطور الاساسي ↓ :\na┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n\27[0;33;49m') 
@@ -52,7 +52,7 @@ database:set(id_server..":SUDO:ID",SUDOID)
 else 
 print('\27[0;31m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n لم يتم حفظ ايدي المطور الاساسي ارسله مره اخره') 
 end  
-os.execute('lua WaTaN.lua') 
+os.execute('lua Engineer.lua') 
 end
 if not database:get(id_server..":SUDO:USERNAME") then
 io.write('\27[1;31m ↓ ارسل معرف المطور الاساسي :\n SEND ID FOR SIDO : \27[0;39;49m')
@@ -63,7 +63,7 @@ database:set(id_server..":SUDO:USERNAME",'@'..SUDOUSERNAME)
 else
 print('\n\27[1;34m لم يتم حفظ معرف المطور :')
 end 
-os.execute('lua WaTaN.lua')
+os.execute('lua Engineer.lua')
 end
 local create_config_auto = function()
 config = {
@@ -78,10 +78,10 @@ token = database:get(id_server..":token")
 SUDO = database:get(id_server..":SUDO:ID")
 install = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
 print('\n\27[1;34m doneeeeeeee senddddddddddddd :')
-file = io.open("WaTaN", "w")  
+file = io.open("Engineer", "w")  
 file:write([[
 #!/usr/bin/env bash
-cd $HOME/WaTaN
+cd $HOME/Engineer
 token="]]..database:get(id_server..":token")..[["
 while(true) do
 rm -fr ../.telegram-cli
@@ -101,18 +101,18 @@ echo -e "\033[38;5;208m"
 echo -e "                                                  "
 echo -e "\033[0;00m"
 echo -e "\e[36m"
-./tg -s ./WaTaN.lua -p PROFILE --bot=$token
+./tg -s ./Engineer.lua -p PROFILE --bot=$token
 done
 ]])  
 file:close()  
 file = io.open("WtN", "w")  
 file:write([[
 #!/usr/bin/env bash
-cd $HOME/WaTaN
+cd $HOME/Engineer
 while(true) do
 rm -fr ../.telegram-cli
-screen -S WaTaN -X kill
-screen -S WaTaN ./WaTaN
+screen -S Engineer -X kill
+screen -S Engineer ./Engineer
 done
 ]])  
 file:close() 
@@ -151,8 +151,8 @@ print([[
 ╚╗╔╗╔╝║╚╝╚╗ ╔╝╚╗ ║╚╝╚╗║║ ║║║
  ╚╝╚╝ ╚═══╝ ╚══╝ ╚═══╝╚╝ ╚═╝
                                
-> CH › @WaTaNTeaM
-> CH › @WaTaNTeaM
+> CH › @EngineerTeaM
+> CH › @EngineerTeaM
 ~> DEVELOPER › @abbasfadhil
 ]])
 sudos = dofile("./Info.lua") 
