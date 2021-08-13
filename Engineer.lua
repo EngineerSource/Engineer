@@ -1,3 +1,17 @@
+redis    = require('redis') 
+https    = require ("ssl.https") 
+serpent  = dofile("./library/serpent.lua") 
+json     = dofile("./library/JSON.lua") 
+JSON     = dofile("./library/dkjson.lua")
+URL      = require('socket.url')  
+utf8     = require ('lua-utf8') 
+database = redis.connect('127.0.0.1', 6379) 
+Server   = io.popen("echo $SSH_CLIENT | awk '{ print $1}'"):read('*a')
+User     = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '')
+Ip       = io.popen("dig +short myip.opendns.com @resolver1.opendns.com"):read('*a'):gsub('[\n\r]+', '')
+Name     = io.popen("uname -a | awk '{ name = $2 } END { print name }'"):read('*a'):gsub('[\n\r]+', '')
+Port     = io.popen("echo ${SSH_CLIENT} | awk '{ port = $3 } END { print port }'"):read('*a'):gsub('[\n\r]+', '')
+--------------------------------------------------------------------------------------------------------------
 local AutoFiles_Write = function() 
 if not database:get(Server.."Token_Write") then
 print("\27[1;34m»» ارسل توكن البوت الخاص بك الان :\27[m")
