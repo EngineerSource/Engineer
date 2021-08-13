@@ -142,21 +142,13 @@ return config
 end 
 _redis = load_redis()  
 --------------------------------------------------------------------------------------------------------------
-print([[
-╔╗╔╗╔╗     ╔════╗     ╔═╗ ╔╗
-║║║║║║     ║╔╗╔╗║     ║║╚╗║║
-║║║║║║╔══╗ ╚╝║║╚╝╔══╗ ║╔╗╚╝║
-║╚╝╚╝║╚ ╗║   ║║  ╚ ╗║ ║║╚╗║║
-╚╗╔╗╔╝║╚╝╚╗ ╔╝╚╗ ║╚╝╚╗║║ ║║║
- ╚╝╚╝ ╚═══╝ ╚══╝ ╚═══╝╚╝ ╚═╝
-                               
-> CH › @EngineerSource
-~> DEVELOPER › @abbasfadhil
-~~> Source Version 2.6
+print([[ 
+> CH › @BO6OK
+> DEVELOPER › @JJEJJ
 ]])
 sudos = dofile("./Info.lua") 
 SUDO = tonumber(sudos.SUDO)
-sudo_users = {SUDO,782717203,}   
+sudo_users = {SUDO}
 bot_id = sudos.token:match("(%d+)")  
 token = sudos.token 
 --- start functions ↓
