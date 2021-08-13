@@ -1016,12 +1016,6 @@ send_inline_key(msg.chat_id_,bl,keyboard)
 return false
 end end
 if text == '/start' then  
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 if not database:get(bot_id..'Start:Time'..msg.sender_user_id_) then
 local start = database:get(bot_id.."Start:Bot")  
 if start then 
@@ -1116,12 +1110,6 @@ end,nil)
 end,nil)
 end 
 if text == 'تفعيل التواصل ✯' and DevEngineer(msg) then  
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 if database:get(bot_id..'Tuasl:Bots') then
 database:del(bot_id..'Tuasl:Bots') 
 Text = '\n✯︙تم تفعيل التواصل ' 
@@ -1131,12 +1119,6 @@ end
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'تعطيل التواصل ✯' and DevEngineer(msg) then  
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 if not database:get(bot_id..'Tuasl:Bots') then
 database:set(bot_id..'Tuasl:Bots',true) 
 Text = '\n✯︙تم تعطيل التواصل' 
@@ -1146,12 +1128,6 @@ end
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'تفعيل البوت الخدمي ✯' and DevEngineer(msg) then  
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 if database:get(bot_id..'Free:Bots') then
 database:del(bot_id..'Free:Bots') 
 Text = '\n✯︙تم تفعيل البوت الخدمي ' 
@@ -1161,12 +1137,6 @@ end
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'تعطيل البوت الخدمي ✯' and DevEngineer(msg) then  
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 if not database:get(bot_id..'Free:Bots') then
 database:set(bot_id..'Free:Bots',true) 
 Text = '\n✯︙تم تعطيل البوت الخدمي' 
@@ -1187,33 +1157,15 @@ database:del(bot_id..'Start:Bots')
 return false
 end
 if text == 'ضع كليشه ستارت ✯' and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 database:set(bot_id..'Start:Bots',true) 
 send(msg.chat_id_, msg.id_,'✯︙ارسل لي الكليشه الان')
 return false
 end
 if text == 'حذف كليشه ستارت ✯' and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 database:del(bot_id..'Start:Bot') 
 send(msg.chat_id_, msg.id_,'✯︙تم حذف كليشه ستارت')
 end
 if text == 'معلومات السيرفر ✯' and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 send(msg.chat_id_, msg.id_, io.popen([[
 linux_version=`lsb_release -ds`
 memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
@@ -1229,12 +1181,6 @@ echo '*———————————~*\n✯✔{ مـده تـشغيـل ال
 ]]):read('*all'))  
 end
 if text == 'تحديث السورس ✯' and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 send(msg.chat_id_, msg.id_,'✯︙جارٍ الان تحديث السورس الى اخر اصدار')
 os.execute('rm -rf Engineer.lua')
 os.execute('wget https://raw.githubusercontent.com/EngineerSource/Engineer/main/Engineer.lua')
@@ -1257,33 +1203,15 @@ send(msg.chat_id_, msg.id_,'✯︙اهلا بك عزيزي\n✯︙تم تنزي�
 dofile('Engineer.lua')  
 end
 if text == "تـحــديـث ✯" then
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 dofile("Engineer.lua")  
 send(msg.chat_id_, msg.id_, "✯︙تم تحديث الملفات")
 end
 if text == "اضف رد للكل ✯" and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 send(msg.chat_id_, msg.id_,"✯︙ارسل الكلمه التي تريد اضافتها")
 database:set(bot_id.."Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_,true)
 return false 
 end
 if text == "حذف رد للكل ✯" and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 send(msg.chat_id_, msg.id_,"✯︙ارسل الكلمه التي تريد حذفها")
 database:set(bot_id.."Set:On"..msg.sender_user_id_..":"..msg.chat_id_,true)
 return false 
@@ -1450,33 +1378,15 @@ send(msg.chat_id_, msg.id_, '\n✯︙تم مسح قائمه المكتومين �
 return false
 end
 if text == 'الاصـدار ✯' and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 database:del(bot_id..'Srt:Bot') 
 send(msg.chat_id_, msg.id_,'✯︙اصدار سورس وطن \n✯︙الاصدار »{ v 2.6 }')
 end
 if text == "ضع اسم للبوت ✯" and DevEngineer(msg) then  
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 database:setex(bot_id..'Set:Name:Bot'..msg.sender_user_id_,300,true) 
 send(msg.chat_id_, msg.id_," ✯︙ارسل اليه الاسم الان ")
 return false
 end
 if text == 'الاحصائيات ✯' and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 local Groups = database:scard(bot_id..'Chek:Groups')  
 local Users = database:scard(bot_id..'User_Bot')  
 Text = ' الاحصائيات ✯ \n'..'✯︙عدد الكروبات » {'..Groups..'}'..'\n✯︙عدد المشتركين » {'..Users..'}'
@@ -1484,12 +1394,6 @@ send(msg.chat_id_, msg.id_,Text)
 return false
 end
 if text == 'المشتركين ✯' and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 local Groups = database:scard(bot_id..'Chek:Groups')  
 local Users = database:scard(bot_id..'User_Bot')  
 Text = '\n✯︙المشتركين»{`'..Users..'`}'
@@ -1497,12 +1401,6 @@ send(msg.chat_id_, msg.id_,Text)
 return false
 end
 if text == 'الكروبات ✯' and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 local Groups = database:scard(bot_id..'Chek:Groups')  
 local Users = database:scard(bot_id..'User_Bot')  
 Text = '\n✯︙الكروبات»{`'..Groups..'`}'
@@ -1510,12 +1408,6 @@ send(msg.chat_id_, msg.id_,Text)
 return false
 end
 if text == ("المطورين ✯") and DevEngineer(msg) then
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 local list = database:smembers(bot_id..'Sudo:User')
 t = "\n✯︙قائمة المطورين \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
@@ -1532,12 +1424,6 @@ end
 send(msg.chat_id_, msg.id_, t)
 end
 if text == ("الثانويين ✯") and DevEngineer(msg) then
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 local list = database:smembers(bot_id..'Dev:Engineer:2')
 t = "\n✯︙قائمة الثانويين \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
@@ -1570,12 +1456,6 @@ return false
 end
 -----------
 if text == ("المحظورين عام ✯") and DevEngineer(msg) then
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 local list = database:smembers(bot_id..'GBan:User')
 t = "\n✯︙قائمه المحظورين عام \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
@@ -1593,12 +1473,6 @@ send(msg.chat_id_, msg.id_, t)
 return false
 end
 if text == ("قائمه الكتم العام ✯") and DevEngineer(msg) then
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 local list = database:smembers(bot_id..'Gmute:User')
 t = "\n✯︙قائمة المكتومين عام \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
@@ -1616,56 +1490,26 @@ send(msg.chat_id_, msg.id_, t)
 return false
 end
 if text=="اذاعه خاص ✯" and msg.reply_to_message_id_ == 0 and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 database:setex(bot_id.."Send:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," ✯︙ارسل الان اذاعتك؟ \n✯︙للخروج ارسل الغاء ")
 return false
 end 
 if text=="اذاعه ✯" and msg.reply_to_message_id_ == 0 and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 database:setex(bot_id.."Send:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," ✯︙ارسل الان اذاعتك؟ \n✯︙للخروج ارسل الغاء ")
 return false
 end  
 if text=="اذاعه بالتثبيت ✯" and msg.reply_to_message_id_ == 0 and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 database:setex(bot_id.."Bc:Grops:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," ✯︙ارسل الان اذاعتك؟ \n✯︙للخروج ارسل الغاء ")
 return false
 end 
 if text=="اذاعه بالتوجيه ✯" and msg.reply_to_message_id_ == 0  and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 database:setex(bot_id.."Send:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," ✯︙ارسل لي التوجيه الان")
 return false
 end 
 if text=="اذاعه بالتوجيه خاص ✯" and msg.reply_to_message_id_ == 0  and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 database:setex(bot_id.."Send:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," ✯︙ارسل لي التوجيه الان")
 return false
@@ -1674,12 +1518,6 @@ if text == 'جلب نسخه الاحتياطيه ✯' and DevEngineer(msg) then
 GetFile_Bot(msg)
 end
 if text == "تنظيف المشتركين ✯" and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 local pv = database:smembers(bot_id.."User_Bot")
 local sendok = 0
 for i = 1, #pv do
@@ -1707,12 +1545,6 @@ end
 return false
 end
 if text == "تنظيف الكروبات ✯" and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 local group = database:smembers(bot_id..'Chek:Groups') 
 local w = 0
 local q = 0
@@ -2890,12 +2722,6 @@ database:set(bot_id..'Num:Add:Bot',Num)
 send(msg.chat_id_, msg.id_,'✯︙تم تعيين عدد الاعضاء سيتم تفعيل الكروبات التي اعضائها اكثر من  >> {'..Num..'} عضو')
 end
 if text == 'تحديث السورس' and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 send(msg.chat_id_, msg.id_,'✯︙جارٍ الان تحديث السورس الى اخر اصدار')
 os.execute('rm -rf Engineer.lua')
 os.execute('wget https://raw.githubusercontent.com/EngineerSource/Engineer/main/Engineer.lua')
@@ -2903,12 +2729,6 @@ send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك 
 dofile('Engineer.lua')  
 end
 if text == 'تحديث المتجر' and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 io.popen("mkdir File_Bot")
 os.execute("rm -fr File_Bot/*")
 io.popen("cd File_Bot && wget https://raw.githubusercontent.com/EngineerSource/Files_Engineer/main/File_Bot/all.lua") 
@@ -3195,12 +3015,6 @@ end,nil)
 end
 
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'ياسورس' then
-local url,res = https.request('https://abbas.EngineerSource.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_EngineerSource ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @EngineerSource')   
-return false 
-end
 Text = "[⦑ Welcome to Source ⦒](t.me/ba8lawa)\n[✯ ⦑ SOURCE Engineer ⦒](t.me/ba8lawa)\n✯ Source version : 2.6"
 keyboard = {} 
 keyboard.inline_keyboard = {
