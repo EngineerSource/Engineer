@@ -10526,6 +10526,244 @@ local Textxt = text:match("^كول (.*)$")
 send(msg.chat_id_, msg.id_, '['..Textxt..']')
 end
 
+if text == 'تفعيل فلم' and CoSu(msg) then   
+if database:get(bot_id..'Abs:Movies:Abs'..msg.chat_id_) then
+Text = '✯︙تم تفعيل امر فلم الان ارسل فلم'
+database:del(bot_id..'Abs:Movies:Abs'..msg.chat_id_)  
+else
+Text = '✯︙بالتاكيد تم تفعيل امر فلم تستطيع ارسال فلم'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل فلم' and CoSu(msg) then  
+if not database:get(bot_id..'Abs:Movies:Abs'..msg.chat_id_) then
+database:set(bot_id..'Abs:Movies:Abs'..msg.chat_id_,true)  
+Text = '\n✯︙تم تعطيل امر فلم'
+else
+Text = '\n✯︙بالتاكيد تم تعطيل امر فلم'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == "فلم" or text == "↫ فلم ᥀" and not database:get(bot_id..'Abs:Movies:Abs'..msg.chat_id_) and Mod(msg) then
+data,res = https.request('https://ccccxcc.ml/David/Movies.php')
+if res == 200 then
+photo = json:decode(data)
+if photo.Info == true then
+local Text ='*᥀︙تم اختيار فلم لك*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.',url="t.me/ba8lawa"}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo='..URL.escape(photo.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+end
+end
+
+if text == 'تفعيل مسلسل' and CoSu(msg) then   
+if database:get(bot_id..'Abs:Series:Abs'..msg.chat_id_) then
+Text = '✯︙تم تفعيل امر مسلسل الان ارسل مسلسل'
+database:del(bot_id..'Abs:Series:Abs'..msg.chat_id_)  
+else
+Text = '✯︙بالتاكيد تم تفعيل امر مسلسل تستطيع ارسال مسلسل'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل مسلسل' and CoSu(msg) then  
+if not database:get(bot_id..'Abs:Series:Abs'..msg.chat_id_) then
+database:set(bot_id..'Abs:Series:Abs'..msg.chat_id_,true)  
+Text = '\n✯︙تم تعطيل امر مسلسل'
+else
+Text = '\n✯︙بالتاكيد تم تعطيل امر مسلسل'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == "مسلسل" or text == "↫ مسلسل ᥀" and not database:get(bot_id..'Abs:Series:Abs'..msg.chat_id_) and Mod(msg) then
+data,res = https.request('https://ccccxcc.ml/David/Series.php')
+if res == 200 then
+photo = json:decode(data)
+if photo.Info == true then
+local Text ='*᥀︙تم اختيار مسلسل لك*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.',url="t.me/ba8lawa"}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo='..URL.escape(photo.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+end
+end
+
+if text == 'تفعيل انمي' and CoSu(msg) then   
+if database:get(bot_id..'Abs:Anime:Abs'..msg.chat_id_) then
+Text = '✯︙تم تفعيل امر انمي الان ارسل انمي'
+database:del(bot_id..'Abs:Anime:Abs'..msg.chat_id_)  
+else
+Text = '✯︙بالتاكيد تم تفعيل امر انمي تستطيع ارسال انمي'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل انمي' and CoSu(msg) then  
+if not database:get(bot_id..'Abs:Anime:Abs'..msg.chat_id_) then
+database:set(bot_id..'Abs:Anime:Abs'..msg.chat_id_,true)  
+Text = '\n✯︙تم تعطيل امر انمي'
+else
+Text = '\n✯︙بالتاكيد تم تعطيل امر انمي'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == "انمي" or text == "↫ انمي ᥀" and not database:get(bot_id..'Abs:Anime:Abs'..msg.chat_id_) and Mod(msg) then
+data,res = https.request('https://ccccxcc.ml/David/Anime.php')
+if res == 200 then
+photo = json:decode(data)
+if photo.Info == true then
+local Text ='*᥀︙تم اختيار صورة الانمي لك*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.',url="t.me/ba8lawa"}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo='..URL.escape(photo.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+end
+end
+
+if text == 'تفعيل صوره' and CoSu(msg) then   
+if database:get(bot_id..'Abs:Photoo:Abs'..msg.chat_id_) then
+Text = '✯︙تم تفعيل امر صوره الان ارسل صوره'
+database:del(bot_id..'Abs:Photoo:Abs'..msg.chat_id_)  
+else
+Text = '✯︙بالتاكيد تم تفعيل امر صوره تستطيع ارسال صوره'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل صوره' and CoSu(msg) then  
+if not database:get(bot_id..'Abs:Photoo:Abs'..msg.chat_id_) then
+database:set(bot_id..'Abs:Photoo:Abs'..msg.chat_id_,true)  
+Text = '\n✯︙تم تعطيل امر صوره'
+else
+Text = '\n✯︙بالتاكيد تم تعطيل امر صوره'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == "صوره" or text == "↫ صوره ᥀" and not database:get(bot_id..'Abs:Photoo:Abs'..msg.chat_id_) and Mod(msg) then
+data,res = https.request('https://ccccxcc.ml/David/Photo.php')
+if res == 200 then
+photo = json:decode(data)
+if photo.Info == true then
+local Text ='*᥀︙تم اختيار الصوره لك*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.',url="t.me/ba8lawa"}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo='..URL.escape(photo.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+end
+end
+
+if text == 'تفعيل ريمكس' and CoSu(msg) then   
+if database:get(bot_id..'Abs:Remix:Abs'..msg.chat_id_) then
+Text = '✯︙تم تفعيل امر ريمكس الان ارسل ريمكس'
+database:del(bot_id..'Abs:Remix:Abs'..msg.chat_id_)  
+else
+Text = '✯︙بالتاكيد تم تفعيل امر ريمكس تستطيع ارسال ريمكس'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل ريمكس' and CoSu(msg) then  
+if not database:get(bot_id..'Abs:Remix:Abs'..msg.chat_id_) then
+database:set(bot_id..'Abs:Remix:Abs'..msg.chat_id_,true)  
+Text = '\n✯︙تم تعطيل امر ريمكس'
+else
+Text = '\n✯︙بالتاكيد تم تعطيل امر ريمكس'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == "ريمكس" or text == "↫ ريمكس ᥀" and not database:get(bot_id..'Abs:Remix:Abs'..msg.chat_id_) and Mod(msg) then
+data,res = https.request('https://ccccxcc.ml/David/Remix.php')
+if res == 200 then
+Audios = json:decode(data)
+if Audios.Info == true then
+local Text ='*᥀︙تم اختيار الريمكس لك*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.',url="t.me/ba8lawa"}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(Audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+end
+end
+
+if text == 'تفعيل متحركه' and CoSu(msg) then   
+if database:get(bot_id..'Abs:gif:Abs'..msg.chat_id_) then
+Text = '✯︙تم تفعيل امر متحركه الان ارسل متحركه'
+database:del(bot_id..'Abs:gif:Abs'..msg.chat_id_)  
+else
+Text = '✯︙بالتاكيد تم تفعيل امر متحركه تستطيع ارسال متحركه'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل متحركه' and CoSu(msg) then  
+if not database:get(bot_id..'Abs:gif:Abs'..msg.chat_id_) then
+database:set(bot_id..'Abs:gif:Abs'..msg.chat_id_,true)  
+Text = '\n✯︙تم تعطيل امر متحركه'
+else
+Text = '\n✯︙بالتاكيد تم تعطيل امر متحركه'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == "متحركه" or text == "↫ متحركه ᥀" and not database:get(bot_id..'Abs:gif:Abs'..msg.chat_id_) and Mod(msg) then
+data,res = https.request('https://ccccxcc.ml/David/animation.php')
+if res == 200 then
+animation = json:decode(data)
+if animation.Info == true then
+local Text ='*᥀︙تم اختيار المتحركه لك*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.',url="t.me/ba8lawa"}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendanimation?chat_id=' .. msg.chat_id_ .. '&animation='..URL.escape(animation.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+end
+end
+
+if text == 'تفعيل ميمز' and CoSu(msg) then   
+if database:get(bot_id..'Abs:memz:Abs'..msg.chat_id_) then
+Text = '✯︙تم تفعيل امر ميمز الان ارسل ميمز'
+database:del(bot_id..'Abs:memz:Abs'..msg.chat_id_)  
+else
+Text = '✯︙بالتاكيد تم تفعيل امر ميمز تستطيع ارسال ميمز'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل ميمز' and CoSu(msg) then  
+if not database:get(bot_id..'Abs:memz:Abs'..msg.chat_id_) then
+database:set(bot_id..'Abs:memz:Abs'..msg.chat_id_,true)  
+Text = '\n✯︙تم تعطيل امر ميمز'
+else
+Text = '\n✯︙بالتاكيد تم تعطيل امر ميمز'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == "ميمز" or text == "↫ ميمز ᥀" and not database:get(bot_id..'Abs:memz:Abs'..msg.chat_id_) and Mod(msg) then
+data,res = https.request('https://ccccxcc.ml/David/memz.php')
+if res == 200 then
+Audios = json:decode(data)
+if Audios.Info == true then
+local Text ='*᥀︙تم اختيار مقطع الميمز لك*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.',url="t.me/ba8lawa"}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(Audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+end
+end
+
 if text == "غنيلي" and not database:get(bot_id.."sing:for:me"..msg.chat_id_) then
 data,res = https.request('https://black-source.tk/BlackTeAM/audios.php')
 if res == 200 then
