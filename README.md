@@ -1,6 +1,6 @@
 # <p align="center" style="color:#cb3349" >سورس وطن على تلكرام ⌯︙
 
-# <p align="center" style="color:#cb3349" > [اصـــغـــط هــنـــا لــلــدخــول الــى الــقــنــاة](https://telegram.me/WaTaNTeaM) <br>
+# <p align="center" style="color:#cb3349" > [اصـــغـــط هــنـــا لــلــدخــول الــى الــقــنــاة](https://telegram.me/ba8lawa) <br>
 
 # <p align="center"> كود تنصيب السورس ⌯︙
 
@@ -18,7 +18,7 @@
 
   
 
-# <p align="center" style="color:#cb3349" > [مــطــور ســورس](https://telegram.me/abbasfadhil) <br>
+# <p align="center" style="color:#cb3349" > [مــطــور ســورس](https://telegram.me/BlackBirdd) <br>
  
  
 
