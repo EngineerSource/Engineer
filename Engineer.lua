@@ -3018,10 +3018,10 @@ if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or te
 Text = "[⦑ Welcome to Source ⦒](t.me/ba8lawa)\n[✯ ⦑ SOURCE Engineer ⦒](t.me/ba8lawa)\n✯ Source version : 1.1"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'قناة بقلاوة عراقية',url="https://t.me/ba8lawa"},
+{{text = 'قناة بقلاوة عراقية',url="https://t.me/M10_Z5"},
 {text = 'المبرمج',url="https://t.me/blackbirdd"}},
-{{text = 'كروب ولاية بطيخ',url="https://t.me/joinchat/d81A6EaDbKY3ZDc6"}},
-{{text = 'المطور الاساسي',url="https://t.me/blackbirdd"}},
+{{text = 'كروب ولاية بطيخ',url="https://t.me/joinchat/fVbt6I2jHtowZDZi"}},
+{{text = 'المطور الاساسي',url="https://t.me/dia2i"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/ba8lawa&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -10691,6 +10691,32 @@ keyboard.inline_keyboard = {
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(Audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+end
+end
+
+if text == "تفعيل الاغاني" and Manager(msg) and ChCheck(msg) or text == "تفعيل اغنيه" and Manager(msg) and ChCheck(msg) then
+local EngineerSource = '᥀︙اهلا عزيزي ↫ '..AbsRank(msg)..' \n᥀︙تم تفعيل الاغاني'
+Absmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, EngineerSource, 14, string.len(msg.sender_user_id_))
+DevAbs:del(Engineer..'Abs:mp3:Abs'..msg.chat_id_) 
+end
+if text == "تعطيل الاغاني" and Manager(msg) and ChCheck(msg) or text == "تعطيل اغنيه" and Manager(msg) and ChCheck(msg) then
+local EngineerSource = '᥀︙اهلا عزيزي ↫ '..AbsRank(msg)..' \n᥀︙تم تعطيل الاغاني'
+Absmoned(msg.chat_id_, msg.sender_user_id_, msg.id_, EngineerSource, 14, string.len(msg.sender_user_id_))
+DevAbs:set(Engineer..'Abs:mp3:Abs'..msg.chat_id_,true)  
+end
+if text == "اغنيه" or text == "↫ اغنيه ᥀" or text == "اغاني" and not DevAbs:get(Enginner..'Abs:mp3:Abs'..msg.chat_id_) and ChCheck(msg) then
+data,res = https.request('https://ccccxcc.ml/David/mp3.php')
+if res == 200 then
+Audios = json:decode(data)
+if Audios.Info == true then
+local Text ='*᥀︙تم اختيار الاغنيه لك*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = 'المهندس حسن البصراوي',url="t.me/ba8lawa"}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(Audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
 end
