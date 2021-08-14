@@ -3018,10 +3018,10 @@ if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or te
 Text = "[⦑ Welcome to Source ⦒](t.me/ba8lawa)\n[✯ ⦑ SOURCE Engineer ⦒](t.me/ba8lawa)\n✯ Source version : 1.1"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'قناة دايموند',url="t.me/M10_Z5"},
-{text = 'المبرمج',url="t.me/blackbirdd"}},
-{{text = 'كروب دايموند',url="https://t.me/joinchat/fVbt6I2jHtowZDZi"}},
-{{text = 'المطور الاساسي',url="t.me/dia2i"}},
+{{text = 'قناة بقلاوة عراقية',url="https://t.me/ba8lawa"},
+{text = 'المبرمج',url="https://t.me/blackbirdd"}},
+{{text = 'كروب ولاية بطيخ',url="https://t.me/joinchat/d81A6EaDbKY3ZDc6"}},
+{{text = 'المطور الاساسي',url="https://t.me/blackbirdd"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/ba8lawa&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
