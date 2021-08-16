@@ -132,7 +132,7 @@ print([[
                                
 > CH › @EngineerTeaM
 ~> DEVELOPER › @abbasfadhil
-~~> Source Version 1.2
+~~> Source Version 1.1
 ]])
 sudos = dofile("./Info.lua") 
 SUDO = tonumber(sudos.SUDO)
@@ -1184,13 +1184,13 @@ if text == 'تحديث السورس ✯' and DevEngineer(msg) then
 send(msg.chat_id_, msg.id_,'✯︙جارٍ الان تحديث السورس الى اخر اصدار')
 os.execute('rm -rf Engineer.lua')
 os.execute('wget https://raw.githubusercontent.com/EngineerSource/Engineer/main/Engineer.lua')
-send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك اخر اصدار لسورس المهندس\n✯︙الاصدار » { v 1.2 }')
+send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك اخر اصدار لسورس المهندس\n✯︙الاصدار » { v 1.1 }')
 dofile('Engineer.lua')  
 end
 
 if text == 'مطور السورس ✯' and DevEngineer(msg) then 
 database:del(bot_id..'Srt:Bot') 
-send(msg.chat_id_, msg.id_,'✯︙اهلا بك عزيزي\n✯︙ان كان لديك استفسار او اي مشكلة\n✯︙يمكنك مراسلة مطور السورس\n✯︙حساب مطور السورس [اضـغـط هـنـا  𓆩•ENG.HASSAN•𓆪  ](t.me/blackbirdd)')
+send(msg.chat_id_, msg.id_,'✯︙اهلا بك عزيزي\n✯︙ان كان لديك استفسار او اي مشكلة\n✯︙يمكنك مراسلة مطور السورس\n✯︙حساب مطور السورس [اضـغـط هـنـا  𓆩•Eng.Hassan•𓆪  ](t.me/blackbirdd)')
 end
 
 if text == 'تحديث المتجر ✯' and DevEngineer(msg) then 
@@ -1379,7 +1379,7 @@ return false
 end
 if text == 'الاصـدار ✯' and DevEngineer(msg) then 
 database:del(bot_id..'Srt:Bot') 
-send(msg.chat_id_, msg.id_,'✯︙اصدار سورس المهندس \n✯︙الاصدار »{ v 1.2 }')
+send(msg.chat_id_, msg.id_,'✯︙اصدار سورس المهندس \n✯︙الاصدار »{ v 1.1 }')
 end
 if text == "ضع اسم للبوت ✯" and DevEngineer(msg) then  
 database:setex(bot_id..'Set:Name:Bot'..msg.sender_user_id_,300,true) 
@@ -2725,7 +2725,7 @@ if text == 'تحديث السورس' and DevEngineer(msg) then
 send(msg.chat_id_, msg.id_,'✯︙جارٍ الان تحديث السورس الى اخر اصدار')
 os.execute('rm -rf Engineer.lua')
 os.execute('wget https://raw.githubusercontent.com/EngineerSource/Engineer/main/Engineer.lua')
-send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك اخر اصدار لسورس المهندس\n✯︙الاصدار » { v 1.2 }')
+send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك اخر اصدار لسورس المهندس\n✯︙الاصدار » { v 1.1 }')
 dofile('Engineer.lua')  
 end
 if text == 'تحديث المتجر' and DevEngineer(msg) then 
@@ -3015,7 +3015,7 @@ end,nil)
 end
 
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'ياسورس' then
-Text = "[⦑ Welcome to Source ⦒](t.me/ba8lawa)\n[✯ ⦑ SOURCE Engineer ⦒](t.me/ba8lawa)\n✯ Source version : 1.2"
+Text = "[⦑ Welcome to Source ⦒](t.me/ba8lawa)\n[✯ ⦑ SOURCE Engineer ⦒](t.me/ba8lawa)\n✯ Source version : 1.1"
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = 'قناة دايموند',url="https://t.me/M10_Z5"},
@@ -4939,7 +4939,7 @@ end
 send(msg.chat_id_, msg.id_, t)
 end
 
-if text == ("رفع منشئ اساسي") or text == ("اس") and msg.reply_to_message_id_ and CoSu(msg) then
+if text == ("رفع منشئ اساسي") and msg.reply_to_message_id_ and CoSu(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -5013,7 +5013,7 @@ send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
 end
-if text == ("تنزيل منشئ اساسي") or text == ("اها؟") and msg.reply_to_message_id_ and CoSu(msg) then
+if text == ("تنزيل منشئ اساسي") and msg.reply_to_message_id_ and CoSu(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -5140,7 +5140,7 @@ end
 end
 end,nil)   
 end
-if text == "رفع منشئ" or text == "من" and msg.reply_to_message_id_ and BasicConstructor(msg) then
+if text == "رفع منشئ" and msg.reply_to_message_id_ and BasicConstructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -5319,7 +5319,7 @@ t = " ✯︙لا يوجد مدراء"
 end
 send(msg.chat_id_, msg.id_, t)
 end
-if text == ("رفع مدير") or text == ("مد") and msg.reply_to_message_id_ and Constructor(msg) then
+if text == ("رفع مدير") and msg.reply_to_message_id_ and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -5394,7 +5394,7 @@ send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
 end  
-if text == ("تنزيل مدير") or text == ("انزع")and msg.reply_to_message_id_ and Constructor(msg) then
+if text == ("تنزيل مدير") and msg.reply_to_message_id_ and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -5606,7 +5606,7 @@ t = " ✯︙لا يوجد ادمنيه"
 end
 send(msg.chat_id_, msg.id_, t)
 end
-if text == ("رفع ادمن") or text == ("اد") and msg.reply_to_message_id_ and Manager(msg) then
+if text == ("رفع ادمن") and msg.reply_to_message_id_ and Manager(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -5692,7 +5692,7 @@ send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
 end
-if text == ("تنزيل ادمن") or text == ("انزل") and msg.reply_to_message_id_ and Manager(msg) then
+if text == ("تنزيل ادمن") and msg.reply_to_message_id_ and Manager(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -6134,7 +6134,7 @@ t = " ✯︙لا يوجد مميزين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
-if text == ("رفع مميز") or text == ("م") and tonumber(msg.reply_to_message_id_) ~= 0 and Mod(msg) then
+if text == ("رفع مميز") and tonumber(msg.reply_to_message_id_) ~= 0 and Mod(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -6222,7 +6222,7 @@ end;end,nil)
 return false
 end
 
-if (text == ("تنزيل مميز") or text == ("حصر")) and msg.reply_to_message_id_ and Mod(msg) then
+if (text == ("تنزيل مميز")) and msg.reply_to_message_id_ and Mod(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -8753,57 +8753,9 @@ end
 
 if text == 'مطور السورس' or text == 'مطور سورس' or text == 'مطور المهندس' or text == 'مبرمج السورس' or text == 'مبرمج المهندس' then
 database:del(bot_id..'Srt:Bot') 
-send(msg.chat_id_, msg.id_,'✯︙اهلا بك عزيزي\n✯︙ان كان لديك استفسار او اي مشكلة\n✯︙يمكنك مراسلة مطور السورس\n✯︙حساب مطور السورس [اضـغـط هـنـا  𓆩•𝐀𝐁𝐁𝐀𝐒 𝐅𝐀𝐃𝐇𝐈𝐋•𓆪  ](t.me/abbasfadhil)')
+send(msg.chat_id_, msg.id_,'✯︙اهلا بك عزيزي\n✯︙ان كان لديك استفسار او اي مشكلة\n✯︙يمكنك مراسلة مطور السورس\n✯︙حساب مطور السورس [اضـغـط هـنـا  Eng.Hassan   ](t.me/blackbirdd)')
 end
 ---------------------
-if text == "تفعيل الالعاب المتطوره" or text == "p" and Manager(msg) then
-if database:get(bot_id..'Abs:Lock:Gamesinline'..msg.chat_id_) then
-Text = '\n✯︙تم تفعيل امر الالعاب المتطوره'
-database:del(bot_id..'Abs:Lock:Gamesinline'..msg.chat_id_)  
-else
-Text = '\n✯︙بالتاكيد تم تفعيل امر الالعاب المتطوره'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == "تعطيل الالعاب المتطوره" or text == "f" and Manager(msg) then
-if not database:get(bot_id..'Abs:Lock:Gamesinline'..msg.chat_id_) then
-database:set(bot_id..'Abs:Lock:Gamesinline'..msg.chat_id_,true)  
-Text = '\n✯︙تم تعطيل امر الالعاب المتطوره'
-else
-Text = '\n✯︙بالتاكيد تم تعطيل امر الالعاب المتطوره'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-
-if text == "الالعاب المتطوره" or text == "الالعاب الاحترافيه" then
-if not database:get(bot_id..'Abs:Lock:Gamesinline'..msg.chat_id_) then
-Text =[[
-*قائمه الالعاب المتطوره اضغط للعب*
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text="♟ الشطرنج ♟",url='https://t.me/T4TTTTBOT?game=chess'}},
-{{text="لعبة فلابي بيرد 🐥",url='https://t.me/awesomebot?game=FlappyBird'},{text="تحدي الرياضيات",url='https://t.me/gamebot?game=MathBattle'}},
-{{text="اكس او",url='t.me/xobot?start'},{text="سباق الدراجات 🏍",url='https://t.me/gamee?game=MotoFX'}},
-{{text="سباق سيارات 🏎",url='https://t.me/gamee?game=F1Racer'},{text="متشابه 👾",url='https://t.me/gamee?game=DiamondRows'}},
-{{text="كرة قدم ⚽",url='https://t.me/gamee?game=FootballStar'}},
-{{text="ورق🤹‍♂",url='https://t.me/gamee?game=Hexonix'},{text="Hexonix❌",url='https://t.me/gamee?game=Hexonix'}},
-{{text="MotoFx🏍️",url='https://t.me/gamee?game=MotoFx'}},
-{{text="لعبة 2048 🎰",url='https://t.me/awesomebot?game=g2048'},{text="Squares🏁",url='https://t.me/gamee?game=Squares'}},
-{{text="Atomic 1▶️",url='https://t.me/gamee?game=AtomicDrop1'},{text="Corsairs",url='https://t.me/gamebot?game=Corsairs'}},
-{{text="LumberJack",url='https://t.me/gamebot?game=LumberJack'}},
-{{text="LittlePlane",url='https://t.me/gamee?game=LittlePlane'},{text="RollerDisco",url='https://t.me/gamee?game=RollerDisco'}},
-{{text="🦖 لعبة التنين 🦖",url='https://t.me/T4TTTTBOT?game=dragon'},{text="🐍 لعبة الافعى 🐍",url='https://t.me/T4TTTTBOT?game=snake'}},
-{{text="🔵 لعبة الالوان 🔴",url='https://t.me/T4TTTTBOT?game=color'}},
-{{text="🚀 لعبة الصاروخ 🚀",url='https://t.me/T4TTTTBOT?game=rocket'},{text="🏹 لعبة السهام 🏹",url='https://t.me/T4TTTTBOT?game=arrow'}},
-{{text = 'المهندس حسن البصراوي', url="t.me/ba8lawa"}},
-
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-return false
-end end
---------------
 
 if text == "تفعيل صورتي" or text == 'تفعيل الصوره' then
 if Constructor(msg) then  
@@ -10033,7 +9985,7 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تنزيل الكل @(.*)$")}, start_function, nil)
 end
 
-if text == ("تنزيل الكل") or text == ("تك") and msg.reply_to_message_id_ ~= 0 and Manager(msg) then
+if text == ("تنزيل الكل") and msg.reply_to_message_id_ ~= 0 and Manager(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -10571,39 +10523,6 @@ end
 if text and text:match("^كول (.*)$") and not database:get(bot_id.."Speak:after:me"..msg.chat_id_) then
 local Textxt = text:match("^كول (.*)$")
 send(msg.chat_id_, msg.id_, '['..Textxt..']')
-end
-if text == 'تفعيل اغنيه' and CoSu(msg) then   
-if database:get(bot_id..'Abs:mp3:Abs'..msg.chat_id_) then
-Text = '✯︙تم تفعيل امر اغنيه الان ارسل اغنيه'
-database:del(bot_id..'Abs:mp3:Abs'..msg.chat_id_)  
-else
-Text = '✯︙بالتاكيد تم تفعيل امر اغنيه تستطيع ارسال اغنيه'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == 'تعطيل اغنيه' and CoSu(msg) then  
-if not database:get(bot_id..'Abs:mp3:Abs'..msg.chat_id_) then
-database:set(bot_id..'Abs:mp3:Abs'..msg.chat_id_,true)  
-Text = '\n✯︙تم تعطيل امر اغنيه'
-else
-Text = '\n✯︙بالتاكيد تم تعطيل امر اغنيه'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == "اغنيه" or text == "↫ اغنيه ᥀" or text == "اغاني" and not DevAbs:get(RoX..'Rio:mp3:Rio'..msg.chat_id_) and SourceCh(msg) then
-data,res = https.request('https://ccccxcc.ml/David/mp3.php')
-if res == 200 then
-Audios = json:decode(data)
-if Audios.Info == true then
-local Text ='*᥀︙تم اختيار الاغنيه لك*'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 𝙴𝙽𝙶𝙸𝙽𝙴𝙴𝚁.',url="t.me/ba8lawa"}},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice='..URL.escape(Audios.info)..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-end
 end
 
 if text == 'تفعيل فلم' and CoSu(msg) then   
@@ -11297,7 +11216,7 @@ Text = '\n✯︙بالتاكيد تم تعطيل ردود المطور'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text == 'تفعيل الايدي' and Manager(msg) or text == 'ت' and Manager(msg)then   
+if text == 'تفعيل الايدي' and Manager(msg) then   
 if database:get(bot_id..'Bot:Id'..msg.chat_id_)  then
 database:del(bot_id..'Bot:Id'..msg.chat_id_) 
 Text = '\n✯︙تم تفعيل الايدي' 
@@ -11306,7 +11225,7 @@ Text = '\n✯︙بالتاكيد تم تفعيل الايدي'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text == 'تعطيل الايدي' or text == 'تع' and Manager(msg) then  
+if text == 'تعطيل الايدي' and Manager(msg) then  
 if not database:get(bot_id..'Bot:Id'..msg.chat_id_)  then
 database:set(bot_id..'Bot:Id'..msg.chat_id_,true) 
 Text = '\n✯︙تم تعطيل الايدي' 
@@ -11369,7 +11288,7 @@ Text = '\n✯︙بالتاكيد تم تعطيل الرفع'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text == 'ايدي' or text == 'ا' and tonumber(msg.reply_to_message_id_) > 0 then
+if text == 'ايدي' and tonumber(msg.reply_to_message_id_) > 0 then
 function start_function(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(extra,data) 
 local Msguser = tonumber(database:get(bot_id..'Msg_User'..msg.chat_id_..':'..result.sender_user_id_) or 1) 
@@ -11463,7 +11382,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
 end
-if text == 'كشف' or text == 'ك' and tonumber(msg.reply_to_message_id_) > 0 then
+if text == 'كشف' and tonumber(msg.reply_to_message_id_) > 0 then
 function start_function(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(extra,data) 
 local rtp = Rutba(result.sender_user_id_,msg.chat_id_)
@@ -13016,7 +12935,7 @@ database:set(bot_id.." Engineer:zhrf_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^زغرفه (.*)$") and database:get(bot_id.." Engineer:zhrf_Bots"..msg.chat_id_) == "open" then
 local TextZhrfa = text:match("^زغرفه (.*)$")
-zh = https.request('https://rudi-dev.tk/Amir1/Boyka.php?en='..URL.escape(TextZhrfa)..'')
+zh = https.request('https://rudi-dev.tk/Amir1/Engineer.php?en='..URL.escape(TextZhrfa)..'')
 zx = JSON.decode(zh)
 t = "\n✯︙قائمه الزخرفه \nٴ≪━━━━ 𝐄𝐍𝐆𝐈𝐍𝐄𝐄𝐑 ━━━━≫ٴ\n"
 i = 0
@@ -13036,7 +12955,7 @@ database:set(bot_id.." Engineer:brj_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^برج (.*)$") and database:get(bot_id.." Engineer:brj_Bots"..msg.chat_id_) == "open" then
 local Textbrj = text:match("^برج (.*)$")
-gk = https.request('https://rudi-dev.tk/Amir2/Boyka.php?br='..URL.escape(Textbrj)..'')
+gk = https.request('https://rudi-dev.tk/Amir2/Engineer.php?br='..URL.escape(Textbrj)..'')
 br = JSON.decode(gk)
 i = 0
 for k,v in pairs(br.ok) do
@@ -13059,7 +12978,7 @@ database:set(bot_id.." Engineer:age_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^احسب (.*)$") and database:get(bot_id.." Engineer:age_Bots"..msg.chat_id_) == "open" then
 local Textage = text:match("^احسب (.*)$")
-ge = https.request('https://rudi-dev.tk/Amir3/Boyka.php?a=ge'..URL.escape(Textage)..'')
+ge = https.request('https://rudi-dev.tk/Amir3/Engineer.php?age='..URL.escape(Textage)..'')
 ag = JSON.decode(ge)
 i = 0
 for k,v in pairs(ag.ok) do
