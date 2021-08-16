@@ -3018,10 +3018,10 @@ if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or te
 Text = "[⦑ Welcome to Source ⦒](t.me/ba8lawa)\n[✯ ⦑ SOURCE Engineer ⦒](t.me/ba8lawa)\n✯ Source version : 1.2"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'قناة بقلاوة عراقية',url="https://t.me/ba8lawa"},
+{{text = 'قناة دايموند',url="https://t.me/M10_Z5"},
 {text = 'المبرمج',url="https://t.me/blackbirdd"}},
-{{text = 'كروب ولاية بطيخ',url="https://t.me/joinchat/d81A6EaDbKY3ZDc6"}},
-{{text = 'المطور الاساسي',url="https://t.me/blackbirdd"}},
+{{text = 'كروب دايموند',url="https://t.me/joinchat/fVbt6I2jHtowZDZi"}},
+{{text = 'المطور الاساسي',url="https://t.me/dia2i"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/ba8lawa&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -4939,7 +4939,7 @@ end
 send(msg.chat_id_, msg.id_, t)
 end
 
-if text == ("رفع منشئ اساسي") and msg.reply_to_message_id_ and CoSu(msg) then
+if text == ("رفع منشئ اساسي") or text == ("اس") and msg.reply_to_message_id_ and CoSu(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -5013,7 +5013,7 @@ send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
 end
-if text == ("تنزيل منشئ اساسي") and msg.reply_to_message_id_ and CoSu(msg) then
+if text == ("تنزيل منشئ اساسي") or text == ("اها؟") and msg.reply_to_message_id_ and CoSu(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -5140,7 +5140,7 @@ end
 end
 end,nil)   
 end
-if text == "رفع منشئ" and msg.reply_to_message_id_ and BasicConstructor(msg) then
+if text == "رفع منشئ" or text == "من" and msg.reply_to_message_id_ and BasicConstructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -5319,7 +5319,7 @@ t = " ✯︙لا يوجد مدراء"
 end
 send(msg.chat_id_, msg.id_, t)
 end
-if text == ("رفع مدير") and msg.reply_to_message_id_ and Constructor(msg) then
+if text == ("رفع مدير") or text == ("مد") and msg.reply_to_message_id_ and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -5394,7 +5394,7 @@ send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
 end  
-if text == ("تنزيل مدير") and msg.reply_to_message_id_ and Constructor(msg) then
+if text == ("تنزيل مدير") or text == ("انزع")and msg.reply_to_message_id_ and Constructor(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -5606,7 +5606,7 @@ t = " ✯︙لا يوجد ادمنيه"
 end
 send(msg.chat_id_, msg.id_, t)
 end
-if text == ("رفع ادمن") and msg.reply_to_message_id_ and Manager(msg) then
+if text == ("رفع ادمن") or text == ("اد") and msg.reply_to_message_id_ and Manager(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -5692,7 +5692,7 @@ send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
 end
-if text == ("تنزيل ادمن") and msg.reply_to_message_id_ and Manager(msg) then
+if text == ("تنزيل ادمن") or text == ("انزل") and msg.reply_to_message_id_ and Manager(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -6134,7 +6134,7 @@ t = " ✯︙لا يوجد مميزين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
-if text == ("رفع مميز") and tonumber(msg.reply_to_message_id_) ~= 0 and Mod(msg) then
+if text == ("رفع مميز") or text == ("م") and tonumber(msg.reply_to_message_id_) ~= 0 and Mod(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -6222,7 +6222,7 @@ end;end,nil)
 return false
 end
 
-if (text == ("تنزيل مميز")) and msg.reply_to_message_id_ and Mod(msg) then
+if (text == ("تنزيل مميز") or text == ("حصر")) and msg.reply_to_message_id_ and Mod(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -8756,7 +8756,7 @@ database:del(bot_id..'Srt:Bot')
 send(msg.chat_id_, msg.id_,'✯︙اهلا بك عزيزي\n✯︙ان كان لديك استفسار او اي مشكلة\n✯︙يمكنك مراسلة مطور السورس\n✯︙حساب مطور السورس [اضـغـط هـنـا  𓆩•𝐀𝐁𝐁𝐀𝐒 𝐅𝐀𝐃𝐇𝐈𝐋•𓆪  ](t.me/abbasfadhil)')
 end
 ---------------------
-if text == "تفعيل الالعاب المتطوره" and Manager(msg) then
+if text == "تفعيل الالعاب المتطوره" or text == "p" and Manager(msg) then
 if database:get(bot_id..'Abs:Lock:Gamesinline'..msg.chat_id_) then
 Text = '\n✯︙تم تفعيل امر الالعاب المتطوره'
 database:del(bot_id..'Abs:Lock:Gamesinline'..msg.chat_id_)  
@@ -8765,7 +8765,7 @@ Text = '\n✯︙بالتاكيد تم تفعيل امر الالعاب المت�
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text == "تعطيل الالعاب المتطوره" and Manager(msg) then
+if text == "تعطيل الالعاب المتطوره" or text == "f" and Manager(msg) then
 if not database:get(bot_id..'Abs:Lock:Gamesinline'..msg.chat_id_) then
 database:set(bot_id..'Abs:Lock:Gamesinline'..msg.chat_id_,true)  
 Text = '\n✯︙تم تعطيل امر الالعاب المتطوره'
@@ -10033,7 +10033,7 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تنزيل الكل @(.*)$")}, start_function, nil)
 end
 
-if text == ("تنزيل الكل") and msg.reply_to_message_id_ ~= 0 and Manager(msg) then
+if text == ("تنزيل الكل") or text == ("تك") and msg.reply_to_message_id_ ~= 0 and Manager(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -11297,7 +11297,7 @@ Text = '\n✯︙بالتاكيد تم تعطيل ردود المطور'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text == 'تفعيل الايدي' and Manager(msg) then   
+if text == 'تفعيل الايدي' and Manager(msg) or text == 'ت' and Manager(msg)then   
 if database:get(bot_id..'Bot:Id'..msg.chat_id_)  then
 database:del(bot_id..'Bot:Id'..msg.chat_id_) 
 Text = '\n✯︙تم تفعيل الايدي' 
@@ -11306,7 +11306,7 @@ Text = '\n✯︙بالتاكيد تم تفعيل الايدي'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text == 'تعطيل الايدي' and Manager(msg) then  
+if text == 'تعطيل الايدي' or text == 'تع' and Manager(msg) then  
 if not database:get(bot_id..'Bot:Id'..msg.chat_id_)  then
 database:set(bot_id..'Bot:Id'..msg.chat_id_,true) 
 Text = '\n✯︙تم تعطيل الايدي' 
@@ -11369,7 +11369,7 @@ Text = '\n✯︙بالتاكيد تم تعطيل الرفع'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
-if text == 'ايدي' and tonumber(msg.reply_to_message_id_) > 0 then
+if text == 'ايدي' or text == 'ا' and tonumber(msg.reply_to_message_id_) > 0 then
 function start_function(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(extra,data) 
 local Msguser = tonumber(database:get(bot_id..'Msg_User'..msg.chat_id_..':'..result.sender_user_id_) or 1) 
@@ -11463,7 +11463,7 @@ end
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
 end
-if text == 'كشف' and tonumber(msg.reply_to_message_id_) > 0 then
+if text == 'كشف' or text == 'ك' and tonumber(msg.reply_to_message_id_) > 0 then
 function start_function(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(extra,data) 
 local rtp = Rutba(result.sender_user_id_,msg.chat_id_)
