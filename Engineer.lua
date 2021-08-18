@@ -3020,7 +3020,7 @@ keyboard = {}
 keyboard.inline_keyboard = {
 {{text = 'قناة • ۧسہٰـمہٰعنہٰيٰ نہٰبٰٰضـڪَِ 🎶♥️',url="https://t.me/ae98mn"},
 {text = 'المبرمج',url="https://t.me/blackbirdd"}},
-{{text = 'كروب 𓆩ڛـٌﻤﻌـنٍٰـي🎧نبٌــۻڪّ𓆪 『🇮🇶』',url="https://t.me/joinchat/d81A6EaDbKY3ZDc6"}},
+{{text = 'كروب 𓆩ڛـٌﻤﻌـنٍٰـي🎧نبٌــۻڪّ𓆪 『🇮🇶』',url="https://t.me/joinchat/f-pELxn03cNmMDY6"}},
 {{text = 'المطور الاساسي',url="https://t.me/ae95mn"}},
 }
 local msg_id = msg.id_/2097152/0.5
