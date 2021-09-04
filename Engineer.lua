@@ -11785,18 +11785,18 @@ local interaction = Total_Msg(Msguser)
 local rtpg = rtpa
 local Engineera = {
 " ✯︙اروح فدوه للحلوين",
-" ✯︙احبك وانا بكمتطي يا دكمه من دكم قاطي",
+" ✯︙حلوة حبيبي معليك بالمضغوطين",
 " ✯︙جهرتك منورة ",
 " ✯︙هاي شكد حلو انتة",
-" ✯︙انت عسل انت توت والياخذك مني كون يموت",
-" ✯︙فدوة لربك ظيم وبراسك 60 حظ",
+" ✯︙كيكه وربي",
+" ✯︙اصلا مطوري احلئ",
 " ✯︙فديت الصاك محح",
-" ✯︙بس كلي امك متنسيه بنحله وجابت هجي عسل؟",
-" ✯︙ليس في الارض قمرا, كالذي في عيناك",
-" ✯︙لست امام عيني, لكنك كل ما ارى",
-" ✯︙ابتسامتك الاعجوبه الثامنه, واما السبع السابقات كلها انت",
+" ✯︙فدشـي عمي",
+" ✯︙دغيرها شبي هذا",
+" ✯︙شهالگيمر ",
+" ✯︙شهالصوره تخمبش ",
 " ✯︙فديت الحلو ",
-" ✯︙انت لو تسالني ماذا ينقصك؟ سأقول اقرأ اول كلمه",
+" ✯︙ببكن حلك ",
 }
 local rdphoto = Engineera[math.random(#Engineera)]
 if not database:get(bot_id..'Bot:Id:Photo'..msg.chat_id_) then      
@@ -11832,12 +11832,12 @@ else
 username = 'لا يوجد '
 end
 if result.status_.ID == "UserStatusRecently" and result.profile_photo_ ~= false then
-sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, Engineer.photos_[0].sizes_[1].photo_.persistent_id_,''..rdphoto..'\n✯︙ايديك ➸ '..msg.sender_user_id_..'\n✯︙معرفك ➸ '..username..'\n✯︙رتبتك ➸ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n✯︙موقعك ➸ '..rtpa..'\n✯︙تفاعلك ➸ '..Total_Msg(Msguser)..'\n✯︙رسائلك ➸ '..Msguser..'\n✯︙نسبه تفاعلك ➸ '..string.sub(nspatfa, 1,5)..' %\n✯︙السحكات ➸ '..edit..'\n✯︙نقاطك ➸ '..NUMPGAME..'\n''✯︙تحذير ➸ 'ممنوع تسرق اعضاء من الكروب وممنوع تخلي توحيد كروب اخر وبخلاف ذلك سوف تنحظر']\n')
+sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, Engineer.photos_[0].sizes_[1].photo_.persistent_id_,''..rdphoto..'\n✯︙ايديك ➸ '..msg.sender_user_id_..'\n✯︙معرفك ➸ '..username..'\n✯︙رتبتك ➸ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n✯︙موقعك ➸ '..rtpa..'\n✯︙تفاعلك ➸ '..Total_Msg(Msguser)..'\n✯︙رسائلك ➸ '..Msguser..'\n✯︙نسبه تفاعلك ➸ '..string.sub(nspatfa, 1,5)..' %\n✯︙السحكات ➸ '..edit..'\n✯︙نقاطك ➸ '..NUMPGAME..'\n')
 else 
 if result.status_.ID == "UserStatusEmpty" and result.profile_photo_ == false then
-send(msg.chat_id_, msg.id_,'[\n✯︙ايديك ➸ '..msg.sender_user_id_..'\n✯︙معرفك ➸ '..username..'\n✯︙رتبتك ➸ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n✯︙موقعك ➸ '..rtpa..'\n✯︙تفاعلك ➸ '..Total_Msg(Msguser)..'\n✯︙رسائلك ➸ '..Msguser..'\n✯︙نسبه  تفاعلك ➸ '..string.sub(nspatfa, 1,5)..' %\n✯︙السحكات ➸ '..edit..'\n✯︙نقاطك ➸ '..NUMPGAME..']\n''✯︙تحذير ➸ 'ممنوع تسرق اعضاء من الكروب وممنوع تخلي توحيد كروب اخر وبخلاف ذلك سوف تنحظر']\n')
+send(msg.chat_id_, msg.id_,'[\n✯︙ايديك ➸ '..msg.sender_user_id_..'\n✯︙معرفك ➸ '..username..'\n✯︙رتبتك ➸ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n✯︙موقعك ➸ '..rtpa..'\n✯︙تفاعلك ➸ '..Total_Msg(Msguser)..'\n✯︙رسائلك ➸ '..Msguser..'\n✯︙نسبه  تفاعلك ➸ '..string.sub(nspatfa, 1,5)..' %\n✯︙السحكات ➸ '..edit..'\n✯︙نقاطك ➸ '..NUMPGAME..']\n')
 else
-send(msg.chat_id_, msg.id_, '\n✯︙الصوره ➸ ليس لديك صور في حسابك'..'[\n✯︙ايديك ➸ '..msg.sender_user_id_..'\n✯︙معرفك ➸ '..username..'\n✯︙رتبتك ➸ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n✯︙موقعك ➸ '..rtpa..'\n✯︙تفاعلك ➸ '..Total_Msg(Msguser)..'\n✯︙رسائلك ➸ '..Msguser..'\n✯︙نسبه تفاعلك ➸ '..string.sub(nspatfa, 1,5)..' %\n✯︙السحكات ➸ '..edit..'\n✯︙نقاطك ➸ '..NUMPGAME..']\n'✯︙تحذير ➸ 'ممنوع تسرق اعضاء من الكروب وممنوع تخلي توحيد كروب اخر وبخلاف ذلك سوف تنحظر']\n')
+send(msg.chat_id_, msg.id_, '\n✯︙الصوره ➸ ليس لديك صور في حسابك'..'[\n✯︙ايديك ➸ '..msg.sender_user_id_..'\n✯︙معرفك ➸ '..username..'\n✯︙رتبتك ➸ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n✯︙موقعك ➸ '..rtpa..'\n✯︙تفاعلك ➸ '..Total_Msg(Msguser)..'\n✯︙رسائلك ➸ '..Msguser..'\n✯︙نسبه تفاعلك ➸ '..string.sub(nspatfa, 1,5)..' %\n✯︙السحكات ➸ '..edit..'\n✯︙نقاطك ➸ '..NUMPGAME..']\n')
 end 
 end
 end
