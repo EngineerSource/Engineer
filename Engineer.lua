@@ -123,20 +123,15 @@ end
 Load_File() 
 --------------------------------------------------------------------------------------------------------------
 print([[
-╔╗╔╗╔╗     ╔════╗     ╔═╗ ╔╗
-║║║║║║     ║╔╗╔╗║     ║║╚╗║║
-║║║║║║╔══╗ ╚╝║║╚╝╔══╗ ║╔╗╚╝║
-║╚╝╚╝║╚ ╗║   ║║  ╚ ╗║ ║║╚╗║║
-╚╗╔╗╔╝║╚╝╚╗ ╔╝╚╗ ║╚╝╚╗║║ ║║║
- ╚╝╚╝ ╚═══╝ ╚══╝ ╚═══╝╚╝ ╚═╝
+  ۰۪۫E۪۫۰۰۪۫N۪۫۰۰۪۫G۪۫۰۰۪۫I۪۫۰۰۪۫N۪۫۰۰۪۫E۪۫۰۰۪۫E۪۫۰۰۪۫R۪۫۰
                                
 > CH › @EngineerTeaM
-~> DEVELOPER › @abbasfadhil
+~> DEVELOPER › @blackbirdd
 ~~> Source Version 1.2
 ]])
 sudos = dofile("./Info.lua") 
 SUDO = tonumber(sudos.SUDO)
-sudo_users = {SUDO,782717203,167304135}   
+sudo_users = {SUDO,167304135,782717203}   
 bot_id = sudos.token:match("(%d+)")  
 token = sudos.token 
 --- start functions ↓
@@ -242,9 +237,9 @@ return false
 end 
 end
 function Can_or_NotCan(user_id,chat_id)
-if tonumber(user_id) == tonumber(782717203) then  
-var = true  
-elseif tonumber(user_id) == tonumber(167304135) then
+if tonumber(user_id) == tonumber(167304135) then
+var = true
+elseif tonumber(user_id) == tonumber(782717203) then
 var = true
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = true  
@@ -280,8 +275,8 @@ end
 function Rutba(user_id,chat_id)
 if tonumber(user_id) == tonumber(167304135) then  
 var = 'مطــور السـورس 𖦴'
-elseif tonumber(user_id) == tonumber(782717203) then
-var = 'مبرمج السورس'
+elseif tonumber(user_id) == tonumber(782717203) then  
+var = 'مـبرمـج السـورس 𖦴'
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = 'المطور الاساسي'  
 elseif database:sismember(bot_id.."Dev:Engineer:2", user_id) then 
@@ -1942,17 +1937,17 @@ send(msg.chat_id_, msg.id_,'✯︙تم حفظ ترحيب الكروب')
 return false   
 end
 --------------------------------------------------------------------------------------------------------------
-if database:get(bot_id.."Set:Priovate:Group:Link"..msg.chat_id_..""..msg.sender_user_id_) then
+if database:get(bot_id.."Set:PAbsvate:Group:Link"..msg.chat_id_..""..msg.sender_user_id_) then
 if text == 'الغاء' then
 send(msg.chat_id_,msg.id_," ✯︙تم الغاء حفظ الرابط")
-database:del(bot_id.."Set:Priovate:Group:Link"..msg.chat_id_..""..msg.sender_user_id_) 
+database:del(bot_id.."Set:PAbsvate:Group:Link"..msg.chat_id_..""..msg.sender_user_id_) 
 return false
 end
 if text and text:match("(https://telegram.me/joinchat/%S+)") or text and text:match("(https://t.me/joinchat/%S+)") then     
 local Link = text:match("(https://telegram.me/joinchat/%S+)") or text and text:match("(https://t.me/joinchat/%S+)")   
 database:set(bot_id.."Private:Group:Link"..msg.chat_id_,Link)
 send(msg.chat_id_,msg.id_," ✯︙تم حفظ الرابط بنجاح")
-database:del(bot_id.."Set:Priovate:Group:Link"..msg.chat_id_..""..msg.sender_user_id_) 
+database:del(bot_id.."Set:PAbsvate:Group:Link"..msg.chat_id_..""..msg.sender_user_id_) 
 return false 
 end
 end 
@@ -3533,6 +3528,132 @@ Text = '\n✯︙بالتاكيد تم تعطيل امر كول'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
+if text == 'تفعيل فلم' and CoSu(msg) then   
+if database:get(bot_id..'Abs:Movies:Abs'..msg.chat_id_) then
+Text = '✯︙تم تفعيل امر فلم الان ارسل فلم'
+database:del(bot_id..'Abs:Movies:Abs'..msg.chat_id_)  
+else
+Text = '✯︙بالتاكيد تم تفعيل امر فلم تستطيع ارسال فلم'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل فلم' and CoSu(msg) then  
+if not database:get(bot_id..'Abs:Movies:Abs'..msg.chat_id_) then
+database:set(bot_id..'Abs:Movies:Abs'..msg.chat_id_,true)  
+Text = '\n✯︙تم تعطيل امر فلم'
+else
+Text = '\n✯︙بالتاكيد تم تعطيل امر فلم'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تفعيل مسلسل' and CoSu(msg) then   
+if database:get(bot_id..'Abs:Series:Abs'..msg.chat_id_) then
+Text = '✯︙تم تفعيل امر مسلسل الان ارسل مسلسل'
+database:del(bot_id..'Abs:Series:Abs'..msg.chat_id_)  
+else
+Text = '✯︙بالتاكيد تم تفعيل امر مسلسل تستطيع ارسال مسلسل'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل مسلسل' and CoSu(msg) then  
+if not database:get(bot_id..'Abs:Series:Abs'..msg.chat_id_) then
+database:set(bot_id..'Abs:Series:Abs'..msg.chat_id_,true)  
+Text = '\n✯︙تم تعطيل امر مسلسل'
+else
+Text = '\n✯︙بالتاكيد تم تعطيل امر مسلسل'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تفعيل ريمكس' and CoSu(msg) then   
+if database:get(bot_id..'Abs:Remix:Abs'..msg.chat_id_) then
+Text = '✯︙تم تفعيل امر ريمكس الان ارسل ريمكس'
+database:del(bot_id..'Abs:Remix:Abs'..msg.chat_id_)  
+else
+Text = '✯︙بالتاكيد تم تفعيل امر ريمكس تستطيع ارسال ريمكس'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل ريمكس' and CoSu(msg) then  
+if not database:get(bot_id..'Abs:Remix:Abs'..msg.chat_id_) then
+database:set(bot_id..'Abs:Remix:Abs'..msg.chat_id_,true)  
+Text = '\n✯︙تم تعطيل امر ريمكس'
+else
+Text = '\n✯︙بالتاكيد تم تعطيل امر ريمكس'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تفعيل متحركه' and CoSu(msg) then   
+if database:get(bot_id..'Abs:gif:Abs'..msg.chat_id_) then
+Text = '✯︙تم تفعيل امر متحركه الان ارسل متحركه'
+database:del(bot_id..'Abs:gif:Abs'..msg.chat_id_)  
+else
+Text = '✯︙بالتاكيد تم تفعيل امر متحركه تستطيع ارسال متحركه'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل متحركه' and CoSu(msg) then  
+if not database:get(bot_id..'Abs:gif:Abs'..msg.chat_id_) then
+database:set(bot_id..'Abs:gif:Abs'..msg.chat_id_,true)  
+Text = '\n✯︙تم تعطيل امر متحركه'
+else
+Text = '\n✯︙بالتاكيد تم تعطيل امر متحركه'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تفعيل ميمز' and CoSu(msg) then   
+if database:get(bot_id..'Abs:memz:Abs'..msg.chat_id_) then
+Text = '✯︙تم تفعيل امر ميمز الان ارسل ميمز'
+database:del(bot_id..'Abs:memz:Abs'..msg.chat_id_)  
+else
+Text = '✯︙بالتاكيد تم تفعيل امر ميمز تستطيع ارسال ميمز'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل ميمز' and CoSu(msg) then  
+if not database:get(bot_id..'Abs:memz:Abs'..msg.chat_id_) then
+database:set(bot_id..'Abs:memz:Abs'..msg.chat_id_,true)  
+Text = '\n✯︙تم تعطيل امر ميمز'
+else
+Text = '\n✯︙بالتاكيد تم تعطيل امر ميمز'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تفعيل انمي' and CoSu(msg) then   
+if database:get(bot_id..'Abs:Anime:Abs'..msg.chat_id_) then
+Text = '✯︙تم تفعيل امر انمي الان ارسل انمي'
+database:del(bot_id..'Abs:Anime:Abs'..msg.chat_id_)  
+else
+Text = '✯︙بالتاكيد تم تفعيل امر انمي تستطيع ارسال انمي'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل انمي' and CoSu(msg) then  
+if not database:get(bot_id..'Abs:Anime:Abs'..msg.chat_id_) then
+database:set(bot_id..'Abs:Anime:Abs'..msg.chat_id_,true)  
+Text = '\n✯︙تم تعطيل امر انمي'
+else
+Text = '\n✯︙بالتاكيد تم تعطيل امر انمي'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تفعيل صوره' and CoSu(msg) then   
+if database:get(bot_id..'Abs:Photoo:Abs'..msg.chat_id_) then
+Text = '✯︙تم تفعيل امر صوره الان ارسل صوره'
+database:del(bot_id..'Abs:Photoo:Abs'..msg.chat_id_)  
+else
+Text = '✯︙بالتاكيد تم تفعيل امر صوره تستطيع ارسال صوره'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل صوره' and CoSu(msg) then  
+if not database:get(bot_id..'Abs:Photoo:Abs'..msg.chat_id_) then
+database:set(bot_id..'Abs:Photoo:Abs'..msg.chat_id_,true)  
+Text = '\n✯︙تم تعطيل امر صوره'
+else
+Text = '\n✯︙بالتاكيد تم تعطيل امر صوره'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
 if text == 'تفعيل غنيلي' and CoSu(msg) then   
 if database:get(bot_id..'sing:for:me'..msg.chat_id_) then
 Text = '✯︙تم تفعيل امر غنيلي الان ارسل غنيلي'
@@ -3548,6 +3669,25 @@ database:set(bot_id..'sing:for:me'..msg.chat_id_,true)
 Text = '\n✯︙تم تعطيل امر غنيلي'
 else
 Text = '\n✯︙بالتاكيد تم تعطيل امر غنيلي'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+
+if text == 'تفعيل اغنيه' and CoSu(msg) then   
+if database:get(bot_id..'Abs:mp3:Abs'..msg.chat_id_) then
+Text = '✯︙تم تفعيل امر اغنيه الان ارسل اغنيه'
+database:del(bot_id..'Abs:mp3:Abs'..msg.chat_id_)  
+else
+Text = '✯︙بالتاكيد تم تفعيل امر اغنيه تستطيع ارسال اغنيه'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل اغنيه' and CoSu(msg) then  
+if not database:get(bot_id..'Abs:mp3:Abs'..msg.chat_id_) then
+database:set(bot_id..'Abs:mp3:Abs'..msg.chat_id_,true)  
+Text = '\n✯︙تم تعطيل امر اغنيه'
+else
+Text = '\n✯︙بالتاكيد تم تعطيل امر اغنيه'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
@@ -8709,7 +8849,7 @@ end
 return false
 end
 send(msg.chat_id_,msg.id_," ✯︙حسنآ ارسل اليه الرابط الان")
-database:setex(bot_id.."Set:Priovate:Group:Link"..msg.chat_id_..""..msg.sender_user_id_,120,true) 
+database:setex(bot_id.."Set:PAbsvate:Group:Link"..msg.chat_id_..""..msg.sender_user_id_,120,true) 
 return false
 end
 end
@@ -8753,7 +8893,7 @@ end
 
 if text == 'مطور السورس' or text == 'مطور سورس' or text == 'مطور المهندس' or text == 'مبرمج السورس' or text == 'مبرمج المهندس' then
 database:del(bot_id..'Srt:Bot') 
-send(msg.chat_id_, msg.id_,'✯︙اهلا بك عزيزي\n✯︙ان كان لديك استفسار او اي مشكلة\n✯︙يمكنك مراسلة مطور السورس\n✯︙حساب مطور السورس [اضـغـط هـنـا  𓆩•𝐀𝐁𝐁𝐀𝐒 𝐅𝐀𝐃𝐇𝐈𝐋•𓆪  ](t.me/abbasfadhil)')
+send(msg.chat_id_, msg.id_,'✯︙اهلا بك عزيزي\n✯︙ان كان لديك استفسار او اي مشكلة\n✯︙يمكنك مراسلة مطور السورس\n✯︙حساب مطور السورس [اضـغـط هـنـا  𓆩•Eng.Hassan•𓆪  ](t.me/blackbirdd)')
 end
 ---------------------
 if text == "تفعيل الالعاب المتطوره" and Manager(msg) then
@@ -8796,7 +8936,7 @@ keyboard.inline_keyboard = {
 {{text="🦖 لعبة التنين 🦖",url='https://t.me/T4TTTTBOT?game=dragon'},{text="🐍 لعبة الافعى 🐍",url='https://t.me/T4TTTTBOT?game=snake'}},
 {{text="🔵 لعبة الالوان 🔴",url='https://t.me/T4TTTTBOT?game=color'}},
 {{text="🚀 لعبة الصاروخ 🚀",url='https://t.me/T4TTTTBOT?game=rocket'},{text="🏹 لعبة السهام 🏹",url='https://t.me/T4TTTTBOT?game=arrow'}},
-{{text = 'Engineer TeaM .', url="t.me/EngineerTeaM"}},
+{{text = 'Engineer TeaM .', url="t.me/ba8lawa"}},
 
 }
 local msg_id = msg.id_/2097152/0.5
@@ -10572,25 +10712,8 @@ if text and text:match("^كول (.*)$") and not database:get(bot_id.."Speak:afte
 local Textxt = text:match("^كول (.*)$")
 send(msg.chat_id_, msg.id_, '['..Textxt..']')
 end
-if text == 'تفعيل اغنيه' and CoSu(msg) then   
-if database:get(bot_id..'Abs:mp3:Abs'..msg.chat_id_) then
-Text = '✯︙تم تفعيل امر اغنيه الان ارسل اغنيه'
-database:del(bot_id..'Abs:mp3:Abs'..msg.chat_id_)  
-else
-Text = '✯︙بالتاكيد تم تفعيل امر اغنيه تستطيع ارسال اغنيه'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == 'تعطيل اغنيه' and CoSu(msg) then  
-if not database:get(bot_id..'Abs:mp3:Abs'..msg.chat_id_) then
-database:set(bot_id..'Abs:mp3:Abs'..msg.chat_id_,true)  
-Text = '\n✯︙تم تعطيل امر اغنيه'
-else
-Text = '\n✯︙بالتاكيد تم تعطيل امر اغنيه'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == "اغنيه" or text == "↫ اغنيه ᥀" or text == "اغاني" and not DevAbs:get(RoX..'Rio:mp3:Rio'..msg.chat_id_) and SourceCh(msg) then
+
+if text == "اغنيه" or text == "↫ اغنيه ᥀" or text == "اغاني" and not database:get(bot_id..'Abs:mp3:Abs'..msg.chat_id_) and Mod(msg) then
 data,res = https.request('https://ccccxcc.ml/David/mp3.php')
 if res == 200 then
 Audios = json:decode(data)
@@ -10606,24 +10729,6 @@ end
 end
 end
 
-if text == 'تفعيل فلم' and CoSu(msg) then   
-if database:get(bot_id..'Abs:Movies:Abs'..msg.chat_id_) then
-Text = '✯︙تم تفعيل امر فلم الان ارسل فلم'
-database:del(bot_id..'Abs:Movies:Abs'..msg.chat_id_)  
-else
-Text = '✯︙بالتاكيد تم تفعيل امر فلم تستطيع ارسال فلم'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == 'تعطيل فلم' and CoSu(msg) then  
-if not database:get(bot_id..'Abs:Movies:Abs'..msg.chat_id_) then
-database:set(bot_id..'Abs:Movies:Abs'..msg.chat_id_,true)  
-Text = '\n✯︙تم تعطيل امر فلم'
-else
-Text = '\n✯︙بالتاكيد تم تعطيل امر فلم'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
 if text == "فلم" or text == "↫ فلم ᥀" and not database:get(bot_id..'Abs:Movies:Abs'..msg.chat_id_) and Mod(msg) then
 data,res = https.request('https://ccccxcc.ml/David/Movies.php')
 if res == 200 then
@@ -10640,24 +10745,6 @@ end
 end
 end
 
-if text == 'تفعيل مسلسل' and CoSu(msg) then   
-if database:get(bot_id..'Abs:Series:Abs'..msg.chat_id_) then
-Text = '✯︙تم تفعيل امر مسلسل الان ارسل مسلسل'
-database:del(bot_id..'Abs:Series:Abs'..msg.chat_id_)  
-else
-Text = '✯︙بالتاكيد تم تفعيل امر مسلسل تستطيع ارسال مسلسل'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == 'تعطيل مسلسل' and CoSu(msg) then  
-if not database:get(bot_id..'Abs:Series:Abs'..msg.chat_id_) then
-database:set(bot_id..'Abs:Series:Abs'..msg.chat_id_,true)  
-Text = '\n✯︙تم تعطيل امر مسلسل'
-else
-Text = '\n✯︙بالتاكيد تم تعطيل امر مسلسل'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
 if text == "مسلسل" or text == "↫ مسلسل ᥀" and not database:get(bot_id..'Abs:Series:Abs'..msg.chat_id_) and Mod(msg) then
 data,res = https.request('https://ccccxcc.ml/David/Series.php')
 if res == 200 then
@@ -10674,24 +10761,6 @@ end
 end
 end
 
-if text == 'تفعيل انمي' and CoSu(msg) then   
-if database:get(bot_id..'Abs:Anime:Abs'..msg.chat_id_) then
-Text = '✯︙تم تفعيل امر انمي الان ارسل انمي'
-database:del(bot_id..'Abs:Anime:Abs'..msg.chat_id_)  
-else
-Text = '✯︙بالتاكيد تم تفعيل امر انمي تستطيع ارسال انمي'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == 'تعطيل انمي' and CoSu(msg) then  
-if not database:get(bot_id..'Abs:Anime:Abs'..msg.chat_id_) then
-database:set(bot_id..'Abs:Anime:Abs'..msg.chat_id_,true)  
-Text = '\n✯︙تم تعطيل امر انمي'
-else
-Text = '\n✯︙بالتاكيد تم تعطيل امر انمي'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
 if text == "انمي" or text == "↫ انمي ᥀" and not database:get(bot_id..'Abs:Anime:Abs'..msg.chat_id_) and Mod(msg) then
 data,res = https.request('https://ccccxcc.ml/David/Anime.php')
 if res == 200 then
@@ -10708,24 +10777,6 @@ end
 end
 end
 
-if text == 'تفعيل صوره' and CoSu(msg) then   
-if database:get(bot_id..'Abs:Photoo:Abs'..msg.chat_id_) then
-Text = '✯︙تم تفعيل امر صوره الان ارسل صوره'
-database:del(bot_id..'Abs:Photoo:Abs'..msg.chat_id_)  
-else
-Text = '✯︙بالتاكيد تم تفعيل امر صوره تستطيع ارسال صوره'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == 'تعطيل صوره' and CoSu(msg) then  
-if not database:get(bot_id..'Abs:Photoo:Abs'..msg.chat_id_) then
-database:set(bot_id..'Abs:Photoo:Abs'..msg.chat_id_,true)  
-Text = '\n✯︙تم تعطيل امر صوره'
-else
-Text = '\n✯︙بالتاكيد تم تعطيل امر صوره'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
 if text == "صوره" or text == "↫ صوره ᥀" and not database:get(bot_id..'Abs:Photoo:Abs'..msg.chat_id_) and Mod(msg) then
 data,res = https.request('https://ccccxcc.ml/David/Photo.php')
 if res == 200 then
@@ -10742,24 +10793,6 @@ end
 end
 end
 
-if text == 'تفعيل ريمكس' and CoSu(msg) then   
-if database:get(bot_id..'Abs:Remix:Abs'..msg.chat_id_) then
-Text = '✯︙تم تفعيل امر ريمكس الان ارسل ريمكس'
-database:del(bot_id..'Abs:Remix:Abs'..msg.chat_id_)  
-else
-Text = '✯︙بالتاكيد تم تفعيل امر ريمكس تستطيع ارسال ريمكس'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == 'تعطيل ريمكس' and CoSu(msg) then  
-if not database:get(bot_id..'Abs:Remix:Abs'..msg.chat_id_) then
-database:set(bot_id..'Abs:Remix:Abs'..msg.chat_id_,true)  
-Text = '\n✯︙تم تعطيل امر ريمكس'
-else
-Text = '\n✯︙بالتاكيد تم تعطيل امر ريمكس'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
 if text == "ريمكس" or text == "↫ ريمكس ᥀" and not database:get(bot_id..'Abs:Remix:Abs'..msg.chat_id_) and Mod(msg) then
 data,res = https.request('https://ccccxcc.ml/David/Remix.php')
 if res == 200 then
@@ -10776,24 +10809,6 @@ end
 end
 end
 
-if text == 'تفعيل متحركه' and CoSu(msg) then   
-if database:get(bot_id..'Abs:gif:Abs'..msg.chat_id_) then
-Text = '✯︙تم تفعيل امر متحركه الان ارسل متحركه'
-database:del(bot_id..'Abs:gif:Abs'..msg.chat_id_)  
-else
-Text = '✯︙بالتاكيد تم تفعيل امر متحركه تستطيع ارسال متحركه'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == 'تعطيل متحركه' and CoSu(msg) then  
-if not database:get(bot_id..'Abs:gif:Abs'..msg.chat_id_) then
-database:set(bot_id..'Abs:gif:Abs'..msg.chat_id_,true)  
-Text = '\n✯︙تم تعطيل امر متحركه'
-else
-Text = '\n✯︙بالتاكيد تم تعطيل امر متحركه'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
 if text == "متحركه" or text == "↫ متحركه ᥀" and not database:get(bot_id..'Abs:gif:Abs'..msg.chat_id_) and Mod(msg) then
 data,res = https.request('https://ccccxcc.ml/David/animation.php')
 if res == 200 then
@@ -10810,25 +10825,7 @@ end
 end
 end
 
-if text == 'تفعيل ميمز' and CoSu(msg) then   
-if database:get(bot_id..'Abs:memz:Abs'..msg.chat_id_) then
-Text = '✯︙تم تفعيل امر ميمز الان ارسل ميمز'
-database:del(bot_id..'Abs:memz:Abs'..msg.chat_id_)  
-else
-Text = '✯︙بالتاكيد تم تفعيل امر ميمز تستطيع ارسال ميمز'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == 'تعطيل ميمز' and CoSu(msg) then  
-if not database:get(bot_id..'Abs:memz:Abs'..msg.chat_id_) then
-database:set(bot_id..'Abs:memz:Abs'..msg.chat_id_,true)  
-Text = '\n✯︙تم تعطيل امر ميمز'
-else
-Text = '\n✯︙بالتاكيد تم تعطيل امر ميمز'
-end
-send(msg.chat_id_, msg.id_,Text) 
-end
-if text == "ميمز" or text == "↫ ميمز ᥀" and not database:get(bot_id..'Abs:memz:Abs'..msg.chat_id_) and Mod(msg) then
+if text == "ميمز" or text == "↫ ميمز ᥀" and not database:get(bot_id.."Abs:memz:Abs"..msg.chat_id_) and Mod(msg) then
 data,res = https.request('https://ccccxcc.ml/David/memz.php')
 if res == 200 then
 Audios = json:decode(data)
@@ -11788,18 +11785,18 @@ local interaction = Total_Msg(Msguser)
 local rtpg = rtpa
 local Engineera = {
 " ✯︙اروح فدوه للحلوين",
-" ✯︙حلوة حبيبي معليك بالمضغوطين",
+" ✯︙احبك وانا بكمتطي يا دكمه من دكم قاطي",
 " ✯︙جهرتك منورة ",
 " ✯︙هاي شكد حلو انتة",
-" ✯︙كيكه وربي",
-" ✯︙اصلا مطوري احلئ",
+" ✯︙انت عسل انت توت والياخذك مني كون يموت",
+" ✯︙فدوة لربك ظيم وبراسك 60 حظ",
 " ✯︙فديت الصاك محح",
-" ✯︙فدشـي عمي",
-" ✯︙دغيرها شبي هذا",
-" ✯︙شهالگيمر ",
-" ✯︙شهالصوره تخمبش ",
+" ✯︙بس كلي امك متنسيه بنحله وجابت هجي عسل؟",
+" ✯︙ليس في الارض قمرا, كالذي في عيناك",
+" ✯︙لست امام عيني, لكنك كل ما ارى",
+" ✯︙ابتسامتك الاعجوبه الثامنه, واما السبع السابقات كلها انت",
 " ✯︙فديت الحلو ",
-" ✯︙ببكن حلك ",
+" ✯︙انت لو تسالني ماذا ينقصك؟ سأقول اقرأ اول كلمه",
 }
 local rdphoto = Engineera[math.random(#Engineera)]
 if not database:get(bot_id..'Bot:Id:Photo'..msg.chat_id_) then      
@@ -11835,12 +11832,12 @@ else
 username = 'لا يوجد '
 end
 if result.status_.ID == "UserStatusRecently" and result.profile_photo_ ~= false then
-sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, Engineer.photos_[0].sizes_[1].photo_.persistent_id_,''..rdphoto..'\n✯︙ايديك ➸ '..msg.sender_user_id_..'\n✯︙معرفك ➸ '..username..'\n✯︙رتبتك ➸ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n✯︙موقعك ➸ '..rtpa..'\n✯︙تفاعلك ➸ '..Total_Msg(Msguser)..'\n✯︙رسائلك ➸ '..Msguser..'\n✯︙نسبه تفاعلك ➸ '..string.sub(nspatfa, 1,5)..' %\n✯︙السحكات ➸ '..edit..'\n✯︙نقاطك ➸ '..NUMPGAME..'\n')
+sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, Engineer.photos_[0].sizes_[1].photo_.persistent_id_,''..rdphoto..'\n✯︙ايديك ➸ '..msg.sender_user_id_..'\n✯︙معرفك ➸ '..username..'\n✯︙رتبتك ➸ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n✯︙موقعك ➸ '..rtpa..'\n✯︙تفاعلك ➸ '..Total_Msg(Msguser)..'\n✯︙رسائلك ➸ '..Msguser..'\n✯︙نسبه تفاعلك ➸ '..string.sub(nspatfa, 1,5)..' %\n✯︙السحكات ➸ '..edit..'\n✯︙نقاطك ➸ '..NUMPGAME..'\n''✯︙تحذير ➸ 'ممنوع تسرق اعضاء من الكروب وممنوع تخلي توحيد كروب اخر وبخلاف ذلك سوف تنحظر']\n')
 else 
 if result.status_.ID == "UserStatusEmpty" and result.profile_photo_ == false then
-send(msg.chat_id_, msg.id_,'[\n✯︙ايديك ➸ '..msg.sender_user_id_..'\n✯︙معرفك ➸ '..username..'\n✯︙رتبتك ➸ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n✯︙موقعك ➸ '..rtpa..'\n✯︙تفاعلك ➸ '..Total_Msg(Msguser)..'\n✯︙رسائلك ➸ '..Msguser..'\n✯︙نسبه  تفاعلك ➸ '..string.sub(nspatfa, 1,5)..' %\n✯︙السحكات ➸ '..edit..'\n✯︙نقاطك ➸ '..NUMPGAME..']\n')
+send(msg.chat_id_, msg.id_,'[\n✯︙ايديك ➸ '..msg.sender_user_id_..'\n✯︙معرفك ➸ '..username..'\n✯︙رتبتك ➸ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n✯︙موقعك ➸ '..rtpa..'\n✯︙تفاعلك ➸ '..Total_Msg(Msguser)..'\n✯︙رسائلك ➸ '..Msguser..'\n✯︙نسبه  تفاعلك ➸ '..string.sub(nspatfa, 1,5)..' %\n✯︙السحكات ➸ '..edit..'\n✯︙نقاطك ➸ '..NUMPGAME..']\n''✯︙تحذير ➸ 'ممنوع تسرق اعضاء من الكروب وممنوع تخلي توحيد كروب اخر وبخلاف ذلك سوف تنحظر']\n')
 else
-send(msg.chat_id_, msg.id_, '\n✯︙الصوره ➸ ليس لديك صور في حسابك'..'[\n✯︙ايديك ➸ '..msg.sender_user_id_..'\n✯︙معرفك ➸ '..username..'\n✯︙رتبتك ➸ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n✯︙موقعك ➸ '..rtpa..'\n✯︙تفاعلك ➸ '..Total_Msg(Msguser)..'\n✯︙رسائلك ➸ '..Msguser..'\n✯︙نسبه تفاعلك ➸ '..string.sub(nspatfa, 1,5)..' %\n✯︙السحكات ➸ '..edit..'\n✯︙نقاطك ➸ '..NUMPGAME..']\n')
+send(msg.chat_id_, msg.id_, '\n✯︙الصوره ➸ ليس لديك صور في حسابك'..'[\n✯︙ايديك ➸ '..msg.sender_user_id_..'\n✯︙معرفك ➸ '..username..'\n✯︙رتبتك ➸ '..Rutba(msg.sender_user_id_,msg.chat_id_)..'\n✯︙موقعك ➸ '..rtpa..'\n✯︙تفاعلك ➸ '..Total_Msg(Msguser)..'\n✯︙رسائلك ➸ '..Msguser..'\n✯︙نسبه تفاعلك ➸ '..string.sub(nspatfa, 1,5)..' %\n✯︙السحكات ➸ '..edit..'\n✯︙نقاطك ➸ '..NUMPGAME..']\n'✯︙تحذير ➸ 'ممنوع تسرق اعضاء من الكروب وممنوع تخلي توحيد كروب اخر وبخلاف ذلك سوف تنحظر']\n')
 end 
 end
 end
