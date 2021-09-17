@@ -3066,10 +3066,10 @@ https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. ms
 end
 
 if text == 'ضياء' or text == 'المطور' then
-Text = "[⦑ وياك ضياء تفضل ⦒](t.me/dia2i)\n[⦑ القناة الخاصة ⦒](t.me/M10_Z5)\n"
+Text = "[⦑ ويآإگ♥̨̥̬̩ ضـياءء تـ♥̨̥̬̩فضل ⦒](t.me/dia2i)\n[⦑ قـ♥̨̥̬̩نآإتـ♥̨̥̬̩ي آإلخآإصة ⦒](t.me/M10_Z5)\n"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'ضــــيَـــإآءء',url="https://t.me/dia2i"},
+{{text = 'ضـ♥̨̥̬̩ـياءء',url="https://t.me/dia2i"},
 {text = 'قـ♥̨̥̬̩ــنــآإتـ♥̨̥̬̩ـي',url="https://t.me/M10_Z5"}},
 }
 local msg_id = msg.id_/2097152/0.5
