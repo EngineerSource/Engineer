@@ -1183,7 +1183,7 @@ send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك 
 dofile('Engineer.lua')  
 end
 
-if text == 'مطور السورس' and DevEngineer(msg) then 
+if text == 'مطور السورس ✯' and DevEngineer(msg) then 
 database:del(bot_id..'Srt:Bot') 
 send(msg.chat_id_, msg.id_,'✯︙اهلا بك عزيزي\n✯︙ان كان لديك استفسار او اي مشكلة\n✯︙يمكنك مراسلة مطور السورس\n✯︙حساب مطور السورس [اضـغـط هـنـا  المهندس حسن البصراوي   ](t.me/blackbirdd)')
 end
