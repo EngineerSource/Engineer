@@ -132,7 +132,7 @@ print([[
                                
 > CH › @ba8lawa
 ~> DEVELOPER › @abbasfadhil
-~~> Source Version 3.2
+~~> Source Version 1.5
 لا ابرئ الذمة لأي شخص يأخذ حرفاً او رقما من ملفي ، ايٍ كان الشخص لن ابرئ الذمة لهُ
 ]])
 sudos = dofile("./Info.lua") 
@@ -1082,12 +1082,6 @@ send_inline_key(msg.chat_id_,bl,keyboard)
 return false
 end end
 if text == '/start' then
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 tdcli_function ({ID = "GetUser",user_id_ = SUDO},function(arg,result) 
 tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = SUDO,offset_ = 0,limit_ = 1},function(extra,abbas,success) 
 local msg_id = msg.id_/2097152/0.5
@@ -1193,12 +1187,6 @@ end,nil)
 end,nil)
 end 
 if text == 'تفعيل التواصل ✯' and DevEngineer(msg) then  
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 if database:get(bot_id..'Tuasl:Bots') then
 database:del(bot_id..'Tuasl:Bots') 
 Text = '\n✯︙تم تفعيل التواصل ' 
@@ -1208,12 +1196,6 @@ end
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'تعطيل التواصل ✯' and DevEngineer(msg) then  
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 if not database:get(bot_id..'Tuasl:Bots') then
 database:set(bot_id..'Tuasl:Bots',true) 
 Text = '\n✯︙تم تعطيل التواصل' 
@@ -1223,12 +1205,6 @@ end
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'تفعيل البوت الخدمي ✯' and DevEngineer(msg) then  
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 if database:get(bot_id..'Free:Bots') then
 database:del(bot_id..'Free:Bots') 
 Text = '\n✯︙تم تفعيل البوت الخدمي ' 
@@ -1238,12 +1214,6 @@ end
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'تعطيل البوت الخدمي ✯' and DevEngineer(msg) then  
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 if not database:get(bot_id..'Free:Bots') then
 database:set(bot_id..'Free:Bots',true) 
 Text = '\n✯︙تم تعطيل البوت الخدمي' 
@@ -1273,12 +1243,6 @@ send(msg.chat_id_,msg.id_,'✯︙تم حفظ كليشة ستارت')
 return false
 end
 if text == 'معلومات السيرفر ✯' and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 send(msg.chat_id_, msg.id_, io.popen([[
 linux_version=`lsb_release -ds`
 memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
@@ -1294,16 +1258,10 @@ echo '*———————————~*\n✯✔{ مـده تـشغيـل ال
 ]]):read('*all'))  
 end
 if text == 'تحديث السورس ✯' and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 send(msg.chat_id_, msg.id_,'✯︙جارٍ الان تحديث السورس الى اخر اصدار')
 os.execute('rm -rf Engineer.lua')
 os.execute('wget https://raw.githubusercontent.com/EngineerSource/Engineer/main/Engineer.lua')
-send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك اخر اصدار لسورس وطن\n✯︙الاصدار » { v 3.2 }')
+send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك اخر اصدار لسورس وطن\n✯︙الاصدار » { v 1.5 }')
 dofile('Engineer.lua')  
 end
 
@@ -1322,33 +1280,15 @@ send(msg.chat_id_, msg.id_,'✯︙اهلا بك عزيزي\n✯︙تم تنزي�
 dofile('Engineer.lua')  
 end
 if text == "تـحــديـث ✯" then
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 dofile("Engineer.lua")  
 send(msg.chat_id_, msg.id_, "✯︙تم تحديث الملفات")
 end
 if text == "اضف رد للكل ✯" and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 send(msg.chat_id_, msg.id_,"✯︙ارسل الكلمه التي تريد اضافتها")
 database:set(bot_id.."Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_,true)
 return false 
 end
 if text == "حذف رد للكل ✯" and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 send(msg.chat_id_, msg.id_,"✯︙ارسل الكلمه التي تريد حذفها")
 database:set(bot_id.."Set:On"..msg.sender_user_id_..":"..msg.chat_id_,true)
 return false 
@@ -1515,33 +1455,15 @@ send(msg.chat_id_, msg.id_, '\n✯︙تم مسح قائمه المكتومين �
 return false
 end
 if text == 'الاصـدار ✯' and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 database:del(bot_id..'Srt:Bot') 
-send(msg.chat_id_, msg.id_,'✯︙اصدار سورس وطن \n✯︙الاصدار »{ v 3.2 }')
+send(msg.chat_id_, msg.id_,'✯︙اصدار سورس وطن \n✯︙الاصدار »{ v 1.5 }')
 end
 if text == "ضع اسم للبوت ✯" and DevEngineer(msg) then  
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 database:setex(bot_id..'Set:Name:Bot'..msg.sender_user_id_,300,true) 
 send(msg.chat_id_, msg.id_," ✯︙ارسل اليه الاسم الان ")
 return false
 end
 if text == 'الاحصائيات ✯' and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 local Groups = database:scard(bot_id..'Chek:Groups')  
 local Users = database:scard(bot_id..'User_Bot')  
 Text = ' الاحصائيات ✯ \n'..'✯︙عدد الكروبات » {'..Groups..'}'..'\n✯︙عدد المشتركين » {'..Users..'}'
@@ -1549,12 +1471,6 @@ send(msg.chat_id_, msg.id_,Text)
 return false
 end
 if text == 'المشتركين ✯' and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 local Groups = database:scard(bot_id..'Chek:Groups')  
 local Users = database:scard(bot_id..'User_Bot')  
 Text = '\n✯︙المشتركين»{`'..Users..'`}'
@@ -1562,12 +1478,6 @@ send(msg.chat_id_, msg.id_,Text)
 return false
 end
 if text == 'الكروبات ✯' and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 local Groups = database:scard(bot_id..'Chek:Groups')  
 local Users = database:scard(bot_id..'User_Bot')  
 Text = '\n✯︙الكروبات»{`'..Groups..'`}'
@@ -1575,12 +1485,6 @@ send(msg.chat_id_, msg.id_,Text)
 return false
 end
 if text == ("المطورين ✯") and DevEngineer(msg) then
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 local list = database:smembers(bot_id..'Sudo:User')
 t = "\n✯︙قائمة المطورين \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
@@ -1597,12 +1501,6 @@ end
 send(msg.chat_id_, msg.id_, t)
 end
 if text == ("الثانويين ✯") and DevEngineer(msg) then
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 local list = database:smembers(bot_id..'Dev:Engineer:2')
 t = "\n✯︙قائمة الثانويين \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
@@ -1635,12 +1533,6 @@ return false
 end
 ----- لن ابرئ الذمة لأي شخص يأخذ حرفاً او رقما من ملفي ، ايٍ كان الشخص لن ابرئ الذمة لهُ -----
 if text == ("المحظورين عام ✯") and DevEngineer(msg) then
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 local list = database:smembers(bot_id..'GBan:User')
 t = "\n✯︙قائمه المحظورين عام \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
@@ -1658,12 +1550,6 @@ send(msg.chat_id_, msg.id_, t)
 return false
 end
 if text == ("قائمه الكتم العام ✯") and DevEngineer(msg) then
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 local list = database:smembers(bot_id..'Gmute:User')
 t = "\n✯︙قائمة المكتومين عام \nٴ≪━━━━ 𝐖𝐀𝐓𝐀𝐍 ━━━━≫ٴ\n"
 for k,v in pairs(list) do
@@ -1681,56 +1567,26 @@ send(msg.chat_id_, msg.id_, t)
 return false
 end
 if text=="اذاعه خاص ✯" and msg.reply_to_message_id_ == 0 and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 database:setex(bot_id.."Send:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," ✯︙ارسل الان اذاعتك؟ \n✯︙للخروج ارسل الغاء ")
 return false
 end 
 if text=="اذاعه ✯" and msg.reply_to_message_id_ == 0 and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 database:setex(bot_id.."Send:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," ✯︙ارسل الان اذاعتك؟ \n✯︙للخروج ارسل الغاء ")
 return false
 end  
 if text=="اذاعه بالتثبيت ✯" and msg.reply_to_message_id_ == 0 and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 database:setex(bot_id.."Bc:Grops:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," ✯︙ارسل الان اذاعتك؟ \n✯︙للخروج ارسل الغاء ")
 return false
 end 
 if text=="اذاعه بالتوجيه ✯" and msg.reply_to_message_id_ == 0  and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 database:setex(bot_id.."Send:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," ✯︙ارسل لي التوجيه الان")
 return false
 end 
 if text=="اذاعه بالتوجيه خاص ✯" and msg.reply_to_message_id_ == 0  and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 database:setex(bot_id.."Send:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
 send(msg.chat_id_, msg.id_," ✯︙ارسل لي التوجيه الان")
 return false
@@ -1739,12 +1595,6 @@ if text == 'جلب نسخه الاحتياطيه ✯' and DevEngineer(msg) then
 GetFile_Bot(msg)
 end
 if text == "تنظيف المشتركين ✯" and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 local pv = database:smembers(bot_id.."User_Bot")
 local sendok = 0
 for i = 1, #pv do
@@ -2815,25 +2665,13 @@ database:set(bot_id..'Num:Add:Bot',Num)
 send(msg.chat_id_, msg.id_,'✯︙تم تعيين عدد الاعضاء سيتم تفعيل الكروبات التي اعضائها اكثر من  >> {'..Num..'} عضو')
 end
 if text == 'تحديث السورس' and ChanSub(msg) and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 send(msg.chat_id_, msg.id_,'✯︙جارٍ الان تحديث السورس الى اخر اصدار')
 os.execute('rm -rf Engineer.lua')
 os.execute('wget https://raw.githubusercontent.com/EngineerSource/Engineer/main/Engineer.lua')
-send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك اخر اصدار لسورس وطن\n✯︙الاصدار » { v 3.2 }')
+send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك اخر اصدار لسورس وطن\n✯︙الاصدار » { v 1.5 }')
 dofile('Engineer.lua')  
 end
 if text == 'تحديث المتجر' and ChanSub(msg) and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 io.popen("mkdir File_Bot")
 os.execute("rm -fr File_Bot/*")
 io.popen("cd File_Bot && wget https://raw.githubusercontent.com/EngineerSource/Files_Engineer/main/File_Bot/all.lua") 
@@ -3166,7 +3004,7 @@ if text == 'جلب ملف السورس' and ChanSub(msg) then
 if not DevEngineer(msg) then
 send(msg.chat_id_, msg.id_,'✯︙للمطور الاساسي فقط ')
 else
-sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, './Engineer.lua', '✯︙نسخة ملف سورس وطن\n✯︙اصدار *3.2*')
+sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, './Engineer.lua', '✯︙نسخة ملف سورس وطن\n✯︙اصدار *1.5*')
 end 
 end
 if text == 'جلب ملف الردود' and ChanSub(msg) then
@@ -11002,12 +10840,6 @@ end
 return false
 end
 if text == "تنظيف الكروبات" and ChanSub(msg) and DevEngineer(msg) or text == "تنظيف الكروبات ✯" and ChanSub(msg) and DevEngineer(msg) then 
-local url,res = https.request('https://abbas.ba8lawa.tk/ch/joinch.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.Info_ba8lawa ~= true then
-send(msg.chat_id_,msg.id_,'✯︙اهلا بك عزيزي ،\n✯︙اشترك في قناة السورس\n✯︙ثم ارسل الامر مره اخرى\n✯︙قناة السورس @ba8lawa')   
-return false 
-end
 local group = database:smembers(bot_id..'Chek:Groups') 
 local w = 0
 local q = 0
