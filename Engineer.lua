@@ -131,7 +131,7 @@ print([[
  ╚╝╚╝ ╚═══╝ ╚══╝ ╚═══╝╚╝ ╚═╝
                                
 > CH › @ba8lawa
-~> DEVELOPER › @abbasfadhil
+~> DEVELOPER › @BlackBirdd
 ~~> Source Version 1.5
 لا ابرئ الذمة لأي شخص يأخذ حرفاً او رقما من ملفي ، ايٍ كان الشخص لن ابرئ الذمة لهُ
 ]])
@@ -1267,7 +1267,7 @@ end
 
 if text == 'مطور السورس ✯' and DevEngineer(msg) then 
 database:del(bot_id..'Srt:Bot') 
-send(msg.chat_id_, msg.id_,'✯︙اهلا بك عزيزي\n✯︙ان كان لديك استفسار او اي مشكلة\n✯︙يمكنك مراسلة مطور السورس\n✯︙حساب مطور السورس [اضـغـط هـنـا  𓆩•𝐀𝐁𝐁𝐀𝐒 𝐅𝐀𝐃𝐇𝐈𝐋•𓆪  ](t.me/abbasfadhil)')
+send(msg.chat_id_, msg.id_,'✯︙اهلا بك عزيزي\n✯︙ان كان لديك استفسار او اي مشكلة\n✯︙يمكنك مراسلة مطور السورس\n✯︙حساب مطور السورس [اضـغـط هـنـا  𓆩•𝐀𝐁𝐁𝐀𝐒 𝐅𝐀𝐃𝐇𝐈𝐋•𓆪  ](t.me/BlackBirdd)')
 end
 
 if text == 'تحديث المتجر ✯' and DevEngineer(msg) then 
@@ -7978,11 +7978,11 @@ end
 
 if text == "مبرمج السورس" and ChanSub(msg) or text == "المبرمج" and ChanSub(msg) or text == "مطور السورس" and ChanSub(msg) or text == "وين المبرمج" and ChanSub(msg) then
 Text = [[
-  ✯︙[DeVeLoPErE OF SoURcE](https://t.me/abbasfadhil)
+  ✯︙[DeVeLoPErE OF SoURcE](https://t.me/BlackBirdd)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '✯︙DeVeLoPErE OF SoURcE',url="t.me/abbasfadhil"}},
+{{text = '✯︙DeVeLoPErE OF SoURcE',url="t.me/BlackBirdd"}},
 {{text = '✯︙ChAnNeL OF SoURcE',url="t.me/ba8lawa"}},
 }
 local msg_id = msg.id_/2097152/0.5
