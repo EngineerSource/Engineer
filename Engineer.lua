@@ -132,7 +132,7 @@ print([[
                                
 > CH › @ba8lawa
 ~> DEVELOPER › @BlackBirdd
-~~> Source Version 1.5
+~~> Source Version 1.6
 لا ابرئ الذمة لأي شخص يأخذ حرفاً او رقما من ملفي ، ايٍ كان الشخص لن ابرئ الذمة لهُ
 ]])
 sudos = dofile("./Info.lua") 
@@ -1261,7 +1261,7 @@ if text == 'تحديث السورس ✯' and DevEngineer(msg) then
 send(msg.chat_id_, msg.id_,'✯︙جارٍ الان تحديث السورس الى اخر اصدار')
 os.execute('rm -rf Engineer.lua')
 os.execute('wget https://raw.githubusercontent.com/EngineerSource/Engineer/main/Engineer.lua')
-send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك اخر اصدار لسورس المهندس\n✯︙الاصدار » { v 1.5 }')
+send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك اخر اصدار لسورس المهندس\n✯︙الاصدار » { v 1.6 }')
 dofile('Engineer.lua')  
 end
 
@@ -1456,7 +1456,7 @@ return false
 end
 if text == 'الاصـدار ✯' and DevEngineer(msg) then 
 database:del(bot_id..'Srt:Bot') 
-send(msg.chat_id_, msg.id_,'✯︙اصدار سورس المهندس \n✯︙الاصدار »{ v 1.5 }')
+send(msg.chat_id_, msg.id_,'✯︙اصدار سورس المهندس \n✯︙الاصدار »{ v 1.6 }')
 end
 if text == "ضع اسم للبوت ✯" and DevEngineer(msg) then  
 database:setex(bot_id..'Set:Name:Bot'..msg.sender_user_id_,300,true) 
@@ -2668,7 +2668,7 @@ if text == 'تحديث السورس' and ChanSub(msg) and DevEngineer(msg) then
 send(msg.chat_id_, msg.id_,'✯︙جارٍ الان تحديث السورس الى اخر اصدار')
 os.execute('rm -rf Engineer.lua')
 os.execute('wget https://raw.githubusercontent.com/EngineerSource/Engineer/main/Engineer.lua')
-send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك اخر اصدار لسورس المهندس\n✯︙الاصدار » { v 1.5 }')
+send(msg.chat_id_, msg.id_,'✯︙تم تحديث السورس \n✯︙لديك اخر اصدار لسورس المهندس\n✯︙الاصدار » { v 1.6 }')
 dofile('Engineer.lua')  
 end
 if text == 'تحديث المتجر' and ChanSub(msg) and DevEngineer(msg) then 
@@ -3004,7 +3004,7 @@ if text == 'جلب ملف السورس' and ChanSub(msg) then
 if not DevEngineer(msg) then
 send(msg.chat_id_, msg.id_,'✯︙للمطور الاساسي فقط ')
 else
-sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, './Engineer.lua', '✯︙نسخة ملف سورس المهندس\n✯︙اصدار *1.5*')
+sendDocument(msg.chat_id_, msg.id_, 0, 1, nil, './Engineer.lua', '✯︙نسخة ملف سورس المهندس\n✯︙اصدار *1.6*')
 end 
 end
 if text == 'جلب ملف الردود' and ChanSub(msg) then
