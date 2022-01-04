@@ -3565,6 +3565,25 @@ end
 send(msg.chat_id_, msg.id_,Text) 
 end
 
+if text == 'تفعيل القران' and ChanSub(msg) and CoSu(msg) then   
+if database:get(bot_id..'memmz:memzzz'..msg.chat_id_) then
+Text = '✯︙تم تفعيل امر القران الان ارسل قران'
+database:del(bot_id..'memmz:memzzz'..msg.chat_id_)  
+else
+Text = '✯︙بالتاكيد تم تفعيل امر القران تستطيع ارسال قران'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+if text == 'تعطيل القران' and ChanSub(msg) and CoSu(msg) then  
+if not database:get(bot_id..'memmz:memzzz'..msg.chat_id_) then
+database:set(bot_id..'memmz:memzzz'..msg.chat_id_,true)  
+Text = '\n✯︙تم تعطيل امر القران'
+else
+Text = '\n✯︙بالتاكيد تم تعطيل امر القران'
+end
+send(msg.chat_id_, msg.id_,Text) 
+end
+
 if text == 'تفعيل اغنيه' and ChanSub(msg) and CoSu(msg) then   
 if database:get(bot_id..'mp3:mmp3'..msg.chat_id_) then
 Text = '✯︙تم تفعيل امر اغنيه الان ارسل اغنيه'
@@ -10352,7 +10371,7 @@ end
 
 if text == "فلم" and not database:get(bot_id..'aflam:mov'..msg.chat_id_) and ChanSub(msg) then
 Abs = math.random(45,125); 
-local Text ='*✯︙تم اختيار الفلم لك*'
+local Text ='*تم اختيار فلم الك بيبي*'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 ����𝙽𝙴𝙴𝚁.',url="t.me/ba8lawa"}},
@@ -10362,7 +10381,8 @@ https.request("https://api.telegram.org/bot"..token..'/sendphoto?chat_id=' .. ms
 end
 
 if text == "مسلسل" and not database:get(bot_id..'musl:mser'..msg.chat_id_) and ChanSub(msg) then
-Abs = math.random(2,54); 
+Abs = math.random(2,54);
+local Text ='*تم اختيار مسلسل الك يالغالي*'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 ����𝙽𝙴𝙴𝚁.',url="t.me/ba8lawa"}},
@@ -10373,6 +10393,7 @@ end
 
 if text == "متحركه" and not database:get(bot_id..'muth:giff'..msg.chat_id_) and ChanSub(msg) then
 Abs = math.random(2,1075); 
+local Text ='*تم اختيار متحركه الك ياحلو*'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 ����𝙽𝙴𝙴𝚁.',url="t.me/ba8lawa"}},
@@ -10383,16 +10404,29 @@ end
 
 if text == "ميمز" and not database:get(bot_id..'memmz:memzz'..msg.chat_id_) and ChanSub(msg) then
 Abs = math.random(2,1201); 
+local Text ='*تم اختيار ميمزايه الك وتدلل*'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 ����𝙽𝙴𝙴𝚁.',url="t.me/ba8lawa"}},
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice=https://t.me/MemzWaTaN/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice=https://t.me/maddan_n/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+
+if text == "قران" and not database:get(bot_id..'memmz:memzzz'..msg.chat_id_) and ChanSub(msg) then
+Abs = math.random(1,100); 
+local Text ='*تم اختيار سورة الك عزيزي*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 ����𝙽𝙴𝙴𝚁.',url="t.me/ba8lawa"}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice=https://t.me/sd99s/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
 if text == "اغنيه" and not database:get(bot_id..'mp3:mmp3'..msg.chat_id_) and ChanSub(msg) then
 Abs = math.random(2,1167); 
+local Text ='*تم اختيار اغنيه الك حبيصي*'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 ����𝙽𝙴𝙴𝚁.',url="t.me/ba8lawa"}},
@@ -10403,6 +10437,7 @@ end
 
 if text == "ريمكس" and not database:get(bot_id..'rem:remix'..msg.chat_id_) and ChanSub(msg) then
 Abs = math.random(2,612); 
+local Text ='*تم اختيار ريمكس الك حمبي*'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '🖨┇𝚂𝙾𝚄𝚁𝙲𝙴𝚂 ����𝙽𝙴𝙴𝚁.',url="t.me/ba8lawa"}},
